@@ -4,7 +4,6 @@ import ContactHero from './components/ContactHero';
 import ContactMethods from './components/ContactMethods';
 import ContactForm from './components/ContactForm';
 import QuoteRequestForm from './components/QuoteRequestForm';
-import LocationInfo from './components/LocationInfo';
 import TrustSignals from './components/TrustSignals';
 import FloatingCTA from './components/FloatingCTA';
 
@@ -32,9 +31,6 @@ const ContactPage = () => {
         <div id="quote-form">
           <QuoteRequestForm />
         </div>
-        
-        {/* Location Information */}
-        <LocationInfo />
         
         {/* Floating CTA */}
         <FloatingCTA />
