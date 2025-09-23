@@ -167,39 +167,6 @@ const ContactMethods = () => {
             </div>
           ))}
         </div>
-
-        {/* Emergency Contact */}
-        <div className="mt-16 bg-gradient-to-r from-red-50 to-orange-50 border border-red-200 rounded-xl p-8 text-center">
-          <div className="flex items-center justify-center mb-4">
-            <div className="w-16 h-16 bg-red-100 border border-red-200 rounded-full flex items-center justify-center">
-              <Icon name="AlertTriangle" size={28} className="text-red-600" />
-            </div>
-          </div>
-          <h3 className="text-xl font-gilroy font-bold text-secondary mb-2">
-            ¿Emergencia en tu Sitio Web?
-          </h3>
-          <p className="text-text-secondary mb-6 max-w-2xl mx-auto">
-            Para problemas críticos que afecten tu negocio (sitio caído, problemas de seguridad, pérdida de datos), contáctanos inmediatamente.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              variant="destructive"
-              size="lg"
-              iconName="Phone"
-              iconPosition="left"
-            >
-              Emergencia: +34 600 911 911
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              iconName="Mail"
-              iconPosition="left"
-            >
-              emergencia@lovapcorporate.com
-            </Button>
-          </div>
-        </div>
       </div>
     </section>
   );
