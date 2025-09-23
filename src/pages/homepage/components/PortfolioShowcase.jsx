@@ -115,7 +115,7 @@ const PortfolioShowcase = () => {
             >
               <div className="grid lg:grid-cols-2 gap-0">
                 {/* Image */}
-                <div className="relative h-64 lg:h-full min-h-[400px] overflow-hidden">
+                <div className="relative h-48 lg:h-64 overflow-hidden">
                   <Image
                     src={projects?.[activeProject]?.image}
                     alt={projects?.[activeProject]?.title}

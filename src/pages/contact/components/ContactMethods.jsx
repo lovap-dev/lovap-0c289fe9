@@ -12,9 +12,7 @@ const ContactMethods = () => {
       contact: 'hola@lovapcorporate.com',
       action: 'Enviar Email',
       responseTime: 'Respuesta en 2-4 horas',
-      bgColor: 'bg-blue-50',
-      iconColor: 'text-blue-600',
-      borderColor: 'border-blue-200'
+      variant: 'primary'
     },
     {
       id: 'phone',
@@ -24,9 +22,7 @@ const ContactMethods = () => {
       contact: '+34 900 123 456',
       action: 'Llamar Ahora',
       responseTime: 'Lun-Vie 9:00-18:00 CET',
-      bgColor: 'bg-green-50',
-      iconColor: 'text-green-600',
-      borderColor: 'border-green-200'
+      variant: 'secondary'
     },
     {
       id: 'whatsapp',
@@ -36,9 +32,7 @@ const ContactMethods = () => {
       contact: '+34 600 789 123',
       action: 'Abrir WhatsApp',
       responseTime: 'Respuesta inmediata',
-      bgColor: 'bg-emerald-50',
-      iconColor: 'text-emerald-600',
-      borderColor: 'border-emerald-200'
+      variant: 'accent'
     },
     {
       id: 'calendar',
@@ -48,9 +42,7 @@ const ContactMethods = () => {
       contact: 'Sesión de 45 minutos',
       action: 'Agendar Reunión',
       responseTime: 'Disponible esta semana',
-      bgColor: 'bg-purple-50',
-      iconColor: 'text-purple-600',
-      borderColor: 'border-purple-200'
+      variant: 'muted'
     },
     {
       id: 'linkedin',
@@ -60,9 +52,7 @@ const ContactMethods = () => {
       contact: '/company/lovap-corporate',
       action: 'Conectar LinkedIn',
       responseTime: 'Red profesional activa',
-      bgColor: 'bg-indigo-50',
-      iconColor: 'text-indigo-600',
-      borderColor: 'border-indigo-200'
+      variant: 'primary'
     },
     {
       id: 'support',
@@ -72,11 +62,45 @@ const ContactMethods = () => {
       contact: 'soporte@lovapcorporate.com',
       action: 'Contactar Soporte',
       responseTime: '24/7 para emergencias',
-      bgColor: 'bg-orange-50',
-      iconColor: 'text-orange-600',
-      borderColor: 'border-orange-200'
+      variant: 'warning'
     }
   ];
+
+  const getVariantStyles = (variant) => {
+    const styles = {
+      primary: {
+        bg: 'bg-primary/5 hover:bg-primary/10',
+        border: 'border-primary/20',
+        icon: 'text-primary',
+        iconBg: 'bg-primary/10'
+      },
+      secondary: {
+        bg: 'bg-secondary/5 hover:bg-secondary/10',
+        border: 'border-secondary/20',
+        icon: 'text-secondary',
+        iconBg: 'bg-secondary/10'
+      },
+      accent: {
+        bg: 'bg-accent/5 hover:bg-accent/10',
+        border: 'border-accent/20',
+        icon: 'text-accent',
+        iconBg: 'bg-accent/10'
+      },
+      muted: {
+        bg: 'bg-muted hover:bg-muted/80',
+        border: 'border-border',
+        icon: 'text-muted-foreground',
+        iconBg: 'bg-muted'
+      },
+      warning: {
+        bg: 'bg-warning/5 hover:bg-warning/10',
+        border: 'border-warning/20',
+        icon: 'text-warning',
+        iconBg: 'bg-warning/10'
+      }
+    };
+    return styles[variant] || styles.primary;
+  };
 
   const handleContactMethod = (method) => {
     switch (method?.id) {
@@ -122,50 +146,52 @@ const ContactMethods = () => {
           </p>
         </div>
 
-        {/* Contact Methods Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {contactMethods?.map((method) => (
-            <div
-              key={method?.id}
-              className={`${method?.bgColor} ${method?.borderColor} border rounded-xl p-6 hover:shadow-lg transition-all duration-300 group`}
-            >
-              {/* Header */}
-              <div className="flex items-start justify-between mb-4">
-                <div className={`w-12 h-12 ${method?.bgColor} border ${method?.borderColor} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon name={method?.icon} size={24} className={method?.iconColor} />
-                </div>
-                <div className="text-xs text-gray-500 bg-white px-2 py-1 rounded-full">
-                  {method?.responseTime}
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="space-y-3 mb-6">
-                <h3 className="text-lg font-gilroy font-semibold text-secondary">
-                  {method?.title}
-                </h3>
-                <p className="text-sm text-text-secondary leading-relaxed">
-                  {method?.description}
-                </p>
-                <div className="text-sm font-medium text-gray-700">
-                  {method?.contact}
-                </div>
-              </div>
-
-              {/* Action Button */}
-              <Button
-                variant="outline"
-                size="sm"
-                fullWidth
-                iconName="ArrowRight"
-                iconPosition="right"
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {contactMethods?.map((method) => {
+            const styles = getVariantStyles(method?.variant);
+            return (
+              <div
+                key={method?.id}
+                className={`${styles.bg} ${styles.border} border rounded-2xl p-6 transition-all duration-300 group cursor-pointer card-elevated hover:card-elevated-strong`}
                 onClick={() => handleContactMethod(method)}
-                className="group-hover:bg-secondary group-hover:text-white transition-colors duration-300"
               >
-                {method?.action}
-              </Button>
-            </div>
-          ))}
+                {/* Header */}
+                <div className="flex items-start justify-between mb-6">
+                  <div className={`w-14 h-14 ${styles.iconBg} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon name={method?.icon} size={24} className={styles.icon} />
+                  </div>
+                  <div className="text-xs text-muted-foreground bg-card px-3 py-1.5 rounded-lg shadow-sm">
+                    {method?.responseTime}
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="space-y-4 mb-6">
+                  <h3 className="text-xl font-gilroy font-bold text-secondary group-hover:text-primary transition-colors">
+                    {method?.title}
+                  </h3>
+                  <p className="text-sm text-text-secondary leading-relaxed">
+                    {method?.description}
+                  </p>
+                  <div className="text-sm font-medium text-text-primary bg-card px-3 py-2 rounded-lg">
+                    {method?.contact}
+                  </div>
+                </div>
+
+                {/* Action Button */}
+                <Button
+                  variant="outline"
+                  size="sm"
+                  fullWidth
+                  iconName="ArrowRight"
+                  iconPosition="right"
+                  className="group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300"
+                >
+                  {method?.action}
+                </Button>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

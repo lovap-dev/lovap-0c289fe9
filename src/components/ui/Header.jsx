@@ -18,11 +18,11 @@ const Header = () => {
   }, []);
 
   const navigationItems = [
-    { name: 'Home', path: '/homepage', icon: 'Home' },
-    { name: 'Services', path: '/services', icon: 'Briefcase' },
-    { name: 'Process', path: '/process', icon: 'GitBranch' },
-    { name: 'About', path: '/about', icon: 'Users' },
-    { name: 'Contact', path: '/contact', icon: 'MessageCircle' }
+    { name: 'Inicio', path: '/homepage', icon: 'Home' },
+    { name: 'Servicios', path: '/services', icon: 'Briefcase' },
+    { name: 'Proceso', path: '/process', icon: 'GitBranch' },
+    { name: 'Nosotros', path: '/about', icon: 'Users' },
+    { name: 'Contacto', path: '/contact', icon: 'MessageCircle' }
   ];
 
   const isActivePath = (path) => {
@@ -42,7 +42,7 @@ const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-background/95 backdrop-blur-md shadow-card' 
-          : 'bg-background'
+          : 'bg-background/50 backdrop-blur-sm'
       }`}
     >
       <div className="w-full">
@@ -95,11 +95,11 @@ const Header = () => {
               <Link
                 key={item?.path}
                 to={item?.path}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-inter font-medium transition-smooth ${
-                  isActivePath(item?.path)
-                    ? 'bg-primary text-primary-foreground'
-                    : 'text-text-primary hover:bg-muted hover:text-secondary'
-                }`}
+              className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-inter font-medium transition-smooth ${
+                isActivePath(item?.path)
+                  ? 'bg-primary text-primary-foreground'
+                  : 'text-text-primary hover:bg-primary/10 hover:text-primary backdrop-blur-sm'
+              }`}
               >
                 <Icon name={item?.icon} size={16} />
                 <span>{item?.name}</span>
@@ -116,7 +116,7 @@ const Header = () => {
               iconName="ArrowRight"
               iconPosition="right"
             >
-              Get Strategic Quote
+              Cotización Estratégica
             </Button>
 
             {/* Mobile Menu Button */}
@@ -151,7 +151,7 @@ const Header = () => {
                   className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-inter font-medium transition-smooth ${
                     isActivePath(item?.path)
                       ? 'bg-primary text-primary-foreground'
-                      : 'text-text-primary hover:bg-muted hover:text-secondary'
+                      : 'text-text-primary hover:bg-primary/10 hover:text-primary'
                   }`}
                 >
                   <Icon name={item?.icon} size={18} />
@@ -169,7 +169,7 @@ const Header = () => {
                   iconPosition="right"
                   onClick={closeMenu}
                 >
-                  Get Strategic Quote
+                  Cotización Estratégica
                 </Button>
               </div>
             </div>
