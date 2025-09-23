@@ -1,36 +1,98 @@
+import React from 'react';
+import Button from '../../../components/ui/Button';
+import Icon from '../../../components/AppIcon';
+
 const ServiceHero = () => {
   return (
-    <section className="relative py-20 lg:py-32 bg-gradient-to-br from-background to-surface">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl lg:text-6xl font-gilroy-bold text-text-primary mb-6 leading-tight">
-            Professional Services That Drive Results
-          </h1>
-          <p className="text-lg lg:text-xl text-text-secondary font-inter-regular mb-8 max-w-3xl mx-auto">
-            Comprehensive business solutions tailored to your unique challenges. From strategy to implementation, we deliver measurable outcomes that transform your organization.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <button className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-inter-medium text-lg hover:bg-accent transition-colors shadow-card">
-              Explore Services
-            </button>
-            <button className="px-8 py-4 border border-border text-text-primary rounded-lg font-inter-medium text-lg hover:bg-muted transition-colors">
-              Calculate ROI
-            </button>
+    <section className="relative bg-gradient-to-br from-secondary via-secondary to-secondary/90 text-white overflow-hidden">
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80')] bg-cover bg-center opacity-10"></div>
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <div className="inline-flex items-center space-x-2 bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-medium">
+                <Icon name="Zap" size={16} />
+                <span>Servicios Estratégicos</span>
+              </div>
+              <h1 className="text-4xl lg:text-6xl font-gilroy font-bold leading-tight">
+                Soluciones Web que 
+                <span className="text-primary"> Impulsan Resultados</span>
+              </h1>
+              <p className="text-xl text-gray-300 leading-relaxed">
+                Transformamos tu presencia digital en una máquina de conversión con servicios especializados que combinan diseño estratégico, desarrollo técnico y optimización de rendimiento.
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button 
+                variant="default" 
+                size="lg"
+                iconName="Calculator"
+                iconPosition="left"
+                className="bg-primary text-primary-foreground hover:bg-accent"
+              >
+                Calcular ROI Estimado
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                iconName="Play"
+                iconPosition="left"
+                className="border-white/30 text-white hover:bg-white/10"
+              >
+                Ver Casos de Éxito
+              </Button>
+            </div>
+
+            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/20">
+              <div className="text-center">
+                <div className="text-3xl font-gilroy font-bold text-primary">150%</div>
+                <div className="text-sm text-gray-300">Aumento Promedio en Conversiones</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-gilroy font-bold text-primary">48h</div>
+                <div className="text-sm text-gray-300">Tiempo de Respuesta</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-gilroy font-bold text-primary">99.9%</div>
+                <div className="text-sm text-gray-300">Uptime Garantizado</div>
+              </div>
+            </div>
           </div>
-          
-          {/* Key service highlights */}
-          <div className="grid md:grid-cols-3 gap-6 mt-16">
-            <div className="text-center">
-              <div className="text-2xl font-gilroy-bold text-primary mb-2">500+</div>
-              <div className="text-sm text-text-secondary font-inter-regular">Projects Delivered</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-gilroy-bold text-primary mb-2">15+</div>
-              <div className="text-sm text-text-secondary font-inter-regular">Service Categories</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-gilroy-bold text-primary mb-2">98%</div>
-              <div className="text-sm text-text-secondary font-inter-regular">Client Satisfaction</div>
+
+          <div className="relative">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+              <div className="space-y-6">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-gilroy font-semibold">Consulta Estratégica Gratuita</h3>
+                  <Icon name="Gift" size={24} className="text-primary" />
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <Icon name="CheckCircle" size={20} className="text-primary" />
+                    <span className="text-sm">Análisis de competencia incluido</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Icon name="CheckCircle" size={20} className="text-primary" />
+                    <span className="text-sm">Estrategia de conversión personalizada</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Icon name="CheckCircle" size={20} className="text-primary" />
+                    <span className="text-sm">Roadmap técnico detallado</span>
+                  </div>
+                </div>
+
+                <Button 
+                  variant="default" 
+                  fullWidth
+                  iconName="ArrowRight"
+                  iconPosition="right"
+                  className="bg-primary text-primary-foreground hover:bg-accent"
+                >
+                  Agendar Consulta
+                </Button>
+              </div>
             </div>
           </div>
         </div>

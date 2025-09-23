@@ -1,126 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Gilroy:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    /* Lovap Corporate Color System */
-    --color-primary: #22c55e; /* Green */
-    --color-primary-foreground: #1b2033; /* Navy */
-    --color-secondary: #1b2033; /* Navy */
-    --color-secondary-foreground: #ffffff; /* White */
+    /* Core Brand Colors */
+    --color-primary: #B8FF65; /* Signature growth signal green */
+    --color-primary-foreground: #1B2033; /* Dark navy for contrast */
+    --color-secondary: #1B2033; /* Executive authority navy */
+    --color-secondary-foreground: #FFFFFF; /* White for contrast */
+    --color-accent: #A5E25D; /* Hover states green */
+    --color-accent-foreground: #1B2033; /* Dark navy for contrast */
     
-    --color-background: #ffffff; /* White */
-    --color-foreground: #1a1a1a; /* Near-black */
-    --color-card: #ffffff; /* White */
-    --color-card-foreground: #1a1a1a; /* Near-black */
+    /* Background & Surface */
+    --color-background: #FFFFFF; /* Clean canvas white */
+    --color-foreground: #131624; /* Primary text near-black */
+    --color-card: #FFFFFF; /* Card background white */
+    --color-card-foreground: #131624; /* Card text near-black */
+    --color-popover: #FFFFFF; /* Popover background white */
+    --color-popover-foreground: #131624; /* Popover text near-black */
+    --color-muted: #F4F4F4; /* Subtle section separation gray */
+    --color-muted-foreground: #1B2033; /* Muted text navy */
     
-    --color-popover: #ffffff; /* White */
-    --color-popover-foreground: #1a1a1a; /* Near-black */
+    /* Interactive Elements */
+    --color-border: #DEE1E6; /* Light gray borders */
+    --color-input: #FFFFFF; /* Input background white */
+    --color-ring: #B8FF65; /* Focus ring green */
     
-    --color-muted: #f8f9fa; /* Light-gray */
-    --color-muted-foreground: #1b2033; /* Navy */
+    /* Status Colors */
+    --color-success: #80B148; /* Positive confirmation green */
+    --color-success-foreground: #FFFFFF; /* White for contrast */
+    --color-warning: #FF9500; /* Attention orange */
+    --color-warning-foreground: #FFFFFF; /* White for contrast */
+    --color-error: #E53E3E; /* Problem indication red */
+    --color-error-foreground: #FFFFFF; /* White for contrast */
+    --color-destructive: #E53E3E; /* Destructive action red */
+    --color-destructive-foreground: #FFFFFF; /* White for contrast */
     
-    --color-accent: #16a34a; /* Hover-green */
-    --color-accent-foreground: #1b2033; /* Navy */
-    
-    --color-destructive: #ef4444; /* Red */
-    --color-destructive-foreground: #ffffff; /* White */
-    
-    --color-border: #f8f9fa; /* Light-gray */
-    --color-input: #ffffff; /* White */
-    --color-ring: #22c55e; /* Green */
-    
-    --color-success: #22c55e; /* Success-green */
-    --color-success-foreground: #ffffff; /* White */
-    --color-warning: #f97316; /* Orange */
-    --color-warning-foreground: #ffffff; /* White */
-    --color-error: #ef4444; /* Red */
-    --color-error-foreground: #ffffff; /* White */
-    
-    --color-text-primary: #1b2033; /* Navy */
-    --color-text-secondary: #1a1a1a; /* Near-black */
-    --color-surface: #f8f9fa; /* Light-gray */
-
-    /* Shadcn compatibility */
-    --background: 0 0% 100%;
-    --foreground: 210 10% 10%;
-    --card: 0 0% 100%;
-    --card-foreground: 210 10% 10%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 10% 10%;
-    --primary: 142 76% 36%;
-    --primary-foreground: 210 20% 15%;
-    --secondary: 210 20% 15%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 210 40% 98%;
-    --muted-foreground: 210 20% 15%;
-    --accent: 142 69% 32%;
-    --accent-foreground: 210 20% 15%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 142 76% 36%;
-    --radius: 0.5rem;
+    /* Additional Brand Colors */
+    --color-text-primary: #1B2033; /* Primary text navy */
+    --color-text-secondary: #131624; /* Secondary text near-black */
+    --color-surface: #F4F4F4; /* Surface background gray */
   }
 
-  .dark {
-    --color-primary: #22c55e;
-    --color-primary-foreground: #ffffff;
-    --color-secondary: #374151;
-    --color-secondary-foreground: #ffffff;
-    
-    --color-background: #1a1a1a;
-    --color-foreground: #ffffff;
-    --color-card: #1f2937;
-    --color-card-foreground: #ffffff;
-    
-    --color-popover: #1f2937;
-    --color-popover-foreground: #ffffff;
-    
-    --color-muted: #374151;
-    --color-muted-foreground: #d1d5db;
-    
-    --color-accent: #16a34a;
-    --color-accent-foreground: #ffffff;
-    
-    --color-text-primary: #ffffff;
-    --color-text-secondary: #d1d5db;
-    --color-surface: #374151;
-
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
-    --popover: 224 71% 4%;
-    --popover-foreground: 213 31% 91%;
-    --primary: 142 76% 36%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 215 28% 17%;
-    --secondary-foreground: 213 31% 91%;
-    --muted: 215 28% 17%;
-    --muted-foreground: 218 11% 65%;
-    --accent: 142 69% 32%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 213 31% 91%;
-    --border: 215 28% 17%;
-    --input: 215 28% 17%;
-    --ring: 142 76% 36%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
-
+  
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 600;
+  }
+
+  .font-gilroy {
+    font-family: 'Gilroy', sans-serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-jetbrains {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-accent transition-all duration-300 ease-out;
+  }
+.btn-secondary  {
+    @apply bg-secondary text-secondary-foreground transition-all duration-300 ease-out;
+  }
+
+  .card-elevated {
+    box-shadow: 0 4px 20px rgba(27, 32, 51, 0.08);
+  }
+
+  .card-elevated-strong {
+    box-shadow: 0 8px 40px rgba(27, 32, 51, 0.12);
+  }
+
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transition-quick {
+    transition: all 0.2s ease-out;
+  }
+
+  .transition-modal {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }

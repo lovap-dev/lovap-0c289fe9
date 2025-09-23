@@ -1,25 +1,32 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Routes as RouterRoutes, Route } from "react-router-dom";
+import ScrollToTop from "components/ScrollToTop";
+import ErrorBoundary from "components/ErrorBoundary";
+import NotFound from "pages/NotFound";
+import ServicesPage from './pages/services';
+import ContactPage from './pages/contact';
+import ProcessPage from './pages/process';
 import AboutPage from './pages/about';
 import Homepage from './pages/homepage';
-import ServicesPage from './pages/services';
-import ProcessPage from './pages/process';
-import ContactPage from './pages/contact';
-import NotFound from './pages/NotFound';
 
-const AppRoutes = () => {
+const Routes = () => {
   return (
     <BrowserRouter>
-      <Routes>
+      <ErrorBoundary>
+      <ScrollToTop />
+      <RouterRoutes>
+        {/* Define your route here */}
         <Route path="/" element={<AboutPage />} />
-        <Route path="/homepage" element={<Homepage />} />
         <Route path="/services" element={<ServicesPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/process" element={<ProcessPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/process" element={<ProcessPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/homepage" element={<Homepage />} />
         <Route path="*" element={<NotFound />} />
-      </Routes>
+      </RouterRoutes>
+      </ErrorBoundary>
     </BrowserRouter>
   );
 };
 
-export default AppRoutes;
+export default Routes;

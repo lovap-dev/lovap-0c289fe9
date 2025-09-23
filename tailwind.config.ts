@@ -1,7 +1,5 @@
-import type { Config } from "tailwindcss";
-
+/** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: ["class"],
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -9,61 +7,54 @@ export default {
   theme: {
     extend: {
       colors: {
-        border: 'var(--color-border)',
-        input: 'var(--color-input)',
-        ring: 'var(--color-ring)',
-        background: 'var(--color-background)',
-        foreground: 'var(--color-foreground)',
+        border: 'var(--color-border)', // light-gray
+        input: 'var(--color-input)', // white
+        ring: 'var(--color-ring)', // green
+        background: 'var(--color-background)', // white
+        foreground: 'var(--color-foreground)', // near-black
         primary: {
-          DEFAULT: 'var(--color-primary)',
-          foreground: 'var(--color-primary-foreground)',
+          DEFAULT: 'var(--color-primary)', // green
+          foreground: 'var(--color-primary-foreground)', // navy
         },
         secondary: {
-          DEFAULT: 'var(--color-secondary)',
-          foreground: 'var(--color-secondary-foreground)',
+          DEFAULT: 'var(--color-secondary)', // navy
+          foreground: 'var(--color-secondary-foreground)', // white
         },
         destructive: {
-          DEFAULT: 'var(--color-destructive)',
-          foreground: 'var(--color-destructive-foreground)',
+          DEFAULT: 'var(--color-destructive)', // red
+          foreground: 'var(--color-destructive-foreground)', // white
         },
         muted: {
-          DEFAULT: 'var(--color-muted)',
-          foreground: 'var(--color-muted-foreground)',
+          DEFAULT: 'var(--color-muted)', // light-gray
+          foreground: 'var(--color-muted-foreground)', // navy
         },
         accent: {
-          DEFAULT: 'var(--color-accent)',
-          foreground: 'var(--color-accent-foreground)',
+          DEFAULT: 'var(--color-accent)', // hover-green
+          foreground: 'var(--color-accent-foreground)', // navy
         },
         popover: {
-          DEFAULT: 'var(--color-popover)',
-          foreground: 'var(--color-popover-foreground)',
+          DEFAULT: 'var(--color-popover)', // white
+          foreground: 'var(--color-popover-foreground)', // near-black
         },
         card: {
-          DEFAULT: 'var(--color-card)',
-          foreground: 'var(--color-card-foreground)',
+          DEFAULT: 'var(--color-card)', // white
+          foreground: 'var(--color-card-foreground)', // near-black
         },
         success: {
-          DEFAULT: 'var(--color-success)',
-          foreground: 'var(--color-success-foreground)',
+          DEFAULT: 'var(--color-success)', // success-green
+          foreground: 'var(--color-success-foreground)', // white
         },
         warning: {
-          DEFAULT: 'var(--color-warning)',
-          foreground: 'var(--color-warning-foreground)',
+          DEFAULT: 'var(--color-warning)', // orange
+          foreground: 'var(--color-warning-foreground)', // white
         },
         error: {
-          DEFAULT: 'var(--color-error)',
-          foreground: 'var(--color-error-foreground)',
+          DEFAULT: 'var(--color-error)', // red
+          foreground: 'var(--color-error-foreground)', // white
         },
-        'text-primary': 'var(--color-text-primary)',
-        'text-secondary': 'var(--color-text-secondary)',
-        surface: 'var(--color-surface)',
-        
-        // Shadcn compatibility
-        "border-alt": "hsl(var(--border))",
-        "input-alt": "hsl(var(--input))",
-        "ring-alt": "hsl(var(--ring))",
-        "background-alt": "hsl(var(--background))",
-        "foreground-alt": "hsl(var(--foreground))",
+        'text-primary': 'var(--color-text-primary)', // navy
+        'text-secondary': 'var(--color-text-secondary)', // near-black
+        surface: 'var(--color-surface)', // light-gray
       },
       fontFamily: {
         'gilroy': ['Gilroy', 'sans-serif'],
@@ -84,9 +75,9 @@ export default {
         '128': '32rem',
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        'lg': '8px',
+        'md': '6px',
+        'sm': '4px',
       },
       boxShadow: {
         'card': '0 4px 20px rgba(27, 32, 51, 0.08)',
@@ -98,8 +89,6 @@ export default {
         'slide-up': 'slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
         'scale-in': 'scaleIn 0.2s ease-out',
         'bounce-gentle': 'bounceGentle 0.4s ease-out',
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
       },
       keyframes: {
         fadeIn: {
@@ -119,22 +108,6 @@ export default {
           '50%': { transform: 'scale(1.02)' },
           '100%': { transform: 'scale(1)' },
         },
-        "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
-        },
-        "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
-        },
       },
       transitionTimingFunction: {
         'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
@@ -146,4 +119,4 @@ export default {
     require('@tailwindcss/forms'),
     require('tailwindcss-animate'),
   ],
-} satisfies Config;
+}

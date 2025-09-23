@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import React from 'react';
 import Header from '../../components/ui/Header';
 import ServiceHero from './components/ServiceHero';
 import ServiceGrid from './components/ServiceGrid';
@@ -11,27 +11,20 @@ import CTASection from './components/CTASection';
 
 const ServicesPage = () => {
   return (
-    <>
-      <Helmet>
-        <title>Services - Lovap Corporate</title>
-        <meta name="description" content="Explore Lovap Corporate's comprehensive service offerings. From consulting to implementation, we deliver results." />
-        <meta name="keywords" content="business services, consulting, implementation, professional services" />
-      </Helmet>
+    <div className="min-h-screen bg-background">
+      <Header />
       
-      <div className="min-h-screen bg-background">
-        <Header />
-        <main>
-          <ServiceHero />
-          <ServiceGrid />
-          <ROICalculator />
-          <CaseStudyShowcase />
-          <ProcessOverview />
-          <TechnicalSpecs />
-          <ComparisonMatrix />
-          <CTASection />
-        </main>
-      </div>
-    </>
+      <main className="pt-16">
+        <ServiceHero />
+        <ServiceGrid />
+        <ROICalculator />
+        <CaseStudyShowcase />
+        <ProcessOverview />
+        <TechnicalSpecs />
+        <ComparisonMatrix />
+        <CTASection />
+      </main>
+    </div>
   );
 };
 

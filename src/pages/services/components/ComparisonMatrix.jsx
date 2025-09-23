@@ -1,177 +1,291 @@
+import React, { useState } from 'react';
+import Button from '../../../components/ui/Button';
+import Icon from '../../../components/AppIcon';
+
 const ComparisonMatrix = () => {
+  const [selectedPlan, setSelectedPlan] = useState('professional');
+
   const comparisonData = {
     categories: [
-      "Strategy Development",
-      "Implementation Speed",
-      "Technical Expertise",
-      "Industry Knowledge",
-      "Support Quality",
-      "Cost Effectiveness",
-      "Innovation Focus",
-      "Client Satisfaction"
-    ],
-    competitors: [
       {
-        name: "Lovap Corporate",
-        isUs: true,
-        scores: [95, 90, 98, 92, 96, 88, 94, 98]
+        name: 'Diseño y UX',
+        features: [
+          { name: 'Diseño Responsive Premium', basic: false, professional: true, enterprise: true },
+          { name: 'Prototipado Interactivo', basic: false, professional: true, enterprise: true },
+          { name: 'Testing de Usabilidad', basic: false, professional: true, enterprise: true },
+          { name: 'Sistema de Diseño Personalizado', basic: false, professional: false, enterprise: true },
+          { name: 'Animaciones y Micro-interacciones', basic: false, professional: true, enterprise: true }
+        ]
       },
       {
-        name: "Large Consulting Firm",
-        isUs: false,
-        scores: [85, 70, 80, 88, 75, 60, 70, 82]
+        name: 'Desarrollo Técnico',
+        features: [
+          { name: 'Código Limpio y Documentado', basic: true, professional: true, enterprise: true },
+          { name: 'Optimización de Rendimiento', basic: 'Básica', professional: 'Avanzada', enterprise: 'Premium' },
+          { name: 'SEO Técnico Avanzado', basic: false, professional: true, enterprise: true },
+          { name: 'Integración con APIs', basic: '1-2', professional: '3-5', enterprise: 'Ilimitadas' },
+          { name: 'Desarrollo a Medida', basic: false, professional: 'Limitado', enterprise: 'Completo' }
+        ]
       },
       {
-        name: "Boutique Agency",
-        isUs: false,
-        scores: [78, 85, 75, 70, 85, 90, 80, 85]
+        name: 'Conversión y Analytics',
+        features: [
+          { name: 'Optimización para Conversión', basic: 'Básica', professional: 'Avanzada', enterprise: 'Premium' },
+          { name: 'A/B Testing Setup', basic: false, professional: true, enterprise: true },
+          { name: 'Analytics Avanzado', basic: false, professional: true, enterprise: true },
+          { name: 'Heatmaps y Session Recording', basic: false, professional: false, enterprise: true },
+          { name: 'Reportes Personalizados', basic: false, professional: 'Mensuales', enterprise: 'Semanales' }
+        ]
       },
       {
-        name: "In-House Team",
-        isUs: false,
-        scores: [60, 95, 70, 85, 90, 95, 65, 75]
+        name: 'Soporte y Mantenimiento',
+        features: [
+          { name: 'Soporte Técnico', basic: '1 mes', professional: '6 meses', enterprise: '12 meses' },
+          { name: 'Actualizaciones de Seguridad', basic: true, professional: true, enterprise: true },
+          { name: 'Backup Automatizado', basic: 'Semanal', professional: 'Diario', enterprise: 'Tiempo Real' },
+          { name: 'Monitoreo 24/7', basic: false, professional: true, enterprise: true },
+          { name: 'SLA Garantizado', basic: false, professional: '99.5%', enterprise: '99.9%' }
+        ]
       }
-    ]
+    ],
+    plans: {
+      basic: {
+        name: 'Básico',
+        price: '€2,500',
+        description: 'Perfecto para startups y pequeños negocios',
+        color: 'border-border',
+        bgColor: 'bg-white',
+        popular: false
+      },
+      professional: {
+        name: 'Profesional',
+        price: '€5,000',
+        description: 'Ideal para empresas en crecimiento',
+        color: 'border-primary',
+        bgColor: 'bg-primary/5',
+        popular: true
+      },
+      enterprise: {
+        name: 'Enterprise',
+        price: '€10,000+',
+        description: 'Soluciones completas para grandes empresas',
+        color: 'border-secondary',
+        bgColor: 'bg-secondary/5',
+        popular: false
+      }
+    }
   };
 
-  const getScoreColor = (score, isUs) => {
-    if (isUs) return "bg-primary";
-    if (score >= 85) return "bg-success";
-    if (score >= 70) return "bg-warning";
-    return "bg-destructive";
-  };
-
-  const getScoreColorText = (score, isUs) => {
-    if (isUs) return "text-primary";
-    if (score >= 85) return "text-success";
-    if (score >= 70) return "text-warning";
-    return "text-destructive";
+  const renderFeatureValue = (feature, plan) => {
+    const value = feature?.[plan];
+    
+    if (value === true) {
+      return <Icon name="Check" size={20} className="text-success" />;
+    } else if (value === false) {
+      return <Icon name="X" size={20} className="text-error" />;
+    } else {
+      return <span className="text-sm font-medium text-secondary">{value}</span>;
+    }
   };
 
   return (
-    <section className="py-20 bg-surface">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-muted">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-5xl font-gilroy-bold text-text-primary mb-6">
-            How We Compare
+          <h2 className="text-3xl lg:text-5xl font-gilroy font-bold text-secondary mb-6">
+            Comparación de 
+            <span className="text-primary"> Servicios</span>
           </h2>
-          <p className="text-lg text-text-secondary font-inter-regular max-w-3xl mx-auto">
-            See how Lovap Corporate stacks up against other consulting options across key performance indicators.
+          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+            Encuentra el nivel de servicio perfecto para tus objetivos de negocio y presupuesto disponible.
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto">
-          {/* Desktop View */}
-          <div className="hidden lg:block bg-card border border-border rounded-2xl overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="bg-surface border-b border-border">
-                    <th className="text-left p-6 font-gilroy-semibold text-text-primary">
-                      Evaluation Criteria
-                    </th>
-                    {comparisonData.competitors.map((competitor, index) => (
-                      <th 
-                        key={index}
-                        className={`text-center p-6 font-gilroy-semibold ${
-                          competitor.isUs ? 'text-primary' : 'text-text-primary'
-                        }`}
-                      >
-                        {competitor.name}
-                        {competitor.isUs && (
-                          <div className="mt-1">
-                            <span className="px-2 py-1 bg-primary text-primary-foreground rounded-full text-xs">
-                              That's Us!
-                            </span>
-                          </div>
-                        )}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonData.categories.map((category, categoryIndex) => (
-                    <tr key={categoryIndex} className="border-b border-border">
-                      <td className="p-6 font-inter-medium text-text-primary">
-                        {category}
-                      </td>
-                      {comparisonData.competitors.map((competitor, competitorIndex) => (
-                        <td key={competitorIndex} className="p-6 text-center">
-                          <div className="flex items-center justify-center">
-                            <div className="flex items-center space-x-2">
-                              <div className="w-24 h-2 bg-border rounded-full overflow-hidden">
-                                <div 
-                                  className={`h-full ${getScoreColor(competitor.scores[categoryIndex], competitor.isUs)} transition-all duration-500`}
-                                  style={{ width: `${competitor.scores[categoryIndex]}%` }}
-                                ></div>
-                              </div>
-                              <span className={`font-inter-semibold text-sm ${getScoreColorText(competitor.scores[categoryIndex], competitor.isUs)}`}>
-                                {competitor.scores[categoryIndex]}%
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+        {/* Mobile Plan Selector */}
+        <div className="lg:hidden mb-8">
+          <div className="bg-white rounded-2xl p-4 shadow-card-elevated">
+            <div className="grid grid-cols-3 gap-2">
+              {Object.entries(comparisonData?.plans)?.map(([key, plan]) => (
+                <button
+                  key={key}
+                  onClick={() => setSelectedPlan(key)}
+                  className={`p-4 rounded-xl text-center transition-all duration-300 ${
+                    selectedPlan === key
+                      ? 'bg-primary text-primary-foreground'
+                      : 'bg-muted text-text-secondary hover:bg-primary/10'
+                  }`}
+                >
+                  <div className="font-gilroy font-bold text-sm">{plan?.name}</div>
+                  <div className="text-xs mt-1">{plan?.price}</div>
+                </button>
+              ))}
             </div>
           </div>
+        </div>
 
-          {/* Mobile View */}
-          <div className="lg:hidden space-y-6">
-            {comparisonData.competitors.map((competitor, competitorIndex) => (
-              <div 
-                key={competitorIndex}
-                className={`bg-card border-2 rounded-2xl p-6 ${
-                  competitor.isUs ? 'border-primary' : 'border-border'
-                }`}
+        {/* Desktop Comparison Table */}
+        <div className="hidden lg:block bg-white rounded-2xl shadow-card-elevated overflow-hidden">
+          {/* Header */}
+          <div className="grid grid-cols-4 border-b border-border">
+            <div className="p-6">
+              <h3 className="text-lg font-gilroy font-bold text-secondary">Características</h3>
+            </div>
+            {Object.entries(comparisonData?.plans)?.map(([key, plan]) => (
+              <div
+                key={key}
+                className={`p-6 text-center relative ${plan?.bgColor} ${plan?.color} border-l border-border`}
               >
-                <div className="text-center mb-6">
-                  <h3 className={`text-lg font-gilroy-semibold ${
-                    competitor.isUs ? 'text-primary' : 'text-text-primary'
-                  }`}>
-                    {competitor.name}
-                  </h3>
-                  {competitor.isUs && (
-                    <span className="inline-block mt-2 px-3 py-1 bg-primary text-primary-foreground rounded-full text-sm">
-                      That's Us!
+                {plan?.popular && (
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-medium">
+                      Más Popular
                     </span>
-                  )}
-                </div>
-                
-                <div className="space-y-4">
-                  {comparisonData.categories.map((category, categoryIndex) => (
-                    <div key={categoryIndex} className="flex justify-between items-center">
-                      <span className="text-sm font-inter-medium text-text-primary flex-1">
-                        {category}
-                      </span>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-16 h-2 bg-border rounded-full overflow-hidden">
-                          <div 
-                            className={`h-full ${getScoreColor(competitor.scores[categoryIndex], competitor.isUs)}`}
-                            style={{ width: `${competitor.scores[categoryIndex]}%` }}
-                          ></div>
-                        </div>
-                        <span className={`font-inter-semibold text-sm ${getScoreColorText(competitor.scores[categoryIndex], competitor.isUs)}`}>
-                          {competitor.scores[categoryIndex]}%
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                  </div>
+                )}
+                <h3 className="text-xl font-gilroy font-bold text-secondary mb-2">{plan?.name}</h3>
+                <div className="text-2xl font-gilroy font-bold text-primary mb-2">{plan?.price}</div>
+                <p className="text-sm text-text-secondary">{plan?.description}</p>
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <p className="text-text-secondary font-inter-regular mb-6">
-              * Scores based on client feedback, industry benchmarks, and third-party evaluations
+          {/* Feature Categories */}
+          {comparisonData?.categories?.map((category, categoryIndex) => (
+            <div key={categoryIndex}>
+              <div className="grid grid-cols-4 bg-muted border-b border-border">
+                <div className="p-4 col-span-4">
+                  <h4 className="font-gilroy font-bold text-secondary flex items-center">
+                    <Icon name="Folder" size={18} className="text-primary mr-2" />
+                    {category?.name}
+                  </h4>
+                </div>
+              </div>
+              
+              {category?.features?.map((feature, featureIndex) => (
+                <div
+                  key={featureIndex}
+                  className="grid grid-cols-4 border-b border-border hover:bg-muted/50 transition-colors"
+                >
+                  <div className="p-4">
+                    <span className="text-sm text-text-secondary">{feature?.name}</span>
+                  </div>
+                  <div className="p-4 text-center border-l border-border">
+                    {renderFeatureValue(feature, 'basic')}
+                  </div>
+                  <div className="p-4 text-center border-l border-border bg-primary/5">
+                    {renderFeatureValue(feature, 'professional')}
+                  </div>
+                  <div className="p-4 text-center border-l border-border">
+                    {renderFeatureValue(feature, 'enterprise')}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
+
+          {/* CTA Row */}
+          <div className="grid grid-cols-4 p-6 bg-muted">
+            <div className="flex items-center">
+              <span className="text-sm font-medium text-secondary">Comenzar ahora:</span>
+            </div>
+            {Object.entries(comparisonData?.plans)?.map(([key, plan]) => (
+              <div key={key} className="px-4">
+                <Button
+                  variant={plan?.popular ? "default" : "outline"}
+                  fullWidth
+                  iconName="ArrowRight"
+                  iconPosition="right"
+                  className={plan?.popular ? "bg-primary text-primary-foreground hover:bg-accent" : ""}
+                >
+                  Seleccionar {plan?.name}
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile Feature List */}
+        <div className="lg:hidden space-y-6">
+          {comparisonData?.categories?.map((category, categoryIndex) => (
+            <div key={categoryIndex} className="bg-white rounded-2xl shadow-card-elevated overflow-hidden">
+              <div className="p-6 bg-muted border-b border-border">
+                <h4 className="font-gilroy font-bold text-secondary flex items-center">
+                  <Icon name="Folder" size={18} className="text-primary mr-2" />
+                  {category?.name}
+                </h4>
+              </div>
+              
+              <div className="p-6 space-y-4">
+                {category?.features?.map((feature, featureIndex) => (
+                  <div key={featureIndex} className="flex justify-between items-center">
+                    <span className="text-sm text-text-secondary">{feature?.name}</span>
+                    <div className="ml-4">
+                      {renderFeatureValue(feature, selectedPlan)}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+          
+          <div className="text-center">
+            <Button
+              variant="default"
+              size="lg"
+              iconName="ArrowRight"
+              iconPosition="right"
+              className="bg-primary text-primary-foreground hover:bg-accent"
+            >
+              Seleccionar {comparisonData?.plans?.[selectedPlan]?.name}
+            </Button>
+          </div>
+        </div>
+
+        {/* Additional Info */}
+        <div className="mt-16 grid lg:grid-cols-3 gap-8">
+          <div className="bg-white rounded-2xl p-8 shadow-card-elevated text-center">
+            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Icon name="Headphones" size={24} className="text-primary" />
+            </div>
+            <h3 className="text-lg font-gilroy font-bold text-secondary mb-3">
+              Consulta Personalizada
+            </h3>
+            <p className="text-text-secondary text-sm mb-4">
+              ¿No estás seguro qué plan elegir? Agenda una consulta gratuita de 30 minutos.
             </p>
-            <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-inter-medium hover:bg-accent transition-colors">
-              See Detailed Comparison
-            </button>
+            <Button variant="outline" size="sm" iconName="Calendar" iconPosition="left">
+              Agendar Consulta
+            </Button>
+          </div>
+
+          <div className="bg-white rounded-2xl p-8 shadow-card-elevated text-center">
+            <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Icon name="Shield" size={24} className="text-success" />
+            </div>
+            <h3 className="text-lg font-gilroy font-bold text-secondary mb-3">
+              Garantía Total
+            </h3>
+            <p className="text-text-secondary text-sm mb-4">
+              Satisfacción 100% garantizada o reembolso completo en los primeros 30 días.
+            </p>
+            <Button variant="outline" size="sm" iconName="FileText" iconPosition="left">
+              Ver Términos
+            </Button>
+          </div>
+
+          <div className="bg-white rounded-2xl p-8 shadow-card-elevated text-center">
+            <div className="w-16 h-16 bg-warning/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Icon name="Zap" size={24} className="text-warning" />
+            </div>
+            <h3 className="text-lg font-gilroy font-bold text-secondary mb-3">
+              Inicio Rápido
+            </h3>
+            <p className="text-text-secondary text-sm mb-4">
+              Comenzamos tu proyecto en menos de 48 horas después de la confirmación.
+            </p>
+            <Button variant="outline" size="sm" iconName="Clock" iconPosition="left">
+              Ver Timeline
+            </Button>
           </div>
         </div>
       </div>

@@ -1,32 +1,23 @@
-import { useState } from 'react';
+import React from 'react';
 
-const AppImage = ({ 
-  src, 
-  alt = "", 
-  className = "", 
-  fallbackSrc = "/public/assets/images/no_image.png",
-  ...props 
-}) => {
-  const [imgSrc, setImgSrc] = useState(src);
-  const [hasError, setHasError] = useState(false);
-
-  const handleError = () => {
-    if (!hasError) {
-      setImgSrc(fallbackSrc);
-      setHasError(true);
-    }
-  };
+function Image({
+  src,
+  alt = "Image Name",
+  className = "",
+  ...props
+}) {
 
   return (
     <img
-      src={imgSrc}
+      src={src}
       alt={alt}
       className={className}
-      onError={handleError}
-      loading="lazy"
+      onError={(e) => {
+        e.target.src = "/assets/images/no_image.png"
+      }}
       {...props}
     />
   );
-};
+}
 
-export default AppImage;
+export default Image;

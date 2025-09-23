@@ -1,96 +1,285 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Icon from '../../../components/AppIcon';
+import Image from '../../../components/AppImage';
 
 const TestimonialCarousel = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const testimonials = [
     {
-      quote: "Lovap Corporate transformed our business operations completely. Their expertise and dedication exceeded all expectations.",
-      author: "Sarah Johnson",
+      id: 1,
+      name: "Elena Rodríguez",
       position: "CEO",
-      company: "TechVision Inc."
+      company: "InnovaTech Solutions",
+      avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+      rating: 5,
+      text: `Trabajar con Lovap fue una experiencia transformadora. No solo crearon un sitio web excepcional, sino que nos ayudaron a entender cómo convertir visitantes en clientes. Nuestras conversiones aumentaron un 340% en los primeros tres meses.`,
+      results: {
+        metric: "+340%",
+        description: "Aumento en conversiones",
+        timeframe: "3 meses"
+      },
+      videoThumbnail: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop",
+      industry: "Tecnología"
     },
     {
-      quote: "The strategic guidance we received helped us navigate complex market challenges and achieve unprecedented growth.",
-      author: "Michael Chen",
-      position: "COO",
-      company: "Global Dynamics"
+      id: 2,
+      name: "Miguel Santos",
+      position: "Director de Marketing",
+      company: "GreenEco Marketplace",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      rating: 5,
+      text: `La atención al detalle y el enfoque estratégico de Lovap superaron nuestras expectativas. Crearon una plataforma que no solo se ve increíble, sino que funciona perfectamente. Nuestro ROI se multiplicó por 4 en el primer año.`,
+      results: {
+        metric: "400%",
+        description: "ROI primer año",
+        timeframe: "12 meses"
+      },
+      videoThumbnail: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop",
+      industry: "E-commerce"
     },
     {
-      quote: "Professional, knowledgeable, and results-driven. Lovap Corporate is the partner every business needs.",
-      author: "Emma Rodriguez",
-      position: "Founder",
-      company: "Innovation Labs"
+      id: 3,
+      name: "Carmen López",
+      position: "Fundadora",
+      company: "HealthCare Plus",
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      rating: 5,
+      text: `Lovap entendió perfectamente nuestra visión y la convirtió en realidad digital. Su proceso es transparente, profesional y orientado a resultados. La nueva plataforma nos ha permitido llegar a miles de pacientes más.`,
+      results: {
+        metric: "+280%",
+        description: "Nuevos pacientes",
+        timeframe: "6 meses"
+      },
+      videoThumbnail: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=300&fit=crop",
+      industry: "Salud"
+    },
+    {
+      id: 4,
+      name: "David Martínez",
+      position: "CTO",
+      company: "FinanceFlow",
+      avatar: "https://randomuser.me/api/portraits/men/45.jpg",
+      rating: 5,
+      text: `Como CTO, valoro la excelencia técnica y Lovap la entrega en cada proyecto. Su código es limpio, escalable y mantenible. Además, su enfoque en la experiencia del usuario es excepcional. Definitivamente volveremos a trabajar con ellos.`,
+      results: {
+        metric: "+195%",
+        description: "Eficiencia operativa",
+        timeframe: "4 meses"
+      },
+      videoThumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+      industry: "Finanzas"
     }
   ];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isPlaying) {
+        setCurrentTestimonial((prev) => (prev + 1) % testimonials?.length);
+      }
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, [isPlaying, testimonials?.length]);
+
   const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => 
-      prev === testimonials.length - 1 ? 0 : prev + 1
-    );
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials?.length);
   };
 
   const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => 
-      prev === 0 ? testimonials.length - 1 : prev - 1
-    );
+    setCurrentTestimonial((prev) => (prev - 1 + testimonials?.length) % testimonials?.length);
+  };
+
+  const handleVideoPlay = () => {
+    setIsPlaying(true);
   };
 
   return (
     <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-5xl font-gilroy-bold text-text-primary mb-6">
-            What Our Clients Say
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <Icon name="MessageSquare" size={16} />
+            <span>Testimonios</span>
+          </div>
+
+          <h2 className="text-4xl lg:text-5xl font-gilroy font-bold text-secondary mb-6">
+            Lo que dicen
+            <span className="text-primary"> nuestros clientes</span>
           </h2>
-          <p className="text-lg text-text-secondary font-inter-regular max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what industry leaders have to say about our services.
+
+          <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+            Más de 150+ empresas confían en nosotros para transformar su presencia digital. 
+            Escucha sus historias de éxito.
           </p>
+        </motion.div>
+
+        {/* Main Testimonial */}
+        <div className="relative">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentTestimonial}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              className="bg-card border border-border rounded-3xl overflow-hidden card-elevated-strong"
+            >
+              <div className="grid lg:grid-cols-2 gap-0">
+                {/* Video/Image Section */}
+                <div className="relative h-64 lg:h-full min-h-[400px] overflow-hidden bg-muted">
+                  <Image
+                    src={testimonials?.[currentTestimonial]?.videoThumbnail}
+                    alt={`${testimonials?.[currentTestimonial]?.name} testimonial`}
+                    className="w-full h-full object-cover"
+                  />
+                  
+                  {/* Video Play Overlay */}
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <button
+                      onClick={handleVideoPlay}
+                      className="w-20 h-20 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors group"
+                    >
+                      <Icon 
+                        name="Play" 
+                        size={32} 
+                        className="text-primary-foreground ml-1 group-hover:scale-110 transition-transform" 
+                      />
+                    </button>
+                  </div>
+
+                  {/* Industry Badge */}
+                  <div className="absolute top-6 left-6">
+                    <span className="bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
+                      {testimonials?.[currentTestimonial]?.industry}
+                    </span>
+                  </div>
+
+                  {/* Navigation Controls */}
+                  <div className="absolute bottom-6 right-6 flex space-x-2">
+                    <button
+                      onClick={prevTestimonial}
+                      className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                    >
+                      <Icon name="ChevronLeft" size={20} />
+                    </button>
+                    <button
+                      onClick={nextTestimonial}
+                      className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                    >
+                      <Icon name="ChevronRight" size={20} />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Content Section */}
+                <div className="p-8 lg:p-12 flex flex-col justify-center">
+                  <div className="space-y-6">
+                    {/* Rating */}
+                    <div className="flex items-center space-x-1">
+                      {[...Array(testimonials?.[currentTestimonial]?.rating)]?.map((_, idx) => (
+                        <Icon key={idx} name="Star" size={20} className="text-warning fill-current" />
+                      ))}
+                    </div>
+
+                    {/* Quote */}
+                    <blockquote className="text-lg lg:text-xl text-text-secondary leading-relaxed">
+                      "{testimonials?.[currentTestimonial]?.text}"
+                    </blockquote>
+
+                    {/* Results */}
+                    <div className="bg-primary/5 rounded-xl p-6 border-l-4 border-primary">
+                      <div className="flex items-center space-x-4">
+                        <div className="text-center">
+                          <div className="text-3xl font-gilroy font-bold text-primary">
+                            {testimonials?.[currentTestimonial]?.results?.metric}
+                          </div>
+                          <div className="text-sm text-text-secondary">
+                            {testimonials?.[currentTestimonial]?.results?.description}
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <div className="text-sm text-text-secondary">
+                            Resultado obtenido en {testimonials?.[currentTestimonial]?.results?.timeframe}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Author */}
+                    <div className="flex items-center space-x-4">
+                      <div className="w-16 h-16 rounded-full overflow-hidden">
+                        <Image
+                          src={testimonials?.[currentTestimonial]?.avatar}
+                          alt={testimonials?.[currentTestimonial]?.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <div className="font-gilroy font-semibold text-secondary text-lg">
+                          {testimonials?.[currentTestimonial]?.name}
+                        </div>
+                        <div className="text-text-secondary">
+                          {testimonials?.[currentTestimonial]?.position}
+                        </div>
+                        <div className="text-primary font-medium">
+                          {testimonials?.[currentTestimonial]?.company}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Testimonial Indicators */}
+          <div className="flex justify-center space-x-2 mt-8">
+            {testimonials?.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentTestimonial(idx)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  idx === currentTestimonial ? 'bg-primary' : 'bg-border'
+                }`}
+              />
+            ))}
+          </div>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="relative bg-card border border-border rounded-2xl p-12 text-center shadow-card">
-            <div className="text-4xl text-primary mb-6">"</div>
-            <blockquote className="text-xl lg:text-2xl font-inter-regular text-text-primary mb-8 leading-relaxed">
-              {testimonials[currentTestimonial].quote}
-            </blockquote>
-            <div className="border-t border-border pt-8">
-              <div className="font-gilroy-semibold text-text-primary text-lg">
-                {testimonials[currentTestimonial].author}
+        {/* Stats Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-16"
+        >
+          {[
+            { number: "150+", label: "Clientes satisfechos" },
+            { number: "98%", label: "Tasa de satisfacción" },
+            { number: "340%", label: "Conversión promedio" },
+            { number: "24/7", label: "Soporte técnico" }
+          ]?.map((stat, idx) => (
+            <div key={idx} className="text-center">
+              <div className="text-3xl lg:text-4xl font-gilroy font-bold text-primary mb-2">
+                {stat?.number}
               </div>
-              <div className="text-text-secondary font-inter-regular">
-                {testimonials[currentTestimonial].position} at {testimonials[currentTestimonial].company}
+              <div className="text-text-secondary">
+                {stat?.label}
               </div>
             </div>
-          </div>
-
-          {/* Navigation */}
-          <div className="flex justify-center items-center mt-8 space-x-4">
-            <button
-              onClick={prevTestimonial}
-              className="p-2 rounded-full border border-border text-text-secondary hover:text-primary hover:border-primary transition-colors"
-            >
-              ←
-            </button>
-            <div className="flex space-x-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentTestimonial(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    index === currentTestimonial ? 'bg-primary' : 'bg-border'
-                  }`}
-                />
-              ))}
-            </div>
-            <button
-              onClick={nextTestimonial}
-              className="p-2 rounded-full border border-border text-text-secondary hover:text-primary hover:border-primary transition-colors"
-            >
-              →
-            </button>
-          </div>
-        </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
