@@ -1,10 +1,8 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import App from "./App";
-import "./styles/tailwind.css";
-import "./styles/index.css";
+import React from 'react';
+import Routes from './Routes';
 
-const container = document.getElementById("root");
-const root = createRoot(container);
+const App = () => {
+  return <Routes />;
+};
 
-root.render(<App />);
+export default App;
