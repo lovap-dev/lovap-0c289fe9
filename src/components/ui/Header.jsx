@@ -1,102 +1,181 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { cn } from '../../utils/cn';
+import Icon from '../AppIcon';
+import Button from './Button';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  const navItems = [
-    { name: 'Home', path: '/homepage' },
-    { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Process', path: '/process' },
-    { name: 'Contact', path: '/contact' },
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navigationItems = [
+    { name: 'Home', path: '/homepage', icon: 'Home' },
+    { name: 'Services', path: '/services', icon: 'Briefcase' },
+    { name: 'Process', path: '/process', icon: 'GitBranch' },
+    { name: 'About', path: '/about', icon: 'Users' },
+    { name: 'Contact', path: '/contact', icon: 'MessageCircle' }
   ];
 
-  const isActive = (path) => location.pathname === path;
+  const isActivePath = (path) => {
+    return location?.pathname === path;
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-primary rounded-lg"></div>
-          <span className="text-xl font-gilroy-bold text-text-primary">
-            Lovap Corporate
-          </span>
-        </Link>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className={cn(
-                "text-sm font-inter-medium transition-colors hover:text-primary",
-                isActive(item.path) 
-                  ? "text-primary" 
-                  : "text-text-secondary"
-              )}
-            >
-              {item.name}
-            </Link>
-          ))}
-        </nav>
-
-        {/* CTA Button */}
-        <div className="hidden md:flex">
-          <Link
-            to="/contact"
-            className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-inter-medium hover:bg-accent transition-colors"
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-background/95 backdrop-blur-md shadow-card' 
+          : 'bg-background'
+      }`}
+    >
+      <div className="w-full">
+        <div className="flex items-center justify-between h-16 px-6 lg:px-8">
+          {/* Logo */}
+          <Link 
+            to="/homepage" 
+            className="flex items-center space-x-2 transition-smooth hover:opacity-80"
+            onClick={closeMenu}
           >
-            Get Started
-          </Link>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden p-2"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          <div className="w-6 h-6 flex flex-col justify-center space-y-1">
-            <span className="w-6 h-0.5 bg-text-primary transition-all"></span>
-            <span className="w-6 h-0.5 bg-text-primary transition-all"></span>
-            <span className="w-6 h-0.5 bg-text-primary transition-all"></span>
-          </div>
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden border-t border-border bg-background">
-          <div className="px-4 py-4 space-y-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={cn(
-                  "block text-sm font-inter-medium transition-colors",
-                  isActive(item.path) 
-                    ? "text-primary" 
-                    : "text-text-secondary hover:text-primary"
-                )}
-                onClick={() => setIsMenuOpen(false)}
+            <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-lg">
+              <svg 
+                width="24" 
+                height="24" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                className="text-primary-foreground"
               >
-                {item.name}
+                <path 
+                  d="M12 2L2 7L12 12L22 7L12 2Z" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                />
+                <path 
+                  d="M2 17L12 22L22 17" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                />
+                <path 
+                  d="M2 12L12 17L22 12" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <span className="text-xl font-gilroy font-bold text-secondary">
+              Lovap Corporate
+            </span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-1">
+            {navigationItems?.map((item) => (
+              <Link
+                key={item?.path}
+                to={item?.path}
+                className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-inter font-medium transition-smooth ${
+                  isActivePath(item?.path)
+                    ? 'bg-primary text-primary-foreground'
+                    : 'text-text-primary hover:bg-muted hover:text-secondary'
+                }`}
+              >
+                <Icon name={item?.icon} size={16} />
+                <span>{item?.name}</span>
               </Link>
             ))}
-            <Link
-              to="/contact"
-              className="block w-full px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-inter-medium text-center hover:bg-accent transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+          </nav>
+
+          {/* CTA Button & Mobile Menu Toggle */}
+          <div className="flex items-center space-x-4">
+            <Button
+              variant="default"
+              size="sm"
+              className="hidden sm:flex"
+              iconName="ArrowRight"
+              iconPosition="right"
             >
-              Get Started
-            </Link>
+              Get Strategic Quote
+            </Button>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={toggleMenu}
+              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-border hover:bg-muted transition-smooth"
+              aria-label="Toggle menu"
+            >
+              <Icon 
+                name={isMenuOpen ? "X" : "Menu"} 
+                size={20} 
+                className="text-text-primary"
+              />
+            </button>
           </div>
         </div>
-      )}
+
+        {/* Mobile Navigation */}
+        <div 
+          className={`lg:hidden transition-all duration-300 ease-out ${
+            isMenuOpen 
+              ? 'max-h-96 opacity-100' :'max-h-0 opacity-0 overflow-hidden'
+          }`}
+        >
+          <nav className="px-6 py-4 bg-background border-t border-border">
+            <div className="space-y-2">
+              {navigationItems?.map((item) => (
+                <Link
+                  key={item?.path}
+                  to={item?.path}
+                  onClick={closeMenu}
+                  className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-inter font-medium transition-smooth ${
+                    isActivePath(item?.path)
+                      ? 'bg-primary text-primary-foreground'
+                      : 'text-text-primary hover:bg-muted hover:text-secondary'
+                  }`}
+                >
+                  <Icon name={item?.icon} size={18} />
+                  <span>{item?.name}</span>
+                </Link>
+              ))}
+              
+              {/* Mobile CTA */}
+              <div className="pt-4 border-t border-border mt-4">
+                <Button
+                  variant="default"
+                  size="sm"
+                  fullWidth
+                  iconName="ArrowRight"
+                  iconPosition="right"
+                  onClick={closeMenu}
+                >
+                  Get Strategic Quote
+                </Button>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
     </header>
   );
 };
