@@ -30,7 +30,7 @@ const ProcessPage = () => {
         <main className="pt-16">
           <ProcessHero />
           <ProcessTimelineNew />
-          <ProjectTypes />
+          {/* <ProjectTypes />  */}
           <QualityAssurance />
           <ClientTestimonials />
           <ProcessCTA />
@@ -72,13 +72,13 @@ const ProcessPage = () => {
                     />
                   </svg>
                 </div>
-                <span className="text-xl font-gilroy font-bold">Lovap Corporate</span>
+                <span className="text-xl font-gilroy font-bold">Lovap</span>
               </div>
               <p className="text-white/70 mb-4">
                 Transformando ideas en experiencias digitales excepcionales
               </p>
               <p className="text-white/50 text-sm">
-                © {new Date()?.getFullYear()} Lovap Corporate. Todos los derechos reservados.
+                © {new Date()?.getFullYear()} Lovap. Todos los derechos reservados.
               </p>
             </div>
           </div>
