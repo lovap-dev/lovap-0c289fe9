@@ -98,7 +98,7 @@ const Header = () => {
               className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-inter font-medium transition-smooth ${
                 isActivePath(item?.path)
                   ? 'bg-primary text-primary-foreground'
-                  : 'text-text-primary hover:bg-primary/10 hover:text-primary backdrop-blur-sm'
+                  : `${isScrolled ? 'text-text-primary' : 'text-foreground'} hover:bg-primary/10 hover:text-primary backdrop-blur-sm`
               }`}
               >
                 <Icon name={item?.icon} size={16} />
@@ -151,7 +151,7 @@ const Header = () => {
                   className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-inter font-medium transition-smooth ${
                     isActivePath(item?.path)
                       ? 'bg-primary text-primary-foreground'
-                      : 'text-text-primary hover:bg-primary/10 hover:text-primary'
+                      : 'text-foreground hover:bg-primary/10 hover:text-primary'
                   }`}
                 >
                   <Icon name={item?.icon} size={18} />

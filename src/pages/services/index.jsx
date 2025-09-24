@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../components/ui/Header';
 import ServiceHero from './components/ServiceHero';
 import ServiceGrid from './components/ServiceGrid';
-import ROICalculator from './components/ROICalculator';
+// import ROICalculator from './components/ROICalculator';
 import CaseStudyShowcase from './components/CaseStudyShowcase';
 import ProcessOverview from './components/ProcessOverview';
 import TechnicalSpecs from './components/TechnicalSpecs';
@@ -17,7 +17,7 @@ const ServicesPage = () => {
       <main className="pt-16">
         <ServiceHero />
         <ServiceGrid />
-        <ROICalculator />
+        {/* <ROICalculator /> */}
         <CaseStudyShowcase />
         <ProcessOverview />
         <TechnicalSpecs />
