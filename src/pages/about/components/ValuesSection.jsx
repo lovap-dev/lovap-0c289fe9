@@ -51,7 +51,7 @@ const ValuesSection = () => {
     <section className="py-16 lg:py-24 bg-gradient-to-br from-muted/30 to-primary/5">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-inter font-medium mb-6">
+          <div className="inline-flex items-center space-x-2 bg-primary-bg/10 text-primary px-4 py-2 rounded-full text-sm font-inter font-medium mb-6">
             <Icon name="Heart" size={16} />
             <span>Nuestros Valores Fundamentales</span>
           </div>
@@ -71,7 +71,7 @@ const ValuesSection = () => {
           {values?.map((value) => (
             <div key={value?.id} className="bg-card rounded-2xl p-8 card-elevated hover:card-elevated-strong transition-smooth group">
               <div className="mb-6">
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-smooth">
+                <div className="w-16 h-16 bg-primary-bg/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary-bg group-hover:text-primary-foreground transition-smooth">
                   <Icon name={value?.icon} size={24} />
                 </div>
                 
@@ -83,7 +83,7 @@ const ValuesSection = () => {
                   {value?.description}
                 </p>
                 
-                <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-inter font-medium">
+                <div className="inline-flex items-center space-x-2 bg-primary-bg/10 text-primary px-3 py-1 rounded-full text-sm font-inter font-medium">
                   <Icon name="TrendingUp" size={14} />
                   <span>{value?.metrics}</span>
                 </div>
@@ -109,21 +109,21 @@ const ValuesSection = () => {
               
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                  <div className="w-8 h-8 bg-primary-bg/10 rounded-lg flex items-center justify-center">
                     <Icon name="BookOpen" size={16} className="text-primary" />
                   </div>
                   <span className="text-text-primary">Formación continua en nuevas tecnologías</span>
                 </div>
                 
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                  <div className="w-8 h-8 bg-primary-bg/10 rounded-lg flex items-center justify-center">
                     <Icon name="Users" size={16} className="text-primary" />
                   </div>
                   <span className="text-text-primary">Colaboración y mentoring interno</span>
                 </div>
                 
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                  <div className="w-8 h-8 bg-primary-bg/10 rounded-lg flex items-center justify-center">
                     <Icon name="Award" size={16} className="text-primary" />
                   </div>
                   <span className="text-text-primary">Certificaciones profesionales patrocinadas</span>

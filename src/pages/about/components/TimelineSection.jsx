@@ -90,7 +90,7 @@ const TimelineSection = () => {
                 index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
               }`}>
                 {/* Timeline Dot */}
-                <div className="absolute left-4 lg:left-1/2 lg:transform lg:-translate-x-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center z-10">
+                <div className="absolute left-4 lg:left-1/2 lg:transform lg:-translate-x-1/2 w-8 h-8 bg-primary-bg rounded-full flex items-center justify-center z-10">
                   <Icon name={milestone?.icon} size={16} className="text-primary-foreground" />
                 </div>
 

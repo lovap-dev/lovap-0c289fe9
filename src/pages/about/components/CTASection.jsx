@@ -57,7 +57,7 @@ const CTASection = () => {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Main CTA */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-inter font-medium mb-6">
+          <div className="inline-flex items-center space-x-2 bg-primary-bg/20 text-primary px-4 py-2 rounded-full text-sm font-inter font-medium mb-6">
             <Icon name="Sparkles" size={16} />
             <span>Comienza tu Transformación Digital</span>
           </div>
@@ -78,7 +78,7 @@ const CTASection = () => {
               size="lg"
               iconName="ArrowRight"
               iconPosition="right"
-              className="bg-primary text-primary-foreground hover:bg-accent"
+              className="bg-primary-bg text-primary-foreground hover:bg-accent"
             >
               Solicitar Cotización Estratégica
             </Button>
@@ -116,7 +116,7 @@ const CTASection = () => {
           {contactMethods.map((method) => (
             <div key={method.id} className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-smooth">
               <div className="text-center">
-                <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-primary-bg/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Icon name={method.icon} size={24} className="text-primary" />
                 </div>
                 
@@ -129,7 +129,7 @@ const CTASection = () => {
                 </p>
                 
                 <div className="mb-4">
-                  <span className="inline-flex items-center space-x-1 bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-inter font-medium">
+                  <span className="inline-flex items-center space-x-1 bg-primary-bg/20 text-primary px-3 py-1 rounded-full text-sm font-inter font-medium">
                     <Icon name="Star" size={12} />
                     <span>{method.highlight}</span>
                   </span>
@@ -165,7 +165,7 @@ const CTASection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {whyChooseUs.map((reason, index) => (
               <div key={index} className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary-bg/20 rounded-xl flex items-center justify-center flex-shrink-0">
                   <Icon name={reason.icon} size={20} className="text-primary" />
                 </div>
                 <span className="text-white/90 font-inter">{reason.text}</span>

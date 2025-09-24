@@ -9,7 +9,7 @@ const HeroSection = () => {
       
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-inter font-medium mb-6">
+          <div className="inline-flex items-center space-x-2 bg-primary-bg/10 text-primary px-4 py-2 rounded-full text-sm font-inter font-medium mb-6">
             <Icon name="Users" size={16} />
             <span>Conoce al Equipo Lovap</span>
           </div>

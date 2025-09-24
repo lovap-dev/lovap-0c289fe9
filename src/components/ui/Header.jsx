@@ -53,7 +53,7 @@ const Header = () => {
             className="flex items-center space-x-2 transition-smooth hover:opacity-80"
             onClick={closeMenu}
           >
-            <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-lg">
+            <div className="flex items-center justify-center w-10 h-10 bg-primary-bg rounded-lg">
               <svg 
                 width="24" 
                 height="24" 
@@ -97,8 +97,8 @@ const Header = () => {
                 to={item?.path}
               className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-inter font-medium transition-smooth ${
                 isActivePath(item?.path)
-                  ? 'bg-primary text-primary-foreground'
-                  : `${isScrolled ? 'text-text-primary' : 'text-foreground'} hover:bg-primary/10 hover:text-primary backdrop-blur-sm`
+                  ? 'bg-primary-bg text-primary-foreground'
+                  : `${isScrolled ? 'text-text-primary' : 'text-foreground'} hover:bg-primary-bg/10 hover:text-primary backdrop-blur-sm`
               }`}
               >
                 <Icon name={item?.icon} size={16} />
@@ -150,8 +150,8 @@ const Header = () => {
                   onClick={closeMenu}
                   className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-inter font-medium transition-smooth ${
                     isActivePath(item?.path)
-                      ? 'bg-primary text-primary-foreground'
-                      : 'text-foreground hover:bg-primary/10 hover:text-primary'
+                      ? 'bg-primary-bg text-primary-foreground'
+                      : 'text-foreground hover:bg-primary-bg/10 hover:text-primary'
                   }`}
                 >
                   <Icon name={item?.icon} size={18} />

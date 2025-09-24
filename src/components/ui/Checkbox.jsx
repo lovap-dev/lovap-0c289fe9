@@ -42,10 +42,10 @@ const Checkbox = React.forwardRef(({
                 <label
                     htmlFor={checkboxId}
                     className={cn(
-                        "peer shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground cursor-pointer transition-colors",
+                        "peer shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary-bg data-[state=checked]:text-primary-foreground cursor-pointer transition-colors",
                         sizeClasses?.[size],
-                        checked && "bg-primary text-primary-foreground border-primary",
-                        indeterminate && "bg-primary text-primary-foreground border-primary",
+                        checked && "bg-primary-bg text-primary-foreground border-primary",
+                        indeterminate && "bg-primary-bg text-primary-foreground border-primary",
                         error && "border-destructive",
                         disabled && "cursor-not-allowed opacity-50"
                     )}

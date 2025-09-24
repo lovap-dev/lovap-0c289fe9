@@ -134,8 +134,8 @@ const TeamSection = () => {
               onClick={() => setSelectedFilter(filter?.key)}
               className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-inter font-medium transition-smooth ${
                 selectedFilter === filter?.key
-                  ? 'bg-primary text-primary-foreground'
-                  : 'bg-muted text-text-primary hover:bg-primary/10 hover:text-primary'
+                  ? 'bg-primary-bg text-primary-foreground'
+                  : 'bg-muted text-text-primary hover:bg-primary-bg/10 hover:text-primary'
               }`}
             >
               <Icon name={filter?.icon} size={16} />
@@ -155,7 +155,7 @@ const TeamSection = () => {
                     alt={member?.name}
                     className="w-24 h-24 rounded-full object-cover mx-auto"
                   />
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-primary-bg rounded-full flex items-center justify-center">
                     <Icon name="CheckCircle" size={16} className="text-primary-foreground" />
                   </div>
                 </div>
@@ -213,13 +213,13 @@ const TeamSection = () => {
                 <div className="flex space-x-3">
                   <a
                     href={member?.linkedin}
-                    className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-smooth"
+                    className="w-8 h-8 bg-primary-bg/10 rounded-lg flex items-center justify-center hover:bg-primary-bg hover:text-primary-foreground transition-smooth"
                   >
                     <Icon name="Linkedin" size={16} />
                   </a>
                   <a
                     href={member?.github}
-                    className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-smooth"
+                    className="w-8 h-8 bg-primary-bg/10 rounded-lg flex items-center justify-center hover:bg-primary-bg hover:text-primary-foreground transition-smooth"
                   >
                     <Icon name="Github" size={16} />
                   </a>
