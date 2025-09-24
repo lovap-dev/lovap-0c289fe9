@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Button from '../../../components/ui/Button';
 import Icon from '../../../components/AppIcon';
+import { SplineSceneBasic } from '../../../components/ui/spline-scene-basic';
 
 const HeroSection = () => {
   const [currentValueProp, setCurrentValueProp] = useState(0);
@@ -154,45 +155,7 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative bg-card rounded-3xl p-8 card-elevated-strong">
-              {/* Mock Dashboard */}
-              <div className="space-y-6">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-gilroy font-semibold text-secondary">
-                    Panel de Resultados
-                  </h3>
-                  <div className="flex items-center space-x-2 text-success">
-                    <Icon name="TrendingUp" size={16} />
-                    <span className="text-sm font-medium">+127%</span>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-primary/5 rounded-xl p-4">
-                    <div className="text-2xl font-gilroy font-bold text-primary">2.4M</div>
-                    <div className="text-sm text-text-secondary">Visitantes</div>
-                  </div>
-                  <div className="bg-success/5 rounded-xl p-4">
-                    <div className="text-2xl font-gilroy font-bold text-success">18.5%</div>
-                    <div className="text-sm text-text-secondary">Conversión</div>
-                  </div>
-                </div>
-
-                <div className="bg-muted rounded-xl p-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-text-secondary">Rendimiento</span>
-                    <span className="text-sm font-medium text-success">Excelente</span>
-                  </div>
-                  <div className="w-full bg-border rounded-full h-2">
-                    <div className="bg-primary h-2 rounded-full w-4/5"></div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-pulse"></div>
-              <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-success rounded-full animate-pulse delay-1000"></div>
-            </div>
+            <SplineSceneBasic />
           </motion.div>
         </div>
       </div>
