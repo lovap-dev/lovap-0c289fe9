@@ -94,7 +94,7 @@ const ComparisonMatrix = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-gilroy font-bold text-secondary mb-6">
             Comparación de 
-            <span className="text-primary"> Servicios</span>
+            <span className="text-secondary"> Servicios</span>
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             Encuentra el nivel de servicio perfecto para tus objetivos de negocio y presupuesto disponible.

@@ -100,7 +100,7 @@ const CaseStudyShowcase = () => {
                   <div className="space-y-2">
                     <div className="font-gilroy font-bold text-secondary">{caseStudy?.client}</div>
                     <div className="text-sm text-text-secondary">{caseStudy?.industry}</div>
-                    <div className="text-xs text-primary font-medium">{caseStudy?.service}</div>
+                    <div className="text-xs text-gray-300 font-medium">{caseStudy?.service}</div>
                   </div>
                 </button>
               ))}
@@ -222,17 +222,9 @@ const CaseStudyShowcase = () => {
                       <Button
                         variant="default"
                         fullWidth
-                        iconName="FileText"
-                        iconPosition="left"
-                        className="bg-primary text-primary-foreground hover:bg-accent"
-                      >
-                        Descargar Caso Completo
-                      </Button>
-                      <Button
-                        variant="outline"
-                        fullWidth
                         iconName="MessageCircle"
                         iconPosition="left"
+                        className="bg-primary text-primary-foreground hover:bg-accent"
                       >
                         Solicitar Caso Similar
                       </Button>

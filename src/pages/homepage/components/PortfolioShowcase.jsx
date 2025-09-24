@@ -86,14 +86,14 @@ const PortfolioShowcase = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 bg-primary/10 text-secondary px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Icon name="Briefcase" size={16} />
             <span>Portfolio</span>
           </div>
 
           <h2 className="text-4xl lg:text-5xl font-gilroy font-bold text-secondary mb-6">
             Proyectos que
-            <span className="text-primary"> generan impacto</span>
+            <span className="text-secondary"> generan impacto</span>
           </h2>
 
           <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
@@ -163,7 +163,7 @@ const PortfolioShowcase = () => {
                     <div className="grid grid-cols-2 gap-4">
                       {Object.entries(projects?.[activeProject]?.results)?.map(([key, value], idx) => (
                         <div key={idx} className="bg-muted rounded-xl p-4 text-center">
-                          <div className="text-2xl font-gilroy font-bold text-primary mb-1">
+                          <div className="text-2xl font-gilroy font-bold text-secondary mb-1">
                             {value}
                           </div>
                           <div className="text-sm text-text-secondary capitalize">

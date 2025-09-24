@@ -95,12 +95,12 @@ const ServicePreview = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center space-x-2 bg-primary/10 text-secondary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Icon name="Briefcase" size={16} />
             <span>Nuestros Servicios</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-gilroy font-bold text-secondary mb-6">
-            Soluciones que <span className="text-primary">impulsan resultados</span>
+            Soluciones que <span className="text-secondary">impulsan resultados</span>
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
             Cada servicio está diseñado para generar impacto medible en tu negocio, desde conversiones hasta crecimiento sostenible.

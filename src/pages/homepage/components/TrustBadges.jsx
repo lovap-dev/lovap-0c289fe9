@@ -118,14 +118,14 @@ const TrustBadges = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center space-x-2 bg-primary/10 text-secondary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Icon name="Shield" size={16} />
             <span>Confianza & Seguridad</span>
           </div>
 
           <h2 className="text-4xl lg:text-5xl font-gilroy font-bold text-secondary mb-6">
             Trabajamos con
-            <span className="text-primary"> total transparencia</span>
+            <span className="text-secondary"> total transparencia</span>
           </h2>
 
           <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">

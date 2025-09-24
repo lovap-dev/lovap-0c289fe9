@@ -108,7 +108,7 @@ const ProcessOverview = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-gilroy font-bold text-secondary mb-6">
             Metodología 
-            <span className="text-primary"> Probada</span>
+            <span className="text-secondary"> Probada</span>
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             Proceso estructurado de 6 fases que garantiza resultados medibles y minimiza riesgos en cada proyecto.
@@ -146,7 +146,7 @@ const ProcessOverview = () => {
                             Fase {step?.id}
                           </span>
                         </div>
-                        <div className="text-primary font-semibold">{step?.duration}</div>
+                        <div className="text-gray-300 font-semibold">{step?.duration}</div>
                       </div>
                     </div>
 
