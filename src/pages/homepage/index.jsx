@@ -5,6 +5,7 @@ import HeroSection from './components/HeroSection';
 import ServicePreview from './components/ServicePreview';
 import PortfolioShowcase from './components/PortfolioShowcase';
 import TestimonialCarousel from './components/TestimonialCarousel';
+import CaseStudyShowcase from './components/CaseStudyShowcase';
 import TrustBadges from './components/TrustBadges';
 import FloatingCTA from './components/FloatingCTA';
 
@@ -46,7 +47,7 @@ const Homepage = () => {
           <ServicePreview />
 
           {/* Portfolio Showcase */}
-          <PortfolioShowcase />
+          <CaseStudyShowcase />
 
           {/* Testimonial Carousel */}
           <TestimonialCarousel />
