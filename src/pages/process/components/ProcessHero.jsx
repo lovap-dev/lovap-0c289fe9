@@ -37,7 +37,7 @@ const ProcessHero = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
             <div className="text-center">
-              <div className="text-2xl lg:text-3xl font-gilroy font-bold text-secondary mb-1">6</div>
+              <div className="text-2xl lg:text-3xl font-gilroy font-bold text-secondary mb-1">5</div>
               <div className="text-sm text-text-primary/70">Fases Estructuradas</div>
             </div>
             <div className="text-center">
