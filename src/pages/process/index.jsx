@@ -15,7 +15,7 @@ const ProcessPage = () => {
         <title>Proceso de Desarrollo Web | Metodología Transparente | Lovap Corporate</title>
         <meta 
           name="description" 
-          content="Descubre nuestra metodología probada de 6 fases para desarrollo web. Proceso transparente con garantía de calidad, cronogramas detallados y soporte 24/7. Más de 150 proyectos exitosos." 
+          content="Descubre nuestra metodología probada de 5 fases para desarrollo web. Proceso transparente con garantía de calidad, cronogramas detallados y soporte 24/7. Más de 150 proyectos exitosos." 
         />
         <meta name="keywords" content="proceso desarrollo web, metodología web, fases desarrollo, calidad web, cronograma proyecto, desarrollo transparente" />
         <meta property="og:title" content="Proceso de Desarrollo Web Transparente | Lovap Corporate" />

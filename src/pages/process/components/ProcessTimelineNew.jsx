@@ -20,7 +20,7 @@ const ProcessTimelineNew = () => {
 
   const data = [
     {
-      title: "1. Descubrimiento",
+      title: "1. Análisis",
       content: (
         <div>
           <p className="text-text-primary dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
