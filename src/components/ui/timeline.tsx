@@ -37,7 +37,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-background font-sans md:px-10"
       ref={containerRef}
     >
-      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
+      <div className="max-w-7xl mx-auto py-8 px-4 md:px-8 lg:px-10">
         <h2 className="text-3xl lg:text-5xl font-gilroy font-bold text-secondary mb-6 max-w-4xl">
           Metodología de <span className="text-secondary">6 Fases</span>
         </h2>
