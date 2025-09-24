@@ -93,7 +93,7 @@ const PortfolioShowcase = () => {
 
           <h2 className="text-4xl lg:text-5xl font-gilroy font-bold text-secondary mb-6">
             Proyectos que
-            <span className="text-primary"> generan impacto</span>
+            <span className="text-brand-text"> generan impacto</span>
           </h2>
 
           <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
