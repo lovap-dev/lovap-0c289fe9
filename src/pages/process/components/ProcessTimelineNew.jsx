@@ -23,7 +23,7 @@ const ProcessTimelineNew = () => {
       title: "1. Descubrimiento",
       content: (
         <div>
-          <p className="text-gray-400 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className="text-text-primary dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             Analizamos las necesidades de tu negocio, los objetivos del proyecto
             y el perfil de tus usuarios. Esta etapa nos permite entender el
             problema a fondo y definir el camino correcto para construir la
@@ -46,7 +46,7 @@ const ProcessTimelineNew = () => {
       title: "2. Planeación",
       content: (
         <div>
-          <p className="text-gray-400 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className="text-text-primary dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             Organizamos la información en un plan de trabajo claro. Definimos
             tiempos, entregables y la arquitectura del proyecto, asegurando que
             cada paso tenga un propósito y esté alineado con tu visión.
@@ -68,7 +68,7 @@ const ProcessTimelineNew = () => {
       title: "3. Diseño",
       content: (
         <div>
-          <p className="text-gray-400 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
+          <p className="text-text-primary dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
             Creamos la identidad visual y la experiencia de usuario. El diseño
             no solo debe verse bien, sino guiar al usuario de manera intuitiva
             para lograr conversiones efectivas.
@@ -98,7 +98,7 @@ const ProcessTimelineNew = () => {
       title: "4. Desarrollo",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className="text-text-primary dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             Convertimos el diseño en un sitio web funcional, ágil y seguro.
             Implementamos las últimas tecnologías y buenas prácticas para
             garantizar escalabilidad y rendimiento.
@@ -120,7 +120,7 @@ const ProcessTimelineNew = () => {
       title: "5. Lanzamiento",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className="text-text-primary dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             Publicamos tu proyecto y te acompañamos en el proceso de lanzamiento.
             Además, ofrecemos soporte y mejoras continuas para que tu sitio web
             siempre esté optimizado.
@@ -141,10 +141,8 @@ const ProcessTimelineNew = () => {
   ];
 
   return (
-    <div className="min-h-screen w-full">
-      <div className="absolute top-0 left-0 w-full">
-        <Timeline data={data} />
-      </div>
+    <div className="w-full">
+      <Timeline data={data} />
     </div>
   );
 };
