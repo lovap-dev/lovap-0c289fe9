@@ -8,7 +8,7 @@
 @layer base {
   :root {
     /* Core Brand Colors */
-    --color-primary: #B8FF65; /* Signature growth signal green */
+    --color-primary: #E9FF02; /* Signature growth signal green */
     --color-primary-foreground: #1B2033; /* Dark navy for contrast */
     --color-secondary: #1B2033; /* Executive authority navy */
     --color-secondary-foreground: #FFFFFF; /* White for contrast */
@@ -28,7 +28,7 @@
     /* Interactive Elements */
     --color-border: #DEE1E6; /* Light gray borders */
     --color-input: #FFFFFF; /* Input background white */
-    --color-ring: #B8FF65; /* Focus ring green */
+    --color-ring: #E9FF02; /* Focus ring green */
     
     /* Status Colors */
     --color-success: #80B148; /* Positive confirmation green */
