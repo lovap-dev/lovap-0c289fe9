@@ -135,10 +135,10 @@ const ServiceGrid = () => {
                     <Icon name={service?.icon} size={24} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-gilroy font-bold text-secondary group-hover:text-primary transition-colors">
+                    <h3 className="text-xl font-gilroy font-bold text-secondary group-hover:text-secondary transition-colors">
                       {service?.title}
                     </h3>
-                    <div className="text-primary font-semibold">{service?.price}</div>
+                    <div className="text-secondary font-semibold">{service?.price}</div>
                   </div>
                 </div>
 

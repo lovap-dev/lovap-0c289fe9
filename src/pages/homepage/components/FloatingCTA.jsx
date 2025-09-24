@@ -107,7 +107,7 @@ const FloatingCTA = () => {
                         name={offers?.[currentOffer]?.icon} 
                         size={16} 
                         className={
-                          offers?.[currentOffer]?.color === 'primary' ? 'text-primary' :
+                          offers?.[currentOffer]?.color === 'primary' ? 'text-secondary' :
                           offers?.[currentOffer]?.color === 'success'? 'text-success' : 'text-warning'
                         }
                       />
@@ -153,7 +153,7 @@ const FloatingCTA = () => {
                     {/* Quick Stats */}
                     <div className="grid grid-cols-3 gap-3 pt-3 border-t border-border">
                       <div className="text-center">
-                        <div className="text-lg font-gilroy font-bold text-primary">24h</div>
+                        <div className="text-lg font-gilroy font-bold text-secondary">24h</div>
                         <div className="text-xs text-text-secondary">Respuesta</div>
                       </div>
                       <div className="text-center">

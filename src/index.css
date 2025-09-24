@@ -8,8 +8,8 @@
 @layer base {
   :root {
     /* Core Brand Colors */
-    --color-primary: #E9FF02; /* Signature growth signal green */
-    --color-primary-foreground: #1B2033; /* Dark navy for contrast */
+    --color-primary: #E9FF02; /* Signature growth signal green - for backgrounds only */
+    --color-primary-foreground: #1B2033; /* Dark navy for contrast on green backgrounds */
     --color-secondary: #1B2033; /* Executive authority navy */
     --color-secondary-foreground: #FFFFFF; /* White for contrast */
     --color-accent: #A5E25D; /* Hover states green */

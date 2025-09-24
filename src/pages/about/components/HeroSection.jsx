@@ -9,14 +9,14 @@ const HeroSection = () => {
       
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center space-x-2 bg-primary-bg/10 text-primary px-4 py-2 rounded-full text-sm font-inter font-medium mb-6">
+          <div className="inline-flex items-center space-x-2 bg-primary/10 text-secondary px-4 py-2 rounded-full text-sm font-inter font-medium mb-6">
             <Icon name="Users" size={16} />
             <span>Conoce al Equipo Lovap</span>
           </div>
           
           <h1 className="text-4xl lg:text-6xl font-gilroy font-bold text-secondary mb-6">
             Socios Estratégicos en
-            <span className="block text-primary">Tecnología Web</span>
+            <span className="block text-secondary bg-primary px-2 py-1 rounded-lg">Tecnología Web</span>
           </h1>
           
           <p className="text-lg lg:text-xl text-text-primary/80 mb-8 leading-relaxed">
@@ -48,19 +48,19 @@ const HeroSection = () => {
         
         <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           <div className="space-y-2">
-            <div className="text-3xl lg:text-4xl font-gilroy font-bold text-primary">150+</div>
+            <div className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary bg-primary px-2 py-1 rounded-lg">150+</div>
             <div className="text-sm text-text-primary/70">Proyectos Exitosos</div>
           </div>
           <div className="space-y-2">
-            <div className="text-3xl lg:text-4xl font-gilroy font-bold text-primary">98%</div>
+            <div className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary bg-primary px-2 py-1 rounded-lg">98%</div>
             <div className="text-sm text-text-primary/70">Satisfacción Cliente</div>
           </div>
           <div className="space-y-2">
-            <div className="text-3xl lg:text-4xl font-gilroy font-bold text-primary">5+</div>
+            <div className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary bg-primary px-2 py-1 rounded-lg">5+</div>
             <div className="text-sm text-text-primary/70">Años Experiencia</div>
           </div>
           <div className="space-y-2">
-            <div className="text-3xl lg:text-4xl font-gilroy font-bold text-primary">24/7</div>
+            <div className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary bg-primary px-2 py-1 rounded-lg">24/7</div>
             <div className="text-sm text-text-primary/70">Soporte Técnico</div>
           </div>
         </div>

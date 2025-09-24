@@ -63,14 +63,14 @@ const TimelineSection = () => {
     <section className="py-16 lg:py-24 bg-gradient-to-br from-background to-muted/20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-inter font-medium mb-6">
+          <div className="inline-flex items-center space-x-2 bg-primary/10 text-secondary px-4 py-2 rounded-full text-sm font-inter font-medium mb-6">
             <Icon name="Clock" size={16} />
             <span>Nuestra Historia de Crecimiento</span>
           </div>
           
           <h2 className="text-3xl lg:text-5xl font-gilroy font-bold text-secondary mb-6">
             5 Años de
-            <span className="text-primary"> Innovación Continua</span>
+            <span className="text-secondary bg-primary px-2 py-1 rounded-lg"> Innovación Continua</span>
           </h2>
           
           <p className="text-lg text-text-primary/80 max-w-3xl mx-auto">
@@ -90,7 +90,7 @@ const TimelineSection = () => {
                 index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
               }`}>
                 {/* Timeline Dot */}
-                <div className="absolute left-4 lg:left-1/2 lg:transform lg:-translate-x-1/2 w-8 h-8 bg-primary-bg rounded-full flex items-center justify-center z-10">
+                <div className="absolute left-4 lg:left-1/2 lg:transform lg:-translate-x-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center z-10">
                   <Icon name={milestone?.icon} size={16} className="text-primary-foreground" />
                 </div>
 
@@ -100,7 +100,7 @@ const TimelineSection = () => {
                 }`}>
                   <div className="bg-card rounded-2xl p-8 card-elevated hover:card-elevated-strong transition-smooth">
                     {/* Year Badge */}
-                    <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-inter font-bold mb-4">
+                    <div className="inline-flex items-center space-x-2 bg-primary/10 text-secondary px-4 py-2 rounded-full text-sm font-inter font-bold mb-4">
                       <Icon name="Calendar" size={14} />
                       <span>{milestone?.year}</span>
                     </div>
@@ -173,7 +173,7 @@ const TimelineSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Icon name="Zap" size={24} className="text-primary" />
+                  <Icon name="Zap" size={24} className="text-secondary" />
                 </div>
                 <h4 className="font-gilroy font-bold text-secondary mb-2">
                   IA Integrada
@@ -185,7 +185,7 @@ const TimelineSection = () => {
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Icon name="Globe" size={24} className="text-primary" />
+                  <Icon name="Globe" size={24} className="text-secondary" />
                 </div>
                 <h4 className="font-gilroy font-bold text-secondary mb-2">
                   Expansión Global
@@ -197,7 +197,7 @@ const TimelineSection = () => {
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Icon name="Rocket" size={24} className="text-primary" />
+                  <Icon name="Rocket" size={24} className="text-secondary" />
                 </div>
                 <h4 className="font-gilroy font-bold text-secondary mb-2">
                   Innovación Web3

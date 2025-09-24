@@ -99,7 +99,7 @@ const FloatingCTA = () => {
                 onClick={scrollToForm}
                 className="w-full flex items-center space-x-3 px-3 py-2 text-sm text-text-primary hover:bg-muted rounded-lg transition-colors"
               >
-                <Icon name="MessageSquare" size={16} className="text-primary" />
+                <Icon name="MessageSquare" size={16} className="text-secondary" />
                 <span>Formulario Contacto</span>
               </button>
               <button
@@ -127,7 +127,7 @@ const FloatingCTA = () => {
           size="lg"
           iconName={isExpanded ? "X" : "MessageCircle"}
           onClick={() => setIsExpanded(!isExpanded)}
-          className="rounded-full shadow-lg hover:shadow-xl transition-all duration-300 bg-primary hover:bg-accent"
+          className="rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
         >
           {isExpanded ? 'Cerrar' : 'Contactar'}
         </Button>

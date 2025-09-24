@@ -13,9 +13,8 @@ export default {
         background: 'var(--color-background)', // white
         foreground: 'var(--color-foreground)', // near-black
         primary: {
-          DEFAULT: 'var(--color-text-primary)', // navy for text - good contrast on light backgrounds
-          foreground: 'var(--color-primary-foreground)', // navy
-          bg: 'var(--color-primary)', // bright green for backgrounds
+          DEFAULT: 'var(--color-primary)', // bright green - use ONLY for backgrounds
+          foreground: 'var(--color-primary-foreground)', // navy for text on green backgrounds
         },
         secondary: {
           DEFAULT: 'var(--color-secondary)', // navy

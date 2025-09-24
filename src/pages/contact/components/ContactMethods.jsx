@@ -133,13 +133,13 @@ const ContactMethods = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-primary-bg/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center space-x-2 bg-primary/10 text-secondary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Icon name="Users" size={16} />
             <span>Múltiples Canales</span>
           </div>
           <h2 className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary mb-6">
             Elige Tu Método de
-            <span className="text-primary block">Contacto Preferido</span>
+            <span className="text-secondary bg-primary px-2 py-1 rounded-lg block">Contacto Preferido</span>
           </h2>
           <p className="text-lg text-text-secondary max-w-3xl mx-auto">
             Ofrecemos múltiples formas de conectar contigo. Selecciona el canal que mejor se adapte a tu estilo de comunicación y urgencia del proyecto.
@@ -167,7 +167,7 @@ const ContactMethods = () => {
 
                 {/* Content */}
                 <div className="space-y-4 mb-6">
-                  <h3 className="text-xl font-gilroy font-bold text-secondary group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-gilroy font-bold text-secondary group-hover:text-secondary transition-colors">
                     {method?.title}
                   </h3>
                   <p className="text-sm text-text-secondary leading-relaxed">
