@@ -139,7 +139,7 @@ const HeroSection = () => {
               </div>
               <div className="flex items-center space-x-2 text-sm text-text-secondary">
                 <Icon name="Clock" size={16} className="text-success" />
-                <span>Entrega 30 días</span>
+                <span>Entrega 21 días</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-text-secondary">
                 <Icon name="Award" size={16} className="text-success" />
