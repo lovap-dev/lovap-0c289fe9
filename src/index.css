@@ -14,6 +14,7 @@
     --color-secondary-foreground: #FFFFFF; /* White for contrast */
     --color-accent: #A5E25D; /* Hover states green */
     --color-accent-foreground: #1B2033; /* Dark navy for contrast */
+    --color-brand-text: #1B2132;
     
     /* Background & Surface */
     --color-background: #FFFFFF; /* Clean canvas white */

@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        'brand-text': 'var(--color-brand-text)',
         border: 'var(--color-border)', // light-gray
         input: 'var(--color-input)', // white
         ring: 'var(--color-ring)', // green
