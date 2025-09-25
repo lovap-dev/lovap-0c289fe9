@@ -47,8 +47,8 @@ const HeroSection = () => {
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
       </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <div className="space-y-8">
             <motion.div
@@ -62,16 +62,16 @@ const HeroSection = () => {
                 <span>Desarrollo Web Estratégico</span>
               </div>
 
-              <h1 className="text-5xl lg:text-6xl font-gilroy font-bold text-secondary leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-gilroy font-bold text-secondary leading-tight">
                 Sitios web que
                 <DynamicTextSlider
                   text="transforman negocios"
-                  className="block text-gray-400 font-gilroy font-bold text-5xl leading-tight"
-                  height={78}
+                  className="block text-gray-400 font-gilroy font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight"
+                  height={60}
                 />
               </h1>
 
-              <p className="text-xl text-text-secondary leading-relaxed max-w-xl">
+              <p className="text-lg sm:text-xl text-text-secondary leading-relaxed max-w-xl">
                 Creamos experiencias digitales que convierten visitantes en clientes y aceleran el crecimiento de tu empresa con resultados medibles.
               </p>
             </motion.div>
@@ -93,7 +93,7 @@ const HeroSection = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-lg font-gilroy font-semibold text-secondary">
+                  <h3 className="text-base sm:text-lg font-gilroy font-semibold text-secondary">
                     {valuePropositions?.[currentValueProp]?.title}
                   </h3>
                   <p className="text-text-secondary">
@@ -140,7 +140,7 @@ const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="flex items-center space-x-6 pt-4"
+              className="flex flex-wrap items-center gap-4 sm:gap-6 pt-4"
             >
               <div className="flex items-center space-x-2 text-sm text-text-secondary">
                 <Icon name="Shield" size={16} className="text-success" />
