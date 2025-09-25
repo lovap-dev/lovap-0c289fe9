@@ -8,6 +8,7 @@ import { DynamicTextSlider } from '@/components/ui/dynamic-text-slider';
 
 const HeroSection = () => {
   const [currentValueProp, setCurrentValueProp] = useState(0);
+  const [sliderHeight, setSliderHeight] = useState(56);
   const whatsappNumber = '573006719235'; // +57 (CO) + número provisto 3006719235
   const whatsappText = encodeURIComponent('Hola, me interesa una cotización estratégica para mi sitio web. Mi nombre es [Tu nombre]. ¿Podemos coordinar una llamada esta semana?');
 
@@ -40,15 +41,34 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)');
+    const update = () => setSliderHeight(mq.matches ? 78 : 56);
+    update();
+    if (mq.addEventListener) {
+      mq.addEventListener('change', update);
+    } else {
+      // Safari fallback
+      mq.addListener(update);
+    }
+    return () => {
+      if (mq.removeEventListener) {
+        mq.removeEventListener('change', update);
+      } else {
+        mq.removeListener(update);
+      }
+    };
+  }, []);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-muted overflow-hidden pt-20 sm:pt-16">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-muted overflow-hidden pb-24 md:pb-28">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
       </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Content */}
           <div className="space-y-8">
             <motion.div
@@ -62,16 +82,16 @@ const HeroSection = () => {
                 <span>Desarrollo Web Estratégico</span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-gilroy font-bold text-secondary leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-gilroy font-bold text-secondary leading-tight">
                 Sitios web que
                 <DynamicTextSlider
                   text="transforman negocios"
-                  className="block text-gray-400 font-gilroy font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight"
-                  height={60}
+                  className="block text-gray-400 font-gilroy font-bold text-4xl md:text-5xl leading-tight"
+                  height={sliderHeight}
                 />
               </h1>
 
-              <p className="text-lg sm:text-xl text-text-secondary leading-relaxed max-w-xl">
+              <p className="text-base sm:text-lg md:text-xl text-text-secondary leading-relaxed max-w-xl">
                 Creamos experiencias digitales que convierten visitantes en clientes y aceleran el crecimiento de tu empresa con resultados medibles.
               </p>
             </motion.div>
@@ -87,13 +107,13 @@ const HeroSection = () => {
               <div className="flex items-center space-x-4">
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 rounded-xl flex items-center justify-center">
-                    <span className="text-2xl font-gilroy font-bold text-yellow-500">
+                    <span className="text-xl md:text-2xl font-gilroy font-bold text-yellow-500">
                       {valuePropositions?.[currentValueProp]?.metric}
                     </span>
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-base sm:text-lg font-gilroy font-semibold text-secondary">
+                  <h3 className="text-lg font-gilroy font-semibold text-secondary">
                     {valuePropositions?.[currentValueProp]?.title}
                   </h3>
                   <p className="text-text-secondary">
@@ -116,7 +136,7 @@ const HeroSection = () => {
                 size="xl"
                 iconName="ArrowRight"
                 iconPosition="right"
-                className="rounded-full px-8 py-4 text-base bg-primary text-primary-foreground shadow-lg shadow-primary/30 hover:bg-primary/90 hover:opacity-90 transition-opacity focus-visible:ring-2 focus-visible:ring-primary/40 border border-primary/20"
+                className="rounded-full px-8 py-4 text-base w-full sm:w-auto bg-primary text-primary-foreground shadow-lg shadow-primary/30 hover:bg-primary/90 hover:opacity-90 transition-opacity focus-visible:ring-2 focus-visible:ring-primary/40 border border-primary/20"
               >
                 <a href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`} target="_blank" rel="noopener noreferrer">
                   Solicitar Cotización
@@ -140,29 +160,29 @@ const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="flex flex-wrap items-center gap-4 sm:gap-6 pt-4"
+              className="flex flex-wrap items-center gap-3 sm:gap-6 pt-4 mb-12"
             >
-              <div className="flex items-center space-x-2 text-sm text-text-secondary">
+              <div className="flex items-center space-x-2 text-xs sm:text-sm text-text-secondary">
                 <Icon name="Shield" size={16} className="text-success" />
                 <span>SSL Seguro</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-text-secondary">
+              <div className="flex items-center space-x-2 text-xs sm:text-sm text-text-secondary">
                 <Icon name="Clock" size={16} className="text-success" />
                 <span>Entrega 21 días</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-text-secondary">
+              <div className="flex items-center space-x-2 text-xs sm:text-sm text-text-secondary">
                 <Icon name="Award" size={16} className="text-success" />
                 <span>Soporte dedicado</span>
               </div>
             </motion.div>
           </div>
 
-          {/* Visual Element - Hidden on mobile */}
+          {/* Visual Element */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative hidden lg:block"
+            className="relative hidden md:block"
           >
             <SplineSceneBasic />
           </motion.div>
