@@ -5,84 +5,65 @@ import Icon from '../../../components/AppIcon';
 const ServiceGrid = () => {
   const [activeService, setActiveService] = useState(0);
 
-  const services = [
-    {
-      id: 'landing-pages',
-      title: 'Landing Pages de Alto Rendimiento',
-      description: 'Páginas de aterrizaje optimizadas para conversión que transforman visitantes en clientes con tasas de conversión superiores al 15%.',
-      icon: 'Target',
-      features: [
-        'Optimización A/B testing integrada',
-        'Carga en menos de 2 segundos',
-        'Formularios inteligentes con validación',
-        'Integración con CRM y analytics'
-      ],
-      metrics: {
-        conversion: '15-25%',
-        loadTime: '<2s',
-        roi: '300-500%'
-      },
-      price: 'Desde €2,500',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80'
+const services = [
+  {
+    id: 'landing-pages',
+    title: 'Landing Pages',
+    description: 'Páginas enfocadas en una sola acción, captar clientes de manera inmediata con foco en conversión.',
+    icon: 'Target',
+    features: [
+      'Optimización con pruebas A/B',
+      'Carga ultrarrápida en menos de 2 segundos',
+      'Formularios inteligentes que reducen leads no calificados',
+      'Integración con CRM y plataformas de marketing'
+    ],
+    metrics: {
+      conversion: '15-25%',
+      loadTime: '<2s',
+      roi: '300-500%'
     },
-    {
-      id: 'corporate-sites',
-      title: 'Sitios Web Corporativos',
-      description: 'Presencia digital profesional que construye autoridad de marca y genera confianza en decisores empresariales.',
-      icon: 'Building2',
-      features: [
-        'Diseño responsive premium',
-        'CMS personalizado y fácil de usar',
-        'SEO técnico avanzado',
-        'Integración con sistemas empresariales'
-      ],
-      metrics: {
-        conversion: '8-12%',
-        loadTime: '<3s',
-        roi: '200-400%'
-      },
-      price: 'Desde €5,000',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80'
+    price: 'Desde $100',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80'
+  },
+  {
+    id: 'corporate-sites',
+    title: 'Sitios Web Corporativos',
+    description: 'El centro digital de tu empresa: credibilidad, autoridad y confianza en un sitio web hecho 100% a la medida en código puro.',
+    icon: 'Building2',
+    features: [
+      'Diseño premium alineado a tu identidad de marca',
+      'Código limpio y seguro (sin CMS ni plugins inseguros)',
+      'Optimización SEO para posicionar en Google',
+      'Escalable e integrable con sistemas empresariales'
+    ],
+    metrics: {
+      conversion: '10-18%',
+      loadTime: '<2s',
+      roi: '400-600%'
     },
-    {
-      id: 'custom-development',
-      title: 'Desarrollo a Medida',
-      description: 'Aplicaciones web personalizadas que resuelven desafíos específicos de negocio con arquitectura escalable.',
-      icon: 'Code2',
-      features: [
-        'Arquitectura escalable y modular',
-        'APIs RESTful y GraphQL',
-        'Integración con terceros',
-        'Documentación técnica completa'
-      ],
-      metrics: {
-        conversion: '20-35%',
-        loadTime: '<2.5s',
-        roi: '400-800%'
-      },
-      price: 'Desde €8,000',
-      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80'
+    price: 'Desde $250',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80'
+  },
+  {
+    id: 'custom-development',
+    title: 'Desarrollo a Medida',
+    description: 'Aplicaciones web únicas y escalables que resuelven retos específicos de negocio y aceleran tu crecimiento.',
+    icon: 'Code2',
+    features: [
+      'Arquitectura modular y escalable',
+      'Integraciones mediante APIs RESTful o GraphQL',
+      'Automatización de procesos',
+      'Documentación técnica clara y soporte continuo'
+    ],
+    metrics: {
+      conversion: '20-30%',
+      loadTime: '<2.5s',
+      roi: '400-800%'
     },
-    {
-      id: 'branding',
-      title: 'Identidad Digital y Branding',
-      description: 'Sistemas de identidad visual cohesivos que comunican valor de marca y diferenciación competitiva.',
-      icon: 'Palette',
-      features: [
-        'Sistema de diseño completo',
-        'Guías de marca digitales',
-        'Assets optimizados para web',
-        'Consistencia multi-plataforma'
-      ],
-      metrics: {
-        conversion: '10-18%',
-        loadTime: '<1.5s',
-        roi: '250-450%'
-      },
-      price: 'Desde €3,500',
-      image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=2064&q=80'
-    },
-    {
+    price: 'Desde $1000',
+    image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80'
+  },
+    /*{
       id: 'integrations',
       title: 'Integraciones y Automatización',
       description: 'Conexiones inteligentes entre sistemas que optimizan flujos de trabajo y eliminan tareas manuales.',
@@ -100,8 +81,44 @@ const ServiceGrid = () => {
       },
       price: 'Desde €4,000',
       image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80'
-    }
+    }*/
   ];
+
+  const buildWhatsAppUrl = (service) => {
+    const phone = '573006719235';
+    const templateLines = [
+      `Hola, me interesa el servicio: ${service?.title}`,
+      '',
+      '¿Podrían compartirme una cotización?',
+      '',
+      'Datos para la cotización:',
+      '- Tu nombre:',
+      '- Nombre de tu Empresa/Emprendimiento:',
+      '- Sitio web actual (si aplica):',
+      '- Presupuesto estimado:',
+      '- Descripción breve del proyecto:',
+    ].filter(Boolean);
+
+    const text = encodeURIComponent(templateLines.join('\n'));
+    return `https://wa.me/${phone}?text=${text}`;
+  };
+
+  const buildGeneralWhatsAppUrl = () => {
+    const phone = '573006719235';
+    const templateLines = [
+      'Hola, me gustaría agendar una Consulta Estratégica Gratuita.',
+      '',
+      'Datos para la consulta:',
+      '- Tu nombre:',
+      '- Nombre de tu Empresa/Emprendimiento:',
+      '- Sitio web actual (si aplica):',
+      '- Presupuesto estimado:',
+      '- Descripción breve del proyecto:',
+    ];
+
+    const text = encodeURIComponent(templateLines.join('\n'));
+    return `https://wa.me/${phone}?text=${text}`;
+  };
 
   return (
     <section className="py-20 bg-background">
@@ -149,7 +166,7 @@ const ServiceGrid = () => {
                 <div className="space-y-3 mb-8">
                   {service?.features?.map((feature, idx) => (
                     <div key={idx} className="flex items-center space-x-3">
-                      <Icon name="CheckCircle" size={16} className="text-primary flex-shrink-0" />
+                      <Icon name="CheckCircle" size={16} className="text-secondary flex-shrink-0" />
                       <span className="text-sm text-text-secondary">{feature}</span>
                     </div>
                   ))}
@@ -157,15 +174,15 @@ const ServiceGrid = () => {
 
                 <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-muted rounded-xl">
                   <div className="text-center">
-                    <div className="text-lg font-gilroy font-bold text-primary">{service?.metrics?.conversion}</div>
+                    <div className="text-lg font-gilroy font-bold text-secondary">{service?.metrics?.conversion}</div>
                     <div className="text-xs text-text-secondary">Conversión</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-lg font-gilroy font-bold text-primary">{service?.metrics?.loadTime}</div>
+                    <div className="text-lg font-gilroy font-bold text-secondary">{service?.metrics?.loadTime}</div>
                     <div className="text-xs text-text-secondary">Carga</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-lg font-gilroy font-bold text-primary">{service?.metrics?.roi}</div>
+                    <div className="text-lg font-gilroy font-bold text-secondary">{service?.metrics?.roi}</div>
                     <div className="text-xs text-text-secondary">ROI</div>
                   </div>
                 </div>
@@ -177,16 +194,14 @@ const ServiceGrid = () => {
                     iconName="Calculator"
                     iconPosition="left"
                     className="bg-primary text-primary-foreground hover:bg-accent"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      const url = buildWhatsAppUrl(service);
+                      window.open(url, '_blank', 'noopener,noreferrer');
+                    }}
+                    aria-label={`Solicitar cotización de ${service?.title} por WhatsApp`}
                   >
-                    Calcular ROI
-                  </Button>
-                  <Button
-                    variant="outline"
-                    fullWidth
-                    iconName="ExternalLink"
-                    iconPosition="right"
-                  >
-                    Ver Casos de Estudio
+                    Solicitar Cotización gratis
                   </Button>
                 </div>
               </div>
@@ -201,10 +216,6 @@ const ServiceGrid = () => {
         </div>
 
         <div className="text-center mt-16">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-6 py-3 rounded-full text-sm font-medium mb-6">
-            <Icon name="Shield" size={16} />
-            <span>Garantía de satisfacción 100% o reembolso completo</span>
-          </div>
           <div className="space-y-4">
             <Button
               variant="default"
@@ -212,11 +223,16 @@ const ServiceGrid = () => {
               iconName="MessageCircle"
               iconPosition="left"
               className="bg-secondary text-secondary-foreground hover:bg-secondary/90"
+              onClick={() => {
+                const url = buildGeneralWhatsAppUrl();
+                window.open(url, '_blank', 'noopener,noreferrer');
+              }}
+              aria-label="Abrir WhatsApp para consulta estratégica gratuita"
             >
               Consulta Estratégica Gratuita
             </Button>
             <p className="text-sm text-text-secondary">
-              Sin compromiso • Análisis personalizado • Respuesta en 24h
+              Sin compromiso • Análisis personalizado • Respuesta rápida
             </p>
           </div>
         </div>

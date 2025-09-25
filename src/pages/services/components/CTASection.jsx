@@ -191,7 +191,7 @@ const CTASection = () => {
               <div className="text-xs text-gray-400">ROI Promedio</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-gilroy font-bold text-primary">24h</div>
+              <div className="text-2xl font-gilroy font-bold text-primary">2h</div>
               <div className="text-xs text-gray-400">Tiempo Respuesta</div>
             </div>
           </div>

@@ -113,7 +113,7 @@ const TrustSignals = () => {
       color: 'text-red-600'
     },
     {
-      number: '24h',
+      number: '2h',
       label: 'Tiempo Respuesta',
       icon: 'Clock',
       color: 'text-blue-600'

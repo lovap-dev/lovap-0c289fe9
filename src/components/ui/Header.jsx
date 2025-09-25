@@ -98,7 +98,7 @@ const Header = () => {
               className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-inter font-medium transition-smooth ${
                 isActivePath(item?.path)
                   ? 'bg-primary text-primary-foreground'
-                  : `${isScrolled ? 'text-text-primary' : 'text-foreground'} hover:bg-primary/10 hover:text-primary backdrop-blur-sm`
+                  : `${isScrolled ? 'text-text-primary' : 'text-foreground'} hover:bg-primary/10 backdrop-blur-sm relative after:absolute after:left-4 after:right-4 after:-bottom-1 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-200`
               }`}
               >
                 <Icon name={item?.icon} size={16} />
@@ -110,13 +110,14 @@ const Header = () => {
           {/* CTA Button & Mobile Menu Toggle */}
           <div className="flex items-center space-x-4">
             <Button
+              asChild
               variant="default"
-              size="sm"
-              className="hidden sm:flex"
+              size="md"
+              className="hidden sm:flex rounded-full px-5 bg-primary text-primary-foreground shadow-lg ring-1 ring-primary/30 hover:bg-primary/90 hover:opacity-90 transition-opacity"
               iconName="ArrowRight"
               iconPosition="right"
             >
-              Cotización Estratégica
+              <a href="https://wa.me/573006719235" target="_blank" rel="noopener noreferrer">Cotización Estratégica</a>
             </Button>
 
             {/* Mobile Menu Button */}
@@ -151,7 +152,7 @@ const Header = () => {
                   className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-inter font-medium transition-smooth ${
                     isActivePath(item?.path)
                       ? 'bg-primary text-primary-foreground'
-                      : 'text-foreground hover:bg-primary/10 hover:text-primary'
+                      : 'text-foreground hover:bg-primary/10 relative after:absolute after:left-4 after:right-4 after:-bottom-1 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-200'
                   }`}
                 >
                   <Icon name={item?.icon} size={18} />
@@ -162,14 +163,16 @@ const Header = () => {
               {/* Mobile CTA */}
               <div className="pt-4 border-t border-border mt-4">
                 <Button
+                  asChild
                   variant="default"
-                  size="sm"
+                  size="md"
                   fullWidth
                   iconName="ArrowRight"
                   iconPosition="right"
+                  className="rounded-full px-5 bg-primary text-primary-foreground shadow-lg ring-1 ring-primary/30 hover:bg-primary/90 hover:opacity-90 transition-opacity"
                   onClick={closeMenu}
                 >
-                  Cotización Estratégica
+                  <a href="https://wa.me/573006719235" target="_blank" rel="noopener noreferrer">Cotización Estratégica</a>
                 </Button>
               </div>
             </div>

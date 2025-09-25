@@ -33,7 +33,7 @@ const ContactHero = () => {
             {/* Quick Stats */}
             <div className="grid grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-2xl font-gilroy font-bold text-primary">24h</div>
+                <div className="text-2xl font-gilroy font-bold text-primary">2h</div>
                 <div className="text-sm text-white/70">Tiempo de Respuesta</div>
               </div>
               <div className="text-center">
@@ -86,7 +86,7 @@ const ContactHero = () => {
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center space-x-2">
                     <Icon name="Mail" size={14} />
-                    <span>hola@lovapcorporate.com</span>
+                    <span>lovap.dev@gmail.com</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Icon name="Phone" size={14} />

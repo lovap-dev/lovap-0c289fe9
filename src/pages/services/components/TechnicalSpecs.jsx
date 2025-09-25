@@ -60,7 +60,7 @@ const TechnicalSpecs = () => {
         },
         {
           metric: 'Monitoreo 24/7',
-          standard: 'Uptime 99.9%',
+          standard: 'Uptime 99%',
           description: 'Supervisión continua con alertas automáticas ante incidencias',
           tools: ['Pingdom', 'UptimeRobot', 'New Relic']
         }
@@ -263,7 +263,7 @@ const TechnicalSpecs = () => {
           </div>
         </div>
 
-        <div className="text-center mt-16">
+        {/*<div className="text-center mt-16">
           <div className="inline-flex items-center space-x-2 bg-secondary/10 text-secondary px-6 py-3 rounded-full text-sm font-medium mb-6">
             <Icon name="FileText" size={16} />
             <span>Documentación técnica completa incluida en cada proyecto</span>
@@ -287,7 +287,7 @@ const TechnicalSpecs = () => {
               Consulta Técnica Personalizada
             </Button>
           </div>
-        </div>
+        </div>*/}
       </div>
     </section>
   );

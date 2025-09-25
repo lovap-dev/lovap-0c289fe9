@@ -221,27 +221,27 @@ const ServicePreview = () => {
               Creamos soluciones personalizadas para cada negocio. Cuéntanos tu proyecto y diseñaremos la estrategia perfecta.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/services">
-                <Button
-                  variant="default"
+            <Link to="/services">
+              <Button
+                  variant="contrast"
                   iconName="Eye"
                   iconPosition="left"
-                  className="w-full sm:w-auto"
+                  className="w-full sm:w-auto rounded-full px-6 py-3 text-base shadow-md hover:shadow-lg ring-1 ring-border"
                 >
                   Ver todos los servicios
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button
-                  variant="outline"
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button
+                  variant="tonal"
                   iconName="MessageCircle"
                   iconPosition="left"
-                  className="w-full sm:w-auto"
+                  className="w-full sm:w-auto rounded-full px-6 py-3 text-base shadow-sm hover:shadow-md ring-1 ring-secondary/30"
                 >
                   Consulta personalizada
-                </Button>
-              </Link>
-            </div>
+              </Button>
+            </Link>
+          </div>
           </div>
         </motion.div>
       </div>

@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
 import HeroSection from './components/HeroSection';
 import ServicePreview from './components/ServicePreview';
-import PortfolioShowcase from './components/PortfolioShowcase';
 import TestimonialCarousel from './components/TestimonialCarousel';
 import CaseStudyShowcase from './components/CaseStudyShowcase';
 import TrustBadges from './components/TrustBadges';
@@ -112,7 +111,7 @@ const Homepage = () => {
                   </div>
                   <div className="flex items-center space-x-2 text-sm">
                     <div className="w-2 h-2 bg-success rounded-full"></div>
-                    <span className="text-white/80">Respuesta en 24h</span>
+                    <span className="text-white/80">Respuesta en 2h</span>
                   </div>
                 </div>
               </div>
@@ -148,10 +147,10 @@ const Homepage = () => {
                   <div className="text-sm">
                     <div className="text-white/60 mb-1">Email</div>
                     <a 
-                      href="mailto:hola@lovapcorporate.com" 
+                      href="mailto:lovap.dev@gmail.com" 
                       className="text-white/80 hover:text-primary transition-colors"
                     >
-                      hola@lovapcorporate.com
+                      lovap.dev@gmail.com
                     </a>
                   </div>
                   <div className="text-sm">

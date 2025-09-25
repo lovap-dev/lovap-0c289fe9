@@ -4,9 +4,12 @@ import { motion } from 'framer-motion';
 import Button from '../../../components/ui/Button';
 import Icon from '../../../components/AppIcon';
 import { SplineSceneBasic } from '../../../components/ui/spline-scene-basic';
+import { DynamicTextSlider } from '@/components/ui/dynamic-text-slider';
 
 const HeroSection = () => {
   const [currentValueProp, setCurrentValueProp] = useState(0);
+  const whatsappNumber = '573006719235'; // +57 (CO) + número provisto 3006719235
+  const whatsappText = encodeURIComponent('Hola, me interesa una cotización estratégica para mi sitio web. Mi nombre es [Tu nombre]. ¿Podemos coordinar una llamada esta semana?');
 
   const valuePropositions = [
     {
@@ -44,7 +47,7 @@ const HeroSection = () => {
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
       </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="space-y-8">
@@ -61,7 +64,11 @@ const HeroSection = () => {
 
               <h1 className="text-5xl lg:text-6xl font-gilroy font-bold text-secondary leading-tight">
                 Sitios web que
-                <span className="block text-primary">impulsan negocios</span>
+                <DynamicTextSlider
+                  text="transforman negocios"
+                  className="block text-gray-400 font-gilroy font-bold text-5xl leading-tight"
+                  height={78}
+                />
               </h1>
 
               <p className="text-xl text-text-secondary leading-relaxed max-w-xl">
@@ -104,26 +111,28 @@ const HeroSection = () => {
               className="flex flex-col sm:flex-row gap-4"
             >
               <Button
+                asChild
                 variant="default"
-                size="lg"
+                size="xl"
                 iconName="ArrowRight"
                 iconPosition="right"
-                className="text-lg px-8 py-4"
+                className="rounded-full px-8 py-4 text-base bg-primary text-primary-foreground shadow-lg shadow-primary/30 hover:bg-primary/90 hover:opacity-90 transition-opacity focus-visible:ring-2 focus-visible:ring-primary/40 border border-primary/20"
               >
-                Solicitar Cotización
+                <a href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`} target="_blank" rel="noopener noreferrer">
+                  Solicitar Cotización
+                </a>
               </Button>
-              
-              <Link to="/services">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  iconName="Play"
-                  iconPosition="left"
-                  className="text-lg px-8 py-4 w-full sm:w-auto"
-                >
-                  Ver Servicios
-                </Button>
-              </Link>
+
+              <Button
+                asChild
+                variant="outline"
+                size="xl"
+                iconName="Play"
+                iconPosition="left"
+                className="rounded-full px-8 py-4 text-base w-full sm:w-auto border-2 border-secondary text-secondary bg-white hover:bg-secondary/10 hover:opacity-95 hover:shadow-md transition-opacity"
+              >
+                <Link to="/services">Ver Servicios</Link>
+              </Button>
             </motion.div>
 
             {/* Trust Indicators */}
@@ -143,7 +152,7 @@ const HeroSection = () => {
               </div>
               <div className="flex items-center space-x-2 text-sm text-text-secondary">
                 <Icon name="Award" size={16} className="text-success" />
-                <span>Garantía 1 año</span>
+                <span>Soporte post lanzamiento</span>
               </div>
             </motion.div>
           </div>
@@ -167,7 +176,7 @@ const HeroSection = () => {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <div className="flex flex-col items-center space-y-2">
-          <span className="text-sm text-text-secondary">Descubre más</span>
+          <span className="text-sm text-text-secondary underline">Descubre más</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}

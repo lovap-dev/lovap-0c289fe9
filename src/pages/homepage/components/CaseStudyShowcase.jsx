@@ -9,11 +9,11 @@ const CaseStudyShowcase = () => {
   const caseStudies = [
     {
       id: 1,
-      client: 'TechFlow Solutions',
-      industry: 'Software B2B',
-      service: 'Landing Page Optimizada',
-      challenge: 'Baja conversión en campañas de Google Ads con tasa del 1.2% y alto costo por adquisición.',
-      solution: 'Rediseño completo con enfoque en UX/UI, optimización de formularios y implementación de pruebas A/B.',
+      client: 'Café Uribe',
+      industry: 'Cultivo y comercialización de café',
+      service: 'Rediseño sitio web corporativo',
+      challenge: 'El sitio anterior había sido desarrollado por el propio dueño sin conocimientos técnicos, lo que generaba una experiencia poco profesional: navegación confusa, ausencia de canales de contacto claros y un diseño que no reflejaba la tradición cafetera ni la innovación de la empresa. Esto afectaba la credibilidad frente a clientes, distribuidores y aliados potenciales.',
+      solution: 'Diseñamos un sitio web moderno y funcional que transmite la esencia familiar de Café Uribe y su compromiso con la innovación. Se incluyeron secciones para destacar el proceso de cultivo, la historia de la marca y el portafolio de productos, además de canales de contacto claros para facilitar nuevas oportunidades comerciales. El resultado fue un espacio digital alineado con la calidad de su café y su trayectoria en el mercado.',
       results: {
         conversionBefore: '1.2%',
         conversionAfter: '8.7%',
@@ -21,19 +21,20 @@ const CaseStudyShowcase = () => {
         costReduction: '-73%',
         roi: '450%'
       },
-      timeline: '6 semanas',
-      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80',
-      testimonial: `"El impacto fue inmediato. En el primer mes recuperamos la inversión y ahora generamos 6x más leads cualificados con el mismo presupuesto publicitario."`,
-      clientName: 'María González',
-      clientRole: 'Directora de Marketing'
+      timeline: '3 semanas',
+      image: 'https://cafeuribe.com/images/galeria/logo_tasa_cafe_uribe.jpeg',
+      website: 'https://cafeuribe.com',
+      testimonial: `"El cambio fue enorme. Pasamos de tener una página que no nos representaba a contar con un sitio web que realmente refleja quiénes somos y lo que ofrecemos. Ahora nuestros clientes nos perciben como una empresa seria, cercana e innovadora."`,
+      clientName: 'Álvaro Javier Uribe',
+      clientRole: 'Fundador y Gerente General'
     },
     {
       id: 2,
-      client: 'Innovate Consulting',
-      industry: 'Consultoría Empresarial',
-      service: 'Sitio Web Corporativo',
-      challenge: 'Sitio web desactualizado que no transmitía profesionalidad ni generaba confianza en clientes enterprise.',
-      solution: 'Desarrollo de sitio corporativo premium con CMS personalizado, integración CRM y optimización SEO.',
+      client: 'ProSalud',
+      industry: 'Sindicato de profesionales de la salud',
+      service: 'Portal web de autogestión + Chatbot IA',
+      challenge: 'Los procesos de afiliados eran manuales, se gestionaban por correo y generaban reprocesos frecuentes debido a solicitudes incompletas o mal diligenciadas. Esto aumentaba la carga operativa del sindicato y afectaba la experiencia de los afiliados. Además, la competencia ya ofrecía soluciones digitales como chatbots, lo que dejaba a ProSalud en desventaja.',
+      solution: 'Desarrollamos un portal de autogestión que centraliza la información y trámites de los afiliados, brindándoles un acceso sencillo y ágil. Complementamos la solución con un chatbot con IA disponible 24/7 que responde consultas frecuentes y guía en los procesos, reduciendo la carga operativa del sindicato y mejorando la satisfacción de los afiliados.',
       results: {
         conversionBefore: '2.1%',
         conversionAfter: '12.4%',
@@ -41,19 +42,20 @@ const CaseStudyShowcase = () => {
         costReduction: '-45%',
         roi: '320%'
       },
-      timeline: '10 semanas',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80',
-      testimonial: `"Nuestro nuevo sitio web se ha convertido en nuestra mejor herramienta de ventas. Los clientes nos perciben como líderes en el sector."`,
-      clientName: 'Carlos Ruiz',
-      clientRole: 'CEO'
+      timeline: '8 semanas',
+      image: '/images/prosalud.png',
+      website: 'https://prosalud-redesign.lovable.app',
+      testimonial: "“Ahora nuestros afiliados tienen un canal claro y rápido para hacer sus trámites. Hemos reducido el trabajo manual y mejorado la comunicación con la comunidad. Además, el chatbot nos pone a la par de las mejores prácticas en el sector.”",
+      clientName: 'Junta Directiva ProSalud',
+      clientRole: 'Sindicato de Profesionales de la Salud'
     },
     {
       id: 3,
-      client: 'EcoTech Industries',
-      industry: 'Tecnología Sostenible',
-      service: 'Desarrollo a Medida',
-      challenge: 'Necesidad de plataforma personalizada para gestión de proyectos sostenibles con múltiples stakeholders.',
-      solution: 'Aplicación web custom con dashboard interactivo, sistema de reportes automatizado y API para integraciones.',
+      client: 'U2Red S.A.S',
+      industry: 'Telecomunicaciones',
+      service: 'Rediseño sitio web corporativo',
+      challenge: "El sitio anterior no cumplía con las normas regulatorias de PQRS ni presentaba la información normativa y legal requerida. Además, tenía fallas técnicas por falta de actualizaciones de plugins y dependencias, lo que dejó botones y redirecciones inoperativos. A pesar de contar con una identidad de marca sólida y amplia cobertura en zonas rurales, el sitio no reflejaba esa fortaleza ni generaba conversiones. Al no tener un encargado de mantenimiento, la empresa desconocía la magnitud de estos problemas hasta nuestra revisión.",
+      solution: "Rediseñamos un sitio web funcional, actualizado y en cumplimiento normativo que refleja la identidad de marca y cobertura de U2Red. Se implementaron secciones claras de PQRS, normatividad y servicios, junto con un diseño moderno que facilita la navegación y la conversión de usuarios interesados. Además, entregamos una plataforma optimizada y fácil de mantener, garantizando estabilidad a largo plazo.",
       results: {
         conversionBefore: '3.5%',
         conversionAfter: '18.2%',
@@ -61,11 +63,12 @@ const CaseStudyShowcase = () => {
         costReduction: '-60%',
         roi: '680%'
       },
-      timeline: '14 semanas',
-      image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80',
-      testimonial: `"La plataforma ha revolucionado nuestra operación. Hemos reducido tiempos administrativos en 60% y mejorado la satisfacción del cliente significativamente."`,
-      clientName: 'Ana Martín',
-      clientRole: 'Directora de Operaciones'
+      timeline: '3 semanas',
+      image: '/images/u2red.png',
+      website: 'https://u2red-sas-two.vercel.app/',
+      testimonial: "“Con el nuevo sitio web ahora cumplimos con las normas, mostramos de forma clara nuestros servicios y tenemos un canal confiable para nuestros usuarios. La diferencia frente a lo que teníamos antes es abismal.”",
+      clientName: 'Álvaro Uribe',
+      clientRole: 'Director de Operaciones'
     }
   ];
 
@@ -156,24 +159,6 @@ const CaseStudyShowcase = () => {
                       </p>
                     </div>
 
-                    <div className="bg-muted rounded-xl p-6">
-                      <h4 className="text-lg font-gilroy font-bold text-secondary mb-4 flex items-center">
-                        <Icon name="MessageSquare" size={20} className="text-primary mr-2" />
-                        Testimonio
-                      </h4>
-                      <blockquote className="text-text-secondary italic leading-relaxed mb-4">
-                        {currentCase?.testimonial}
-                      </blockquote>
-                      <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                          <Icon name="User" size={20} className="text-primary-foreground" />
-                        </div>
-                        <div>
-                          <div className="font-semibold text-secondary">{currentCase?.clientName}</div>
-                          <div className="text-sm text-text-secondary">{currentCase?.clientRole}</div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
 
                   <div className="space-y-6">
@@ -228,6 +213,40 @@ const CaseStudyShowcase = () => {
                       >
                         Solicitar Caso Similar
                       </Button>
+                      {currentCase?.website && (
+                        <Button
+                          asChild
+                          variant="secondary"
+                          fullWidth
+                          iconName="ExternalLink"
+                          iconPosition="left"
+                          className=""
+                        >
+                          <a href={currentCase?.website} target="_blank" rel="noopener noreferrer">
+                            Ver sitio web
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                  </div>
+                  <div className="lg:col-span-2 bg-muted rounded-xl p-6">
+                    <h4 className="text-lg font-gilroy font-bold text-secondary mb-4 flex items-center">
+                      <Icon name="MessageSquare" size={20} className="text-gray-500 mr-2" />
+                      Testimonio
+                    </h4>
+                    <blockquote className="text-text-secondary italic leading-relaxed mb-4">
+                      {currentCase?.testimonial}
+                    </blockquote>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                        <Icon name="User" size={20} className="text-primary-foreground" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-secondary flex items-center flex-wrap">
+                          <span>{currentCase?.clientName}</span>
+                        </div>
+                        <div className="text-sm text-text-secondary">{currentCase?.clientRole}</div>
+                      </div>
                     </div>
                   </div>
                 </div>

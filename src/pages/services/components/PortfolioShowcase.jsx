@@ -75,6 +75,15 @@ const PortfolioShowcase = () => {
     setActiveProject((prev) => (prev - 1 + projects?.length) % projects?.length);
   };
 
+  const buildWhatsAppGreetingUrl = () => {
+    const phone = '573006719235';
+    const templateLines = [
+      'Hola, me gustaría iniciar mi proyecto con Lovap',
+    ];
+    const text = encodeURIComponent(templateLines.join('\n'));
+    return `https://wa.me/${phone}?text=${text}`;
+  };
+
   return (
     <section className="py-20 bg-muted">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -86,7 +95,7 @@ const PortfolioShowcase = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center space-x-2 bg-primary/10 text-secondary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Icon name="Briefcase" size={16} />
             <span>Portfolio</span>
           </div>
@@ -115,7 +124,7 @@ const PortfolioShowcase = () => {
             >
               <div className="grid lg:grid-cols-2 gap-0">
                 {/* Image */}
-                <div className="relative h-48 lg:h-64 overflow-hidden">
+                <div className="relative h-full lg:h-full overflow-hidden">
                   <Image
                     src={projects?.[activeProject]?.image}
                     alt={projects?.[activeProject]?.title}
@@ -260,14 +269,19 @@ const PortfolioShowcase = () => {
               ¿Listo para el siguiente proyecto exitoso?
             </h3>
             <p className="text-text-secondary mb-6 max-w-2xl mx-auto">
-              Únete a más de 150+ empresas que han transformado su presencia digital con nosotros.
+              Únete a las empresas que han transformado su presencia digital con nosotros.
             </p>
             <Button
-              variant="default"
+              variant="contrast"
               size="lg"
               iconName="Rocket"
               iconPosition="left"
               className="text-lg px-8 py-4"
+              onClick={() => {
+                const url = buildWhatsAppGreetingUrl();
+                window.open(url, '_blank', 'noopener,noreferrer');
+              }}
+              aria-label="Iniciar mi proyecto por WhatsApp"
             >
               Iniciar mi proyecto
             </Button>

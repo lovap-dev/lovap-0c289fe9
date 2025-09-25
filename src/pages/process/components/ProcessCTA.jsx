@@ -137,11 +137,11 @@ const ProcessCTA = () => {
           </h3>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
             <a
-              href="mailto:hola@lovapcorporate.com"
+              href="mailto:lovap.dev@gmail.com"
               className="flex items-center space-x-2 text-primary hover:text-accent transition-colors"
             >
               <Icon name="Mail" size={20} />
-              <span>hola@lovapcorporate.com</span>
+              <span>lovap.dev@gmail.com</span>
             </a>
             <a
               href="tel:+34900123456"

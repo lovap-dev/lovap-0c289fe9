@@ -90,7 +90,7 @@ const ContactPage = () => {
               <h3 className="font-gilroy font-semibold mb-4">Contacto Rápido</h3>
               <div className="space-y-2 text-sm text-white/80">
                 <div>+34 900 123 456</div>
-                <div>hola@lovapcorporate.com</div>
+                <div>lovap.dev@gmail.com</div>
                 <div>Madrid, Barcelona, Valencia</div>
               </div>
             </div>

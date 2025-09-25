@@ -29,7 +29,7 @@ const ValuesSection = () => {
       icon: "Shield",
       title: "Calidad Inquebrantable",
       description: `Cada proyecto pasa por rigurosos procesos de calidad. No entregamos hasta que cada detalle cumple con nuestros estándares de excelencia y los tuyos.`,
-      metrics: "99.9% uptime garantizado"
+      metrics: "99% uptime garantizado"
     },
     {
       id: 5,

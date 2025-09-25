@@ -50,11 +50,11 @@ const ServiceHero = () => {
                 <div className="text-sm text-gray-300">Aumento Promedio en Conversiones</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-gilroy font-bold text-primary">48h</div>
+                <div className="text-3xl font-gilroy font-bold text-primary">2h</div>
                 <div className="text-sm text-gray-300">Tiempo de Respuesta</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-gilroy font-bold text-primary">99.9%</div>
+                <div className="text-3xl font-gilroy font-bold text-primary">99%</div>
                 <div className="text-sm text-gray-300">Uptime Garantizado</div>
               </div>
             </div>

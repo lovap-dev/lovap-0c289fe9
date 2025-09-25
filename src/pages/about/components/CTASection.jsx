@@ -102,7 +102,7 @@ const CTASection = () => {
             </div>
             <div className="flex items-center space-x-2">
               <Icon name="Clock" size={16} className="text-success" />
-              <span>Respuesta en 24h</span>
+              <span>Respuesta en 2h</span>
             </div>
             <div className="flex items-center space-x-2">
               <Icon name="Shield" size={16} className="text-success" />

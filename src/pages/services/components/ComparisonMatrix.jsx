@@ -10,10 +10,10 @@ const ComparisonMatrix = () => {
       {
         name: 'Diseño y UX',
         features: [
-          { name: 'Diseño Responsive Premium', basic: false, professional: true, enterprise: true },
+          { name: 'Diseño Responsive Premium', basic: true, professional: true, enterprise: true },
           { name: 'Prototipado Interactivo', basic: false, professional: true, enterprise: true },
           { name: 'Testing de Usabilidad', basic: false, professional: true, enterprise: true },
-          { name: 'Sistema de Diseño Personalizado', basic: false, professional: false, enterprise: true },
+          { name: 'Diseñador Dedicado', basic: false, professional: false, enterprise: true },
           { name: 'Animaciones y Micro-interacciones', basic: false, professional: true, enterprise: true }
         ]
       },
@@ -31,7 +31,7 @@ const ComparisonMatrix = () => {
         name: 'Conversión y Analytics',
         features: [
           { name: 'Optimización para Conversión', basic: 'Básica', professional: 'Avanzada', enterprise: 'Premium' },
-          { name: 'A/B Testing Setup', basic: false, professional: true, enterprise: true },
+          { name: 'A/B Testing Setup', basic: true, professional: true, enterprise: true },
           { name: 'Analytics Avanzado', basic: false, professional: true, enterprise: true },
           { name: 'Heatmaps y Session Recording', basic: false, professional: false, enterprise: true },
           { name: 'Reportes Personalizados', basic: false, professional: 'Mensuales', enterprise: 'Semanales' }
@@ -44,7 +44,7 @@ const ComparisonMatrix = () => {
           { name: 'Actualizaciones de Seguridad', basic: true, professional: true, enterprise: true },
           { name: 'Backup Automatizado', basic: 'Semanal', professional: 'Diario', enterprise: 'Tiempo Real' },
           { name: 'Monitoreo 24/7', basic: false, professional: true, enterprise: true },
-          { name: 'SLA Garantizado', basic: false, professional: '99.5%', enterprise: '99.9%' }
+          { name: 'SLA Garantizado', basic: false, professional: '99%', enterprise: '99%' }
         ]
       }
     ],
@@ -54,22 +54,22 @@ const ComparisonMatrix = () => {
         price: '€2,500',
         description: 'Perfecto para startups y pequeños negocios',
         color: 'border-border',
-        bgColor: 'bg-white',
+        bgColor: 'bg-secondary/5',
         popular: false
       },
       professional: {
         name: 'Profesional',
         price: '€5,000',
         description: 'Ideal para empresas en crecimiento',
-        color: 'border-primary',
-        bgColor: 'bg-primary/5',
+        color: 'border-border',
+        bgColor: 'bg-secondary/5',
         popular: true
       },
       enterprise: {
         name: 'Enterprise',
         price: '€10,000+',
         description: 'Soluciones completas para grandes empresas',
-        color: 'border-secondary',
+        color: 'border-border',
         bgColor: 'bg-secondary/5',
         popular: false
       }
@@ -93,8 +93,7 @@ const ComparisonMatrix = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-gilroy font-bold text-secondary mb-6">
-            Comparación de 
-            <span className="text-secondary"> Servicios</span>
+            Comparación de Servicios
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             Encuentra el nivel de servicio perfecto para tus objetivos de negocio y presupuesto disponible.
@@ -126,7 +125,7 @@ const ComparisonMatrix = () => {
         {/* Desktop Comparison Table */}
         <div className="hidden lg:block bg-white rounded-2xl shadow-card-elevated overflow-hidden">
           {/* Header */}
-          <div className="grid grid-cols-4 border-b border-border">
+          <div className="grid grid-cols-4 border-b border-border pt-10">
             <div className="p-6">
               <h3 className="text-lg font-gilroy font-bold text-secondary">Características</h3>
             </div>

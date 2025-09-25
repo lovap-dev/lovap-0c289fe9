@@ -23,7 +23,7 @@ const ProcessTimelineNew = () => {
       title: "1. Análisis",
       content: (
         <div>
-          <p className="text-text-primary dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className="text-text-secondary dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             Analizamos las necesidades de tu negocio, los objetivos del proyecto
             y el perfil de tus usuarios. Esta etapa nos permite entender el
             problema a fondo y definir el camino correcto para construir la
@@ -31,12 +31,12 @@ const ProcessTimelineNew = () => {
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Img
-              src="https://assets.aceternity.com/templates/startup-1.webp"
-              alt="startup template"
-            />
+                src="/images/analisis_1.jpg"
+                alt="hero template"
+              />
             <Img
-              src="https://assets.aceternity.com/templates/startup-2.webp"
-              alt="startup template"
+              src="/images/analisis_2.jpg"
+              alt="feature template"
             />
           </div>
         </div>
@@ -46,18 +46,18 @@ const ProcessTimelineNew = () => {
       title: "2. Planeación",
       content: (
         <div>
-          <p className="text-text-primary dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className="text-text-secondary dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             Organizamos la información en un plan de trabajo claro. Definimos
             tiempos, entregables y la arquitectura del proyecto, asegurando que
             cada paso tenga un propósito y esté alineado con tu visión.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Img
-              src="https://assets.aceternity.com/pro/hero-sections.png"
+              src="/images/planeacion_1.jpg"
               alt="hero template"
             />
             <Img
-              src="https://assets.aceternity.com/features-section.png"
+              src="/images/planeacion_2.jpeg"
               alt="feature template"
             />
           </div>
@@ -68,27 +68,19 @@ const ProcessTimelineNew = () => {
       title: "3. Diseño",
       content: (
         <div>
-          <p className="text-text-primary dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
+          <p className="text-text-secondary dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
             Creamos la identidad visual y la experiencia de usuario. El diseño
             no solo debe verse bien, sino guiar al usuario de manera intuitiva
             para lograr conversiones efectivas.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Img
-              src="https://assets.aceternity.com/pro/hero-sections.png"
+              src="/images/diseno_1.jpg"
               alt="hero template"
             />
             <Img
-              src="https://assets.aceternity.com/features-section.png"
+              src="/images/diseno_2.jpg"
               alt="feature template"
-            />
-            <Img
-              src="https://assets.aceternity.com/pro/bento-grids.png"
-              alt="bento template"
-            />
-            <Img
-              src="https://assets.aceternity.com/cards.png"
-              alt="cards template"
             />
           </div>
         </div>
@@ -98,19 +90,19 @@ const ProcessTimelineNew = () => {
       title: "4. Desarrollo",
       content: (
         <div>
-          <p className="text-red-600 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className="text-text-secondary dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             Convertimos el diseño en un sitio web funcional, ágil y seguro.
             Implementamos las últimas tecnologías y buenas prácticas para
             garantizar escalabilidad y rendimiento.
           </p>
           <div className="grid grid-cols-2 gap-4">
-            <Img
-              src="https://assets.aceternity.com/features-section.png"
-              alt="feature template"
+          <Img
+              src="/images/desarrollo_1.jpg"
+              alt="hero template"
             />
             <Img
-              src="https://assets.aceternity.com/pro/bento-grids.png"
-              alt="bento template"
+              src="/images/desarrollo_2.png"
+              alt="feature template"
             />
           </div>
         </div>
@@ -120,18 +112,18 @@ const ProcessTimelineNew = () => {
       title: "5. Lanzamiento",
       content: (
         <div>
-          <p className="text-red-600 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className="text-text-secondary dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             Publicamos tu proyecto y te acompañamos en el proceso de lanzamiento.
             Además, ofrecemos soporte y mejoras continuas para que tu sitio web
             siempre esté optimizado.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Img
-              src="https://assets.aceternity.com/templates/startup-3.webp"
+              src="/images/mockups_prosalud.png"
               alt="startup template"
             />
             <Img
-              src="https://assets.aceternity.com/templates/startup-4.webp"
+              src="/images/mockups_cafe_uribe.png"
               alt="startup template"
             />
           </div>

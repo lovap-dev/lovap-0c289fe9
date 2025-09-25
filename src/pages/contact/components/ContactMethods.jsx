@@ -9,7 +9,7 @@ const ContactMethods = () => {
       icon: 'Mail',
       title: 'Email Directo',
       description: 'Para consultas detalladas y documentación de proyectos',
-      contact: 'hola@lovapcorporate.com',
+      contact: 'lovap.dev@gmail.com',
       action: 'Enviar Email',
       responseTime: 'Respuesta en 2-4 horas',
       variant: 'primary'

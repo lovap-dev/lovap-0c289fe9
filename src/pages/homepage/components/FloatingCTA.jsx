@@ -153,7 +153,7 @@ const FloatingCTA = () => {
                     {/* Quick Stats */}
                     <div className="grid grid-cols-3 gap-3 pt-3 border-t border-border">
                       <div className="text-center">
-                        <div className="text-lg font-gilroy font-bold text-secondary">24h</div>
+                        <div className="text-lg font-gilroy font-bold text-secondary">2h</div>
                         <div className="text-xs text-text-secondary">Respuesta</div>
                       </div>
                       <div className="text-center">

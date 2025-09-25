@@ -25,7 +25,7 @@ const FloatingCTA = () => {
         window.open('https://wa.me/34600789123', '_blank');
         break;
       case 'email':
-        window.location.href = 'mailto:hola@lovapcorporate.com';
+        window.location.href = 'mailto:lovap.dev@gmail.com';
         break;
       case 'calendar':
         // In real app, this would open calendar booking
@@ -154,7 +154,7 @@ const FloatingCTA = () => {
         <div className="absolute -top-12 right-0 bg-secondary text-white text-xs px-3 py-1 rounded-full whitespace-nowrap shadow-lg">
           <div className="flex items-center space-x-1">
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span>Respuesta en 24h</span>
+            <span>Respuesta en 2h</span>
           </div>
         </div>
       )}
