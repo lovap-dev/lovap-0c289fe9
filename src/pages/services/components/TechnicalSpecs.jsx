@@ -193,7 +193,7 @@ const TechnicalSpecs = () => {
                     <h4 className="text-lg font-gilroy font-bold text-secondary">
                       {spec?.metric}
                     </h4>
-                    <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-gray-200 text-primary px-3 py-1 rounded-full text-sm font-medium">
                       {spec?.standard}
                     </span>
                   </div>
@@ -236,7 +236,7 @@ const TechnicalSpecs = () => {
             <div className="text-success font-semibold">100% Garantizado</div>
           </div>
 
-          <div className="bg-primary/10 rounded-2xl p-8 text-center">
+          <div className="bg-gray-200 rounded-2xl p-8 text-center">
             <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
               <Icon name="Clock" size={24} className="text-primary-foreground" />
             </div>

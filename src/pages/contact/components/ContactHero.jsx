@@ -17,7 +17,7 @@ const ContactHero = () => {
           {/* Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center space-x-2 bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-medium">
+              <div className="inline-flex items-center space-x-2 bg-gray-700 text-primary px-4 py-2 rounded-full text-sm font-medium">
                 <Icon name="MessageCircle" size={16} />
                 <span>Centro de Conversión</span>
               </div>
@@ -73,14 +73,14 @@ const ContactHero = () => {
           <div className="relative">
             <div className="grid gap-4">
               {/* Quick Contact Card */}
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
+              <div className="bg-black/20 backdrop-blur-sm border border-white/20 rounded-xl p-6">
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                     <Icon name="Zap" size={20} className="text-primary-foreground" />
                   </div>
                   <div>
                     <h3 className="font-gilroy font-semibold">Contacto Rápido</h3>
-                    <p className="text-sm text-white/70">Respuesta en 2 horas</p>
+                    <p className="text-sm text-white/70">Respuesta inmediata</p>
                   </div>
                 </div>
                 <div className="space-y-2 text-sm">
@@ -96,7 +96,7 @@ const ContactHero = () => {
               </div>
 
               {/* Project Quote Card */}
-              <div className="bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-xl p-6">
+              <div className="bg-black/20 backdrop-blur-sm border border-primary/30 rounded-xl p-6">
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
                     <Icon name="Calculator" size={20} className="text-secondary" />

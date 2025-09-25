@@ -22,7 +22,7 @@ const ServicePreview = () => {
         "Integración analytics",
         "Pruebas A/B"
       ],
-      color: "primary"
+      color: "secondary"
     },
     {
       id: 2,
@@ -58,7 +58,7 @@ const ServicePreview = () => {
         "Escalabilidad",
         "Mantenimiento"
       ],
-      color: "success"
+      color: "secondary"
     }
   ];
 
@@ -95,7 +95,7 @@ const ServicePreview = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 bg-primary/10 text-secondary px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center space-x-2 bg-gray-200 text-secondary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Icon name="Briefcase" size={16} />
             <span>Nuestros Servicios</span>
           </div>

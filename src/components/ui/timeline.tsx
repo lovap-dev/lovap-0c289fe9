@@ -18,11 +18,28 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
-    if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      setHeight(rect.height);
-    }
-  }, [ref]);
+    const el = ref.current;
+    if (!el) return;
+
+    const measure = () => {
+      // Use scrollHeight to capture full content height including overflow
+      setHeight(el.scrollHeight);
+    };
+
+    measure();
+
+    // Observe size/content changes (e.g., images loading, responsive layout)
+    const ro = new ResizeObserver(() => measure());
+    ro.observe(el);
+
+    const onResize = () => measure();
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -72,8 +89,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         <div
           style={{
             height: height + "px",
+            top: 0,
           }}
-          className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-gradient-to-b from-transparent via-border to-transparent [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
+          className="hidden md:block absolute md:left-8 left-8 overflow-hidden w-[2px] bg-gradient-to-b from-transparent via-border to-transparent [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
         >
           <motion.div
             style={{

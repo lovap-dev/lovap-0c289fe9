@@ -95,7 +95,7 @@ const PortfolioShowcase = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 bg-primary/10 text-secondary px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center space-x-2 bg-gray-200 text-secondary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Icon name="Briefcase" size={16} />
             <span>Portfolio</span>
           </div>
@@ -200,7 +200,7 @@ const PortfolioShowcase = () => {
                     </div>
 
                     {/* Testimonial */}
-                    <div className="bg-primary/5 rounded-xl p-6 border-l-4 border-primary">
+                    <div className="bg-gray-50 rounded-xl p-6 border-l-4 border-primary">
                       <p className="text-text-secondary italic mb-4">
                         "{projects?.[activeProject]?.testimonial?.text}"
                       </p>

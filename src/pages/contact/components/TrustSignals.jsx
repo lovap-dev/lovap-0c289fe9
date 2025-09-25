@@ -131,13 +131,13 @@ const TrustSignals = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center space-x-2 bg-gray-700 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Icon name="Shield" size={16} />
             <span>Confianza y Credibilidad</span>
           </div>
           <h2 className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary mb-6">
             La Confianza de Empresas
-            <span className="text-primary block">Líderes en España</span>
+            <span className="text-gray-400 block">Líderes en Colombia</span>
           </h2>
           <p className="text-lg text-text-secondary max-w-3xl mx-auto">
             Más de 150 empresas han confiado en nosotros para transformar su presencia digital y acelerar su crecimiento online.

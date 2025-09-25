@@ -57,8 +57,8 @@ const HeroSection = () => {
               transition={{ duration: 0.8 }}
               className="space-y-6"
             >
-              <div className="inline-flex items-center space-x-2 bg-primary/10 text-brand-text px-4 py-2 rounded-full text-sm font-medium">
-                <Icon name="Zap" size={16} />
+              <div className="inline-flex items-center space-x-2 bg-gray-200 text-brand-text px-4 py-2 rounded-full text-sm font-medium">
+                <Icon name="Zap" size={16} className='text-yellow-500' />
                 <span>Desarrollo Web Estratégico</span>
               </div>
 
@@ -86,8 +86,8 @@ const HeroSection = () => {
             >
               <div className="flex items-center space-x-4">
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
-                    <span className="text-2xl font-gilroy font-bold text-primary">
+                  <div className="w-16 h-16 rounded-xl flex items-center justify-center">
+                    <span className="text-2xl font-gilroy font-bold text-yellow-500">
                       {valuePropositions?.[currentValueProp]?.metric}
                     </span>
                   </div>
@@ -152,7 +152,7 @@ const HeroSection = () => {
               </div>
               <div className="flex items-center space-x-2 text-sm text-text-secondary">
                 <Icon name="Award" size={16} className="text-success" />
-                <span>Soporte post lanzamiento</span>
+                <span>Soporte dedicado</span>
               </div>
             </motion.div>
           </div>

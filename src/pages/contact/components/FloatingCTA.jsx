@@ -123,7 +123,7 @@ const FloatingCTA = () => {
       <div className="relative">
         {/* Primary CTA Button */}
         <Button
-          variant="default"
+          variant="ghost"
           size="lg"
           iconName={isExpanded ? "X" : "MessageCircle"}
           onClick={() => setIsExpanded(!isExpanded)}
@@ -154,7 +154,7 @@ const FloatingCTA = () => {
         <div className="absolute -top-12 right-0 bg-secondary text-white text-xs px-3 py-1 rounded-full whitespace-nowrap shadow-lg">
           <div className="flex items-center space-x-1">
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span>Respuesta en 2h</span>
+            <span>Respuesta rápida</span>
           </div>
         </div>
       )}

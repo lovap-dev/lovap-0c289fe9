@@ -14,7 +14,7 @@ const AboutPage = () => {
       <Helmet>
         <title>Sobre Nosotros - Lovap Corporate | Socios Estratégicos en Desarrollo Web</title>
         <meta name="description" content="Conoce al equipo Lovap: expertos en desarrollo web que transforman visiones empresariales en experiencias digitales exitosas. 150+ proyectos, 98% satisfacción cliente." />
-        <meta name="keywords" content="equipo desarrollo web, agencia digital España, socios tecnológicos, desarrollo web profesional, equipo experto React" />
+        <meta name="keywords" content="equipo desarrollo web, agencia digital Colombia, socios tecnológicos, desarrollo web profesional, equipo experto React" />
         <meta property="og:title" content="Sobre Nosotros - Lovap Corporate | Socios Estratégicos en Desarrollo Web" />
         <meta property="og:description" content="Conoce al equipo Lovap: expertos en desarrollo web que transforman visiones empresariales en experiencias digitales exitosas." />
         <meta property="og:type" content="website" />

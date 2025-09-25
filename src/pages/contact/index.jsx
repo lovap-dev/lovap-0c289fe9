@@ -78,7 +78,7 @@ const ContactPage = () => {
                 </span>
               </div>
               <p className="text-white/80 mb-4 max-w-md">
-                Transformamos visiones digitales en realidades de negocio. Socios estratégicos para el crecimiento online de empresas líderes en España.
+                Transformamos visiones digitales en realidades de negocio. Socios estratégicos para el crecimiento online de empresas líderes en Colombia.
               </p>
               <div className="text-sm text-white/60">
                 © {new Date()?.getFullYear()} Lovap Corporate. Todos los derechos reservados.

@@ -111,7 +111,7 @@ const ComparisonMatrix = () => {
                   className={`p-4 rounded-xl text-center transition-all duration-300 ${
                     selectedPlan === key
                       ? 'bg-primary text-primary-foreground'
-                      : 'bg-muted text-text-secondary hover:bg-primary/10'
+                      : 'bg-muted text-text-secondary hover:bg-gray-200'
                   }`}
                 >
                   <div className="font-gilroy font-bold text-sm">{plan?.name}</div>

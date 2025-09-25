@@ -26,7 +26,7 @@ const Homepage = () => {
           name="description" 
           content="Creamos sitios web que convierten visitantes en clientes. Aumenta tus conversiones hasta 300% con nuestras soluciones digitales estratégicas. Consulta gratuita disponible." 
         />
-        <meta name="keywords" content="desarrollo web, diseño web, conversiones, marketing digital, sitios corporativos, landing pages, España" />
+        <meta name="keywords" content="desarrollo web, diseño web, conversiones, marketing digital, sitios corporativos, landing pages, Colombia" />
         <meta property="og:title" content="Lovap Corporate - Desarrollo Web que Impulsa Negocios" />
         <meta property="og:description" content="Sitios web que convierten visitantes en clientes. ROI promedio 450%. Más de 150 empresas confían en nosotros." />
         <meta property="og:type" content="website" />
