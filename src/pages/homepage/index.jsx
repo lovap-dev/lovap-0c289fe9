@@ -110,9 +110,11 @@ const Homepage = () => {
                     <span className="text-white/80">Disponible 24/7</span>
                   </div>
                   <div className="flex items-center space-x4">
+                  <div className="flex items-center space-x-2 text-sm">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
                     <span className="text-white/80">Respuesta en menos de 1h</span>
                   </div>
+                </div>
                 </div>
               </div>
 
