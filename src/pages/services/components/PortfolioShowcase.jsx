@@ -97,7 +97,7 @@ const PortfolioShowcase = () => {
         >
           <div className="inline-flex items-center space-x-2 bg-gray-200 text-secondary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Icon name="Briefcase" size={16} />
-            <span>Portfolio</span>
+            <span>Portafolio de proyectos</span>
           </div>
 
           <h2 className="text-4xl lg:text-5xl font-gilroy font-bold text-secondary mb-6">
