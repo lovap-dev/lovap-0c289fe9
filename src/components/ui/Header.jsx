@@ -85,7 +85,7 @@ const Header = () => {
               </svg>
             </div>
             <span className="text-xl font-gilroy font-bold text-secondary">
-              Lovap Corporate
+              Lovap
             </span>
           </Link>
 
@@ -111,11 +111,11 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <Button
               asChild
-              variant="default"
-              size="md"
-              className="hidden sm:flex rounded-full px-5 bg-primary text-primary-foreground shadow-lg ring-1 ring-primary/30 hover:bg-primary/90 hover:opacity-90 transition-opacity"
-              iconName="ArrowRight"
-              iconPosition="right"
+              variant="default" 
+                size="lg"
+                iconName="Calculator"
+                iconPosition="left"
+                className="bg-primary text-primary-foreground hover:bg-accent"
             >
               <a href="https://wa.me/573006719235" target="_blank" rel="noopener noreferrer">Cotización Estratégica</a>
             </Button>
