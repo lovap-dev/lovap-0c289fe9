@@ -251,7 +251,7 @@ const TechnicalSpecs = () => {
 
           <div className="bg-warning/10 rounded-2xl p-8 text-center">
             <div className="w-16 h-16 bg-warning rounded-full flex items-center justify-center mx-auto mb-4">
-              <Icon name="TrendingUp" size={24} className="text-warning-foreground" />
+              <Icon name="TrendingUp" size={24} className="text-primary-foreground" />
             </div>
             <h3 className="text-xl font-gilroy font-bold text-secondary mb-3">
               Optimización Continua
