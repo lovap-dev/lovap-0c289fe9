@@ -8,7 +8,7 @@ import { DynamicTextSlider } from '@/components/ui/dynamic-text-slider';
 
 const HeroSection = () => {
   const [currentValueProp, setCurrentValueProp] = useState(0);
-  const [sliderHeight, setSliderHeight] = useState(56);
+  const [sliderHeight, setSliderHeight] = useState(110);
   const whatsappNumber = '573006719235'; // +57 (CO) + número provisto 3006719235
   const whatsappText = encodeURIComponent('Hola, me interesa una cotización estratégica para mi sitio web. Mi nombre es [Tu nombre]. ¿Podemos coordinar una llamada esta semana?');
 
@@ -43,7 +43,7 @@ const HeroSection = () => {
 
   useEffect(() => {
     const mq = window.matchMedia('(min-width: 768px)');
-    const update = () => setSliderHeight(mq.matches ? 78 : 56);
+    const update = () => setSliderHeight(mq.matches ? 78 : 110);
     update();
     if (mq.addEventListener) {
       mq.addEventListener('change', update);
@@ -61,14 +61,14 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-muted overflow-hidden pb-24 md:pb-28">
+    <section className="relative min-h-[85vh] md:min-h-screen flex items-start justify-start md:items-center md:justify-center bg-gradient-to-br from-background via-background to-muted overflow-hidden pt-20 md:pt-0 pb-20 md:pb-28">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 hidden md:block">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
       </div>
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
           {/* Content */}
           <div className="space-y-8">
             <motion.div
@@ -79,16 +79,16 @@ const HeroSection = () => {
             >
             
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-gilroy font-bold text-secondary leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-gilroy font-bold text-secondary leading-tight">
                 Sitios web que
                 <DynamicTextSlider
                   text="transforman negocios"
-                  className="block text-gray-400 font-gilroy font-bold text-4xl md:text-5xl leading-tight"
+                  className="block text-gray-400 font-gilroy font-bold text-3xl sm:text-4xl md:text-5xl leading-tight"
                   height={sliderHeight}
                 />
               </h1>
 
-              <p className="text-base sm:text-lg md:text-xl text-text-secondary leading-relaxed max-w-xl">
+              <p className="text-base sm:text-lg md:text-xl text-text-secondary leading-relaxed max-w-full md:max-w-xl">
                 Creamos experiencias digitales que convierten visitantes en clientes y aceleran el crecimiento de tu empresa con resultados medibles.
               </p>
             </motion.div>

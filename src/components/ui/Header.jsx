@@ -41,8 +41,8 @@ const Header = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-background/95 backdrop-blur-md shadow-card' 
-          : 'bg-background/50 backdrop-blur-sm'
+          ? 'bg-background shadow-card' 
+          : 'bg-background border-b border-border'
       }`}
     >
       <div className="w-full">
@@ -85,7 +85,7 @@ const Header = () => {
               </svg>
             </div>
             <span className="text-xl font-gilroy font-bold text-secondary">
-              Lovap
+              Lovap Corporate
             </span>
           </Link>
 
@@ -98,7 +98,7 @@ const Header = () => {
               className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-inter font-medium transition-smooth ${
                 isActivePath(item?.path)
                   ? 'bg-primary text-primary-foreground'
-                  : `${isScrolled ? 'text-text-primary' : 'text-foreground'} hover:bg-primary/10 backdrop-blur-sm relative after:absolute after:left-4 after:right-4 after:-bottom-1 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-200`
+                  : `text-foreground hover:bg-primary/10 relative after:absolute after:left-4 after:right-4 after:-bottom-1 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-200`
               }`}
               >
                 <Icon name={item?.icon} size={16} />
@@ -111,11 +111,11 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <Button
               asChild
-              variant="default" 
-                size="lg"
-                iconName="MessageCircle"
-                iconPosition="left"
-                className="bg-primary text-primary-foreground hover:bg-accent"
+              variant="default"
+              size="lg"
+              className="hidden sm:flex rounded-full bg-primary text-primary-foreground shadow-lg ring-1 ring-primary/30 hover:bg-primary/90"
+              iconName="ArrowRight"
+              iconPosition="right"
             >
               <a href="https://wa.me/573006719235" target="_blank" rel="noopener noreferrer">Cotización Estratégica</a>
             </Button>
@@ -165,11 +165,11 @@ const Header = () => {
                 <Button
                   asChild
                   variant="default"
-                  size="md"
+                  size="lg"
                   fullWidth
                   iconName="ArrowRight"
                   iconPosition="right"
-                  className="rounded-full px-5 bg-primary text-primary-foreground shadow-lg ring-1 ring-primary/30 hover:bg-primary/90 hover:opacity-90 transition-opacity"
+                  className="rounded-full bg-primary text-primary-foreground shadow-lg ring-1 ring-primary/30 hover:bg-primary/90"
                   onClick={closeMenu}
                 >
                   <a href="https://wa.me/573006719235" target="_blank" rel="noopener noreferrer">Cotización Estratégica</a>

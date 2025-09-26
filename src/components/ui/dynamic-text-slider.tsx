@@ -79,6 +79,7 @@ function OpenSourceSlider({ width: initialWidth, height = 70, handleSize = 28, o
   const [draggingHandle, setDraggingHandle] = useState<"left" | "right" | null>(null);
   // State to hold the dynamic rotation angle
   const [dynamicRotation, setDynamicRotation] = useState(ROTATION_DEG);
+  const [isMdUp, setIsMdUp] = useState<boolean>(typeof window !== "undefined" ? window.matchMedia('(min-width: 768px)').matches : false);
 
   const leftRef = useRef(left);
   const rightRef = useRef(right);
@@ -96,20 +97,30 @@ function OpenSourceSlider({ width: initialWidth, height = 70, handleSize = 28, o
     onChange?.({ left, right, range: right - left });
   }, [left, right, onChange]);
   
-  // Effect to calculate and set the dynamic rotation
+  // Effect to calculate and set the dynamic rotation (0deg on mobile)
   useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)');
+    const onChange = () => setIsMdUp(mq.matches);
+    onChange();
+    mq.addEventListener ? mq.addEventListener('change', onChange) : mq.addListener(onChange);
+
     if (width > 0) {
-      const handleMidpoint = (left + right) / 2;
-      const sliderCenter = width / 2;
-      // Calculate deviation of the handle midpoint from the slider's absolute center
-      const deviationFactor = (handleMidpoint - sliderCenter) / sliderCenter;
-      // Define the maximum amount of additional tilt
-      const maxAdditionalTilt = 3; 
-      // Calculate the new rotation based on the deviation
-      const newRotation = ROTATION_DEG + (deviationFactor * maxAdditionalTilt);
-      setDynamicRotation(newRotation);
+      if (!isMdUp) {
+        setDynamicRotation(0);
+      } else {
+        const handleMidpoint = (left + right) / 2;
+        const sliderCenter = width / 2;
+        const deviationFactor = (handleMidpoint - sliderCenter) / sliderCenter;
+        const maxAdditionalTilt = 3; 
+        const newRotation = ROTATION_DEG + (deviationFactor * maxAdditionalTilt);
+        setDynamicRotation(newRotation);
+      }
     }
-  }, [left, right, width]);
+
+    return () => {
+      mq.removeEventListener ? mq.removeEventListener('change', onChange) : mq.removeListener(onChange);
+    };
+  }, [left, right, width, isMdUp]);
 
   useEffect(() => setRight(width), [width]);
 
@@ -177,7 +188,7 @@ function OpenSourceSlider({ width: initialWidth, height = 70, handleSize = 28, o
       className="relative select-none transition-transform duration-300 ease-out"
       style={{ width, height, transform: `rotate(${dynamicRotation}deg)`  }}
     >
-      <div className="absolute inset-0 rounded-2xl border border-yellow-500 pointer-events-none" />
+      <div className="absolute inset-0 rounded-2xl border border-yellow-500 pointer-events-none hidden md:block" />
       {["left", "right"].map((handle) => {
         const x = handle === "left" ? left : right - handleSize;
         const scaleClass = draggingHandle === (handle as any) ? "scale-125" : "hover:scale-110";
@@ -189,7 +200,7 @@ function OpenSourceSlider({ width: initialWidth, height = 70, handleSize = 28, o
             aria-label={handle === "left" ? "Adjust start" : "Adjust end"}
             onPointerDown={(e) => startDrag(handle as "left" | "right", e)}
             onKeyDown={nudgeHandle(handle as "left" | "right")}
-            className={`z-20 absolute top-0 h-full w-7 rounded-full bg-[#262626] border border-yellow-500 flex items-center justify-center cursor-ew-resize focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-transform duration-150 ease-in-out opacity-100 ${scaleClass}` }
+            className={`z-20 absolute top-0 h-full w-7 rounded-full bg-[#262626] border border-yellow-500 hidden md:flex items-center justify-center cursor-ew-resize focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-transform duration-150 ease-in-out opacity-100 ${scaleClass}` }
             style={{ left: x, touchAction: "none" }}
           >
             <span className="w-1 h-8 rounded-full bg-yellow-500" />

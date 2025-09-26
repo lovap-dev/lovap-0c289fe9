@@ -8,6 +8,7 @@ import ProcessOverview from './components/ProcessOverview';
 import TechnicalSpecs from './components/TechnicalSpecs';
 import ComparisonMatrix from './components/ComparisonMatrix';
 import CTASection from './components/CTASection';
+import Footer from '../../components/ui/Footer';
 
 const ServicesPage = () => {
   return (
@@ -24,6 +25,7 @@ const ServicesPage = () => {
         <ComparisonMatrix />
         <CTASection />
       </main>
+      <Footer />
     </div>
   );
 };

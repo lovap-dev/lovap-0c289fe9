@@ -7,6 +7,7 @@ import ValuesSection from './components/ValuesSection';
 import ClientLogosSection from './components/ClientLogosSection';
 import TimelineSection from './components/TimelineSection';
 import CTASection from './components/CTASection';
+import Footer from '../../components/ui/Footer';
 
 const AboutPage = () => {
   return (
@@ -29,10 +30,11 @@ const AboutPage = () => {
           <HeroSection />
           <TeamSection />
           <ValuesSection />
-          <ClientLogosSection />
-          <TimelineSection />
+          {/* <ClientLogosSection /> */ }
+          {/* <TimelineSection /> */ }
           <CTASection />
         </main>
+        <Footer />
       </div>
     </>
   );

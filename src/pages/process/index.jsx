@@ -7,6 +7,7 @@ import ProjectTypes from './components/ProjectTypes';
 import QualityAssurance from './components/QualityAssurance';
 import ClientTestimonials from './components/ClientTestimonials';
 import ProcessCTA from './components/ProcessCTA';
+import Footer from '../../components/ui/Footer';
 
 const ProcessPage = () => {
   return (
@@ -35,54 +36,7 @@ const ProcessPage = () => {
           <ClientTestimonials />
           <ProcessCTA />
         </main>
-
-        {/* Footer */}
-        <footer className="bg-secondary text-white py-12">
-          <div className="container mx-auto px-6 lg:px-8">
-            <div className="text-center">
-              <div className="flex items-center justify-center space-x-2 mb-4">
-                <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-lg">
-                  <svg 
-                    width="24" 
-                    height="24" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    className="text-primary-foreground"
-                  >
-                    <path 
-                      d="M12 2L2 7L12 12L22 7L12 2Z" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round"
-                    />
-                    <path 
-                      d="M2 17L12 22L22 17" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round"
-                    />
-                    <path 
-                      d="M2 12L12 17L22 12" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <span className="text-xl font-gilroy font-bold">Lovap</span>
-              </div>
-              <p className="text-white/70 mb-4">
-                Transformando ideas en experiencias digitales excepcionales
-              </p>
-              <p className="text-white/50 text-sm">
-                © {new Date()?.getFullYear()} Lovap. Todos los derechos reservados.
-              </p>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );
