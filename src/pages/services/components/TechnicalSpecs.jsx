@@ -249,7 +249,7 @@ const TechnicalSpecs = () => {
             <div className="text-primary font-semibold">6 Meses Incluidos</div>
           </div>
 
-          <div className="bg-warning/10 rounded-2xl p-8 text-center">
+          <div className="bg-gray-200 rounded-2xl p-8 text-center">
             <div className="w-16 h-16 bg-warning rounded-full flex items-center justify-center mx-auto mb-4">
               <Icon name="TrendingUp" size={24} className="text-primary-foreground" />
             </div>
