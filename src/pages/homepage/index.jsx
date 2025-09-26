@@ -156,10 +156,10 @@ const Homepage = () => {
                   <div className="text-sm">
                     <div className="text-white/60 mb-1">Teléfono</div>
                     <a 
-                      href="tel:+34900123456" 
+                      href="tel:+573006719235" 
                       className="text-white/80 hover:text-primary transition-colors"
                     >
-                      +34 900 123 456
+                      +57 300 6719235
                     </a>
                   </div>
                   <div className="text-sm">
