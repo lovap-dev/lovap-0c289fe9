@@ -113,7 +113,7 @@ const Header = () => {
               asChild
               variant="default" 
                 size="lg"
-                iconName="message"
+                iconName="MessageCircle"
                 iconPosition="left"
                 className="bg-primary text-primary-foreground hover:bg-accent"
             >
