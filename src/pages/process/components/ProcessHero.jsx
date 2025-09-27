@@ -9,13 +9,13 @@ const ProcessHero = () => {
   const handleWhatsAppContact = () => {
     const message = encodeURIComponent(`¡Hola! 👋 
 
-Me interesa agendar una consultoría estratégica para conocer su metodología de desarrollo web.
+Me interesa agendar una consultoría estratégica gratuita.
 
 Estoy disponible para la consulta:
 📅 Días preferidos: [Agregar días de preferencia]
 🕐 Horarios disponibles: [Agregar horarios disponibles]
 
-¡Espero coordinar una reunión pronto!`);
+Espero coordinar una reunión pronto`);
     
     try {
       window.open(`https://wa.me/573006719235?text=${message}`, '_blank');
@@ -98,8 +98,7 @@ Estoy disponible para la consulta:
               className="group bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary text-primary-foreground font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               <span className="flex items-center space-x-2">
-                <Icon name="Calendar" size={20} className="group-hover:rotate-12 transition-transform duration-300" />
-                <span>Agendar Consultoría</span>
+                <span>Agendar Consultoría gratuita</span>
               </span>
             </Button>
             <Button
