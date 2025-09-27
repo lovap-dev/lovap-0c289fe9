@@ -82,7 +82,7 @@ Espero coordinar una reunión pronto`);
               <div className="text-sm text-text-primary/70 font-medium">Soporte Técnico</div>
             </div>
             <div className="text-center p-4 rounded-lg bg-gradient-to-br from-accent/5 to-transparent border border-accent/10 hover:shadow-card transition-all duration-300">
-              <div className="text-2xl lg:text-3xl font-gilroy font-bold text-accent-foreground mb-1">45</div>
+              <div className="text-2xl lg:text-3xl font-gilroy font-bold text-accent-foreground mb-1">21</div>
               <div className="text-sm text-text-primary/70 font-medium">Días Promedio</div>
             </div>
           </div>
