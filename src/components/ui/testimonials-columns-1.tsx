@@ -40,7 +40,7 @@ export const TestimonialsColumn = (props: {
                   <div className="flex items-center gap-3">
                     <Avatar className="h-10 w-10">
                       {image && <AvatarImage src={image} alt={name} />}
-                      <AvatarFallback className="bg-primary/10 text-primary font-semibold text-sm">
+                      <AvatarFallback className="bg-secondary text-secondary-foreground font-semibold text-sm">
                         {getInitials(name)}
                       </AvatarFallback>
                     </Avatar>
@@ -123,11 +123,6 @@ const thirdColumn = testimonials.slice(6, 9);
 const TestimonialsSection = () => {
   return (
     <section className="bg-background py-20 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-32 h-32 border border-primary/10 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-24 h-24 border border-accent/20 rounded-full animate-bounce"></div>
-      </div>
 
       <div className="container z-10 mx-auto px-6 lg:px-8">
         <motion.div
@@ -143,7 +138,7 @@ const TestimonialsSection = () => {
             </div>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-gilroy font-bold tracking-tight mt-6 text-center bg-gradient-to-r from-secondary to-secondary/80 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-gilroy font-bold tracking-tight mt-6 text-center text-secondary">
             Experiencias de Nuestros Clientes
           </h2>
           <p className="text-center mt-4 text-lg text-text-primary/70 leading-relaxed">
