@@ -130,6 +130,29 @@ const ProcessTimelineNew = () => {
         </div>
       ),
     },
+    {
+      title: "6. Mantenimiento",
+      content: (
+        <div>
+          <p className="text-text-secondary dark:text-text-secondary text-xs md:text-sm font-normal mb-8">
+            Garantizamos que tu proyecto se mantenga actualizado, seguro y en 
+            óptimo rendimiento. Realizamos monitoreo constante, aplicamos 
+            actualizaciones y añadimos mejoras según las necesidades de tu 
+            negocio y de los usuarios.
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <Img
+              src="/images/mantenimiento_1.jpg"
+              alt="maintenance template"
+            />
+            <Img
+              src="/images/mantenimiento_2.jpg"
+              alt="maintenance template"
+            />
+          </div>
+        </div>
+      ),
+    }
   ];
 
   return (
