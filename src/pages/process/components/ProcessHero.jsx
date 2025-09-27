@@ -98,7 +98,7 @@ Espero coordinar una reunión pronto`);
               className="group bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary text-primary-foreground font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               <span className="flex items-center space-x-2">
-                <span>Agendar Consultoría gratuita</span>
+                <span>Agendar Consultoría Gratuita</span>
               </span>
             </Button>
             <Button
