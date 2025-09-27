@@ -146,7 +146,6 @@ const HeroSection = () => {
                 size="xl"
                 iconName="Play"
                 iconPosition="left"
-                onClick={handleGoToServices}
                 className="group border-2 border-secondary/20 text-secondary hover:bg-secondary hover:text-secondary-foreground font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
               >
                 <span className="flex items-center space-x-2">
