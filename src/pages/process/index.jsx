@@ -5,7 +5,7 @@ import ProcessHero from './components/ProcessHero';
 import ProcessTimelineNew from './components/ProcessTimelineNew';
 import ProjectTypes from './components/ProjectTypes';
 import QualityAssurance from './components/QualityAssurance';
-import ClientTestimonials from './components/ClientTestimonials';
+import TestimonialsSection from '../../components/ui/testimonials-columns-1';
 import ProcessCTA from './components/ProcessCTA';
 import Footer from '../../components/ui/Footer';
 
@@ -33,7 +33,7 @@ const ProcessPage = () => {
           <ProcessTimelineNew />
           {/* <ProjectTypes />  */}
           <QualityAssurance />
-          <ClientTestimonials />
+          <TestimonialsSection />
           <ProcessCTA />
         </main>
         <Footer />
