@@ -146,9 +146,12 @@ const HeroSection = () => {
                 size="xl"
                 iconName="Play"
                 iconPosition="left"
-                className="rounded-full px-8 py-4 text-base w-full sm:w-auto border-2 border-secondary text-secondary bg-white hover:bg-secondary/10 hover:opacity-95 hover:shadow-md transition-opacity"
+                onClick={handleGoToServices}
+                className="group border-2 border-secondary/20 text-secondary hover:bg-secondary hover:text-secondary-foreground font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
               >
-                <Link to="/services">Ver Servicios</Link>
+                <span className="flex items-center space-x-2">
+                  <Link to="/services">Ver Servicios</Link>
+                </span>
               </Button>
             </motion.div>
 
