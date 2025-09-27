@@ -111,7 +111,6 @@ Espero coordinar una reunión pronto`);
             >
               <span className="flex items-center space-x-2">
                 <span>Ver Nuestros Servicios</span>
-                <Icon name="ArrowRight" size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
               </span>
             </Button>
           </div>
