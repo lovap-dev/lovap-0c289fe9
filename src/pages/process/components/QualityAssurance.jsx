@@ -199,54 +199,89 @@ const QualityAssurance = () => {
         </div>
 
         {/* Certifications */}
-        <div className="max-w-4xl mx-auto">
-          <h3 className="text-2xl lg:text-3xl font-gilroy font-bold text-secondary text-center mb-8">
-            Certificaciones y Estándares
-          </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center bg-primary/10 border border-primary/20 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
+              Certificaciones
+            </div>
+            <h3 className="text-2xl lg:text-3xl font-gilroy font-bold text-secondary">
+              Estándares de Calidad Verificados
+            </h3>
+            <p className="text-text-primary/70 mt-3 max-w-2xl mx-auto">
+              Cumplimos con los estándares más exigentes de la industria para garantizar la excelencia en cada proyecto.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {certifications?.map((cert, index) => (
-              <div key={index} className="bg-card rounded-xl p-6 text-center shadow-card hover:shadow-card-elevated transition-all duration-300">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Icon name={cert?.icon} size={24} className="text-primary" />
+              <div key={index} className="group bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 text-center shadow-lg shadow-primary/5 hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 transition-all duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300">
+                  <Icon name={cert?.icon} size={28} className="text-primary group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <h4 className="font-gilroy font-semibold text-secondary mb-2">
+                <h4 className="font-gilroy font-bold text-secondary mb-2 text-lg">
                   {cert?.name}
                 </h4>
-                <p className="text-sm text-text-primary/70 mb-3">
+                <p className="text-sm text-text-primary/70 mb-4 leading-relaxed">
                   {cert?.description}
                 </p>
-                <span className="inline-flex items-center px-3 py-1 bg-success/10 text-success rounded-full text-xs font-medium">
-                  <Icon name="Check" size={12} className="mr-1" />
+                <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-success/10 to-success/5 border border-success/20 text-success rounded-full text-sm font-semibold">
+                  <Icon name="Check" size={14} className="mr-2" />
                   {cert?.status}
-                </span>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Quality Promise */}
-        <div className="max-w-4xl mx-auto mt-16">
-          <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 lg:p-12 text-center">
-            <Icon name="Award" size={48} className="text-primary mx-auto mb-6" />
-            <h3 className="text-2xl lg:text-3xl font-gilroy font-bold text-secondary mb-4">
-              Garantía de Calidad 100%
-            </h3>
-            <p className="text-lg text-text-primary/80 mb-6 max-w-2xl mx-auto">
-              Si tu proyecto no cumple con nuestros estándares de calidad, trabajamos sin costo adicional 
-              hasta alcanzar la excelencia prometida.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <div className="flex items-center space-x-2 text-success">
-                <Icon name="Shield" size={20} />
-                <span className="font-medium">30 días de garantía</span>
+        <div className="max-w-5xl mx-auto mt-12">
+          <div className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 border border-primary/20 rounded-3xl p-8 lg:p-10 text-center">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-accent/10 to-transparent rounded-full blur-2xl"></div>
+            
+            <div className="relative z-10">
+              <div className="inline-flex items-center bg-gradient-to-r from-primary/20 to-primary/10 border border-primary/30 text-primary px-6 py-3 rounded-full font-semibold mb-6 shadow-lg">
+                <Icon name="Award" size={20} className="mr-2" />
+                Garantía Total
               </div>
-              <div className="flex items-center space-x-2 text-success">
-                <Icon name="RefreshCw" size={20} />
-                <span className="font-medium">Revisiones ilimitadas</span>
-              </div>
-              <div className="flex items-center space-x-2 text-success">
-                <Icon name="Headphones" size={20} />
-                <span className="font-medium">Soporte técnico 24/7</span>
+              
+              <h3 className="text-2xl lg:text-4xl font-gilroy font-bold text-secondary mb-4 leading-tight">
+                Compromiso de Excelencia
+                <span className="block text-primary">100% Garantizado</span>
+              </h3>
+              
+              <p className="text-lg text-text-primary/80 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Nuestro compromiso va más allá de la entrega. Si tu proyecto no supera todos nuestros 
+                estándares de calidad, continuamos trabajando sin costo adicional hasta lograr la excelencia prometida.
+              </p>
+              
+              <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shadow-lg">
+                  <div className="w-12 h-12 bg-success/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Icon name="Shield" size={24} className="text-success" />
+                  </div>
+                  <h4 className="font-gilroy font-bold text-secondary mb-2">Garantía Extendida</h4>
+                  <p className="text-text-primary/70 text-sm mb-3">Protección completa durante 30 días post-lanzamiento</p>
+                  <span className="text-success font-semibold">30 días</span>
+                </div>
+                
+                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shadow-lg">
+                  <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Icon name="RefreshCw" size={24} className="text-primary" />
+                  </div>
+                  <h4 className="font-gilroy font-bold text-secondary mb-2">Revisiones Sin Límite</h4>
+                  <p className="text-text-primary/70 text-sm mb-3">Ajustes y mejoras hasta tu completa satisfacción</p>
+                  <span className="text-primary font-semibold">Ilimitadas</span>
+                </div>
+                
+                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shadow-lg">
+                  <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Icon name="Headphones" size={24} className="text-accent" />
+                  </div>
+                  <h4 className="font-gilroy font-bold text-secondary mb-2">Soporte Premium</h4>
+                  <p className="text-text-primary/70 text-sm mb-3">Asistencia técnica especializada las 24 horas</p>
+                  <span className="text-accent font-semibold">24/7</span>
+                </div>
               </div>
             </div>
           </div>
