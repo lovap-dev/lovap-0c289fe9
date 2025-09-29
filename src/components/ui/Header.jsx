@@ -113,7 +113,7 @@ const Header = () => {
               asChild
               variant="default"
               size="lg"
-              className="hidden sm:flex rounded-lg bg-[#0D4A58] text-primary shadow-lg ring-1"
+              className="hidden sm:flex rounded-lg bg-[#1B2033] text-primary shadow-lg ring-1"
               iconName="ArrowRight"
               iconPosition="right"
             >
