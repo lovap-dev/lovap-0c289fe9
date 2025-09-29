@@ -173,7 +173,7 @@ const QualityAssurance = () => {
                         <div className="font-medium text-secondary">{metric?.label}</div>
                         <div className="text-sm text-text-primary/70">{metric?.description}</div>
                       </div>
-                      <div className="text-primary font-bold text-lg">
+                      <div className="text-secondary font-bold text-lg">
                         {metric?.target}
                       </div>
                     </div>
@@ -240,24 +240,24 @@ const QualityAssurance = () => {
               {
                 step: "01",
                 title: "Garantía Extendida",
-                content: "Protección completa durante 30 días post-lanzamiento. Si surge cualquier problema, lo resolvemos sin costo adicional.",
-                image: "/images/mantenimiento_1.jpg"
+                content: "Respaldo total durante 30 días post-lanzamiento. Nos hacemos cargo de cualquier inconveniente sin costo adicional, asegurando tu tranquilidad.",
+                image: "/images/garantia.png"
               },
               {
                 step: "02",
-                title: "Revisiones Sin Límite",
-                content: "Ajustes y mejoras necesarios hasta que quedes plenamente satisfecho con el resultado, asegurando una entrega final de calidad.",
-                image: "/images/desarrollo_1.jpg"
+                title: "Revisiones Incluidas",
+                content: "Realizamos todos los ajustes y mejoras necesarios hasta que el resultado refleje exactamente lo que buscas, con la máxima calidad.",
+                image: "/images/revision.png"
               },
               {
                 step: "03",
-                title: "Soporte Premium 24/7",
-                content: "Asistencia técnica especializada las 24 horas, los 7 días de la semana. Siempre estamos disponibles para ti.",
-                image: "/images/planeacion_1.jpg"
+                title: "Soporte Continuo",
+                content: "Nuestro equipo está disponible en todo momento para ofrecerte asistencia técnica inmediata y confiable, cuando más la necesites.",
+                image: "/images/soporte.png"
               }
             ]}
             title="Compromiso con la Excelencia"
-            autoPlayInterval={4000}
+            autoPlayInterval={6000}
             className="py-0"
           />
         </div>
