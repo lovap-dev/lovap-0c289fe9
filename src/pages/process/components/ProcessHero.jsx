@@ -73,7 +73,7 @@ Espero coordinar una reunión pronto`);
   };
 
   return (
-    <section className="relative bg-secondary py-24 lg:py-40 overflow-hidden">
+    <section className="relative bg-secondary py-16 lg:py-24 overflow-hidden">
       {/* Subtle Background Elements */}
       <div className="absolute inset-0">
         {/* Grid pattern */}

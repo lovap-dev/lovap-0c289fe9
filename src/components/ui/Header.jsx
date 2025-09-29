@@ -111,9 +111,9 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <Button
               asChild
-              variant="default"
+              variant="cta"
               size="lg"
-              className="hidden sm:flex rounded-lg bg-[#1B2033] text-white shadow-md ring-1"
+              className="hidden sm:flex rounded-full font-semibold"
               iconName="ArrowRight"
               iconPosition="right"
             >

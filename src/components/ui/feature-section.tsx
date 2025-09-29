@@ -43,7 +43,7 @@ export function FeatureSteps({
   return (
     <div className={cn("p-8 md:p-12", className)}>
       <div className="max-w-7xl mx-auto w-full">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-10 text-center">
+        <h2 className="text-3xl lg:text-5xl font-gilroy font-bold mb-10 text-center text-secondary">
           {title}
         </h2>
 
@@ -73,10 +73,10 @@ export function FeatureSteps({
                 </motion.div>
 
                 <div className="flex-1">
-                  <h3 className="text-xl md:text-2xl font-semibold">
+                  <h3 className="text-xl lg:text-2xl font-gilroy font-semibold text-secondary">
                     {feature.title || feature.step}
                   </h3>
-                  <p className="text-sm md:text-lg text-muted-foreground">
+                  <p className="text-base text-text-primary/80">
                     {feature.content}
                   </p>
                 </div>

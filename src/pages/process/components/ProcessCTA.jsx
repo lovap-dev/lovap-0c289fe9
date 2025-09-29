@@ -35,7 +35,7 @@ const ProcessCTA = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-br from-secondary via-secondary/95 to-secondary text-white relative overflow-hidden">
+    <section className="py-16 lg:py-24 bg-gradient-to-br from-secondary via-secondary/95 to-secondary text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-32 h-32 border border-primary rounded-full"></div>
