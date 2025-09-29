@@ -1,7 +1,51 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import Button from '../../../components/ui/Button';
 import Icon from '../../../components/AppIcon';
+
+const AnimatedText = () => {
+  const texts = [
+    'Desarrollo Web',
+    'Aplicaciones Móviles',
+    'E-Commerce',
+    'Plataformas SaaS',
+    'Sistemas Personalizados'
+  ];
+  
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  
+  useEffect(() => {
+    const currentText = texts[currentIndex];
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        if (displayText.length < currentText.length) {
+          setDisplayText(currentText.slice(0, displayText.length + 1));
+        } else {
+          setTimeout(() => setIsDeleting(true), 2000);
+        }
+      } else {
+        if (displayText.length > 0) {
+          setDisplayText(currentText.slice(0, displayText.length - 1));
+        } else {
+          setIsDeleting(false);
+          setCurrentIndex((prev) => (prev + 1) % texts.length);
+        }
+      }
+    }, isDeleting ? 50 : 100);
+    
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, currentIndex]);
+  
+  return (
+    <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+      {displayText}
+      <span className="animate-pulse">|</span>
+    </span>
+  );
+};
 
 const ProcessHero = () => {
   const navigate = useNavigate();
@@ -29,73 +73,93 @@ Espero coordinar una reunión pronto`);
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-background via-muted/10 to-primary/5 py-20 lg:py-32 overflow-hidden">
-      {/* Enhanced Background Elements */}
+    <section className="relative bg-secondary py-24 lg:py-40 overflow-hidden">
+      {/* Subtle Background Elements */}
       <div className="absolute inset-0">
-        {/* Animated circles */}
-        <div className="absolute top-20 left-10 w-32 h-32 border-2 border-primary/20 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-24 h-24 border-2 border-accent/30 rounded-full animate-bounce"></div>
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg rotate-45 animate-spin" style={{animationDuration: '10s'}}></div>
+        {/* Grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
         
-        {/* Additional decorative elements */}
-        <div className="absolute top-1/3 right-1/4 w-8 h-8 bg-primary/20 rounded-full"></div>
-        <div className="absolute bottom-1/3 left-1/6 w-12 h-12 border border-secondary/10 rounded-full"></div>
-        
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-primary/2"></div>
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-6 lg:px-8 relative">
         <div className="max-w-4xl mx-auto text-center">
           {/* Enhanced Badge */}
-          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary/10 to-accent/10 backdrop-blur-sm border border-primary/20 text-secondary px-6 py-3 rounded-full text-sm font-medium mb-8 shadow-subtle hover:shadow-card transition-all duration-300">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center space-x-2 bg-primary/20 backdrop-blur-sm border border-primary/30 text-primary-foreground px-6 py-3 rounded-full text-sm font-medium mb-10 shadow-lg"
+          >
             <Icon name="GitBranch" size={16} className="text-primary" />
             <span className="font-semibold">Metodología Transparente</span>
-          </div>
+          </motion.div>
 
-          {/* Enhanced Main Heading */}
-          <h1 className="text-4xl lg:text-6xl font-gilroy font-bold text-secondary mb-8 leading-tight">
+          {/* Enhanced Main Heading with Animated Text */}
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-gilroy font-bold text-primary-foreground mb-10 leading-tight"
+          >
             Nuestro Proceso de
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent block lg:inline lg:ml-4">
-              Desarrollo Web
+            <span className="block mt-2">
+              <AnimatedText />
             </span>
-          </h1>
+          </motion.h1>
 
           {/* Enhanced Description */}
-          <p className="text-lg lg:text-xl text-text-primary/80 mb-10 max-w-3xl mx-auto leading-relaxed">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-lg lg:text-xl text-primary-foreground/80 mb-12 max-w-3xl mx-auto leading-relaxed"
+          >
             Descubre nuestra metodología probada que combina excelencia técnica con resultados de negocio medibles. 
             Cada fase está diseñada para maximizar el ROI y minimizar los riesgos del proyecto.
-          </p>
+          </motion.p>
 
           {/* Enhanced Stats */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <div className="text-center p-4 rounded-lg bg-gradient-to-br from-primary/5 to-transparent border border-primary/10 hover:shadow-card transition-all duration-300">
-              <div className="text-2xl lg:text-3xl font-gilroy font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-1">6</div>
-              <div className="text-sm text-text-primary/70 font-medium">Fases Estructuradas</div>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+          >
+            <div className="text-center p-6 rounded-xl bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 hover:border-primary/50 hover:bg-primary-foreground/10 transition-all duration-300">
+              <div className="text-3xl lg:text-4xl font-gilroy font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">6</div>
+              <div className="text-sm text-primary-foreground/70 font-medium">Fases Estructuradas</div>
             </div>
-            <div className="text-center p-4 rounded-lg bg-gradient-to-br from-success/5 to-transparent border border-success/10 hover:shadow-card transition-all duration-300">
-              <div className="text-2xl lg:text-3xl font-gilroy font-bold text-success mb-1">98%</div>
-              <div className="text-sm text-text-primary/70 font-medium">Satisfacción Cliente</div>
+            <div className="text-center p-6 rounded-xl bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 hover:border-success/50 hover:bg-primary-foreground/10 transition-all duration-300">
+              <div className="text-3xl lg:text-4xl font-gilroy font-bold text-success mb-2">98%</div>
+              <div className="text-sm text-primary-foreground/70 font-medium">Satisfacción Cliente</div>
             </div>
-            <div className="text-center p-4 rounded-lg bg-gradient-to-br from-secondary/5 to-transparent border border-secondary/10 hover:shadow-card transition-all duration-300">
-              <div className="text-2xl lg:text-3xl font-gilroy font-bold text-secondary mb-1">24/7</div>
-              <div className="text-sm text-text-primary/70 font-medium">Soporte Técnico</div>
+            <div className="text-center p-6 rounded-xl bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 hover:border-primary/50 hover:bg-primary-foreground/10 transition-all duration-300">
+              <div className="text-3xl lg:text-4xl font-gilroy font-bold text-primary-foreground mb-2">24/7</div>
+              <div className="text-sm text-primary-foreground/70 font-medium">Soporte Técnico</div>
             </div>
-            <div className="text-center p-4 rounded-lg bg-gradient-to-br from-accent/5 to-transparent border border-accent/10 hover:shadow-card transition-all duration-300">
-              <div className="text-2xl lg:text-3xl font-gilroy font-bold text-accent-foreground mb-1">21</div>
-              <div className="text-sm text-text-primary/70 font-medium">Días Promedio</div>
+            <div className="text-center p-6 rounded-xl bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 hover:border-accent/50 hover:bg-primary-foreground/10 transition-all duration-300">
+              <div className="text-3xl lg:text-4xl font-gilroy font-bold text-accent mb-2">21</div>
+              <div className="text-sm text-primary-foreground/70 font-medium">Días Promedio</div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Enhanced CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6"
+          >
             <Button
               variant="default"
               size="lg"
               iconName="Calendar"
               iconPosition="left"
               onClick={handleWhatsAppContact}
-              className="group bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary text-primary-foreground font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="group bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary text-primary-foreground font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105"
             >
               <span className="flex items-center space-x-2">
                 <span>Agendar Consultoría Gratuita</span>
@@ -107,13 +171,13 @@ Espero coordinar una reunión pronto`);
               iconName="ArrowRight"
               iconPosition="right"
               onClick={handleGoToServices}
-              className="group border-2 border-secondary/20 text-secondary hover:bg-secondary hover:text-secondary-foreground font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+              className="group border-2 border-primary-foreground/20 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105"
             >
               <span className="flex items-center space-x-2">
                 <span>Ver Nuestros Servicios</span>
               </span>
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
