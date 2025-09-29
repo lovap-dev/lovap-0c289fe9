@@ -93,8 +93,8 @@ Espero coordinar una reunión pronto`);
             transition={{ duration: 0.6 }}
             className="inline-flex items-center space-x-2 bg-primary/20 backdrop-blur-sm border border-primary/30 text-primary-foreground px-6 py-3 rounded-full text-sm font-medium mb-10 shadow-lg"
           >
-            <Icon name="GitBranch" size={16} className="text-primary" />
-            <span className="font-semibold">Metodología Transparente</span>
+            <Icon name="GitBranch" size={16} className="text-white" />
+            <span className="font-semibold text-white">Metodología Transparente</span>
           </motion.div>
 
           {/* Enhanced Main Heading with Animated Text */}
@@ -102,7 +102,7 @@ Espero coordinar una reunión pronto`);
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-gilroy font-bold text-primary-foreground mb-10 leading-tight"
+            className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-gilroy font-bold text-white mb-10 leading-tight"
           >
             Nuestro Proceso de
             <span className="block mt-2">
@@ -115,7 +115,7 @@ Espero coordinar una reunión pronto`);
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg lg:text-xl text-primary-foreground/80 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg lg:text-xl text-white mb-12 max-w-3xl mx-auto leading-relaxed"
           >
             Descubre nuestra metodología probada que combina excelencia técnica con resultados de negocio medibles. 
             Cada fase está diseñada para maximizar el ROI y minimizar los riesgos del proyecto.
