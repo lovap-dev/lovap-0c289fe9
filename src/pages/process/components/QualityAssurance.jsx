@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Icon from '../../../components/AppIcon';
+import { FeatureSteps } from '../../../components/ui/feature-section';
 
 const QualityAssurance = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -232,59 +233,33 @@ const QualityAssurance = () => {
           </div>
         </div>
 
-        {/* Quality Promise */}
-        <div className="max-w-5xl mx-auto mt-12">
-          <div className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 border border-primary/20 rounded-3xl p-8 lg:p-10 text-center">
-            {/* Decorative elements */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-2xl"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-accent/10 to-transparent rounded-full blur-2xl"></div>
-            
-            <div className="relative z-10">
-              <div className="inline-flex items-center bg-gradient-to-r from-primary/20 to-primary/10 border border-primary/30 text-primary px-6 py-3 rounded-full font-semibold mb-6 shadow-lg">
-                <Icon name="Award" size={20} className="mr-2" />
-                Garantía Total
-              </div>
-              
-              <h3 className="text-2xl lg:text-4xl font-gilroy font-bold text-secondary mb-4 leading-tight">
-                Compromiso de Excelencia
-                <span className="block text-primary">100% Garantizado</span>
-              </h3>
-              
-              <p className="text-lg text-text-primary/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Nuestro compromiso va más allá de la entrega. Si tu proyecto no supera todos nuestros 
-                estándares de calidad, continuamos trabajando sin costo adicional hasta lograr la excelencia prometida.
-              </p>
-              
-              <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shadow-lg">
-                  <div className="w-12 h-12 bg-success/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <Icon name="Shield" size={24} className="text-success" />
-                  </div>
-                  <h4 className="font-gilroy font-bold text-secondary mb-2">Garantía Extendida</h4>
-                  <p className="text-text-primary/70 text-sm mb-3">Protección completa durante 30 días post-lanzamiento</p>
-                  <span className="text-success font-semibold">30 días</span>
-                </div>
-                
-                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shadow-lg">
-                  <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <Icon name="RefreshCw" size={24} className="text-primary" />
-                  </div>
-                  <h4 className="font-gilroy font-bold text-secondary mb-2">Revisiones Sin Límite</h4>
-                  <p className="text-text-primary/70 text-sm mb-3">Ajustes y mejoras hasta tu completa satisfacción</p>
-                  <span className="text-primary font-semibold">Ilimitadas</span>
-                </div>
-                
-                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shadow-lg">
-                  <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <Icon name="Headphones" size={24} className="text-accent" />
-                  </div>
-                  <h4 className="font-gilroy font-bold text-secondary mb-2">Soporte Premium</h4>
-                  <p className="text-text-primary/70 text-sm mb-3">Asistencia técnica especializada las 24 horas</p>
-                  <span className="text-accent font-semibold">24/7</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Quality Promise - New Design */}
+        <div className="max-w-6xl mx-auto mt-8">
+          <FeatureSteps
+            features={[
+              {
+                step: "01",
+                title: "Garantía Extendida",
+                content: "Protección completa durante 30 días post-lanzamiento. Si surge cualquier problema, lo resolvemos sin costo adicional.",
+                image: "/images/mantenimiento_1.jpg"
+              },
+              {
+                step: "02",
+                title: "Revisiones Sin Límite",
+                content: "Ajustes y mejoras hasta tu completa satisfacción. No hay límite en la cantidad de revisiones que podemos hacer.",
+                image: "/images/desarrollo_1.jpg"
+              },
+              {
+                step: "03",
+                title: "Soporte Premium 24/7",
+                content: "Asistencia técnica especializada las 24 horas, los 7 días de la semana. Siempre estamos disponibles para ti.",
+                image: "/images/planeacion_1.jpg"
+              }
+            ]}
+            title="Compromiso de Excelencia 100% Garantizado"
+            autoPlayInterval={4000}
+            className="py-0"
+          />
         </div>
       </div>
     </section>
