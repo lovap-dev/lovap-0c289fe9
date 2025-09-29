@@ -112,7 +112,7 @@ const QualityAssurance = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-background">
+    <section className="py-16 lg:py-20 bg-background">
       <div className="container mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -246,7 +246,7 @@ const QualityAssurance = () => {
               {
                 step: "02",
                 title: "Revisiones Sin Límite",
-                content: "Ajustes y mejoras hasta tu completa satisfacción. No hay límite en la cantidad de revisiones que podemos hacer.",
+                content: "Ajustes y mejoras necesarios hasta que quedes plenamente satisfecho con el resultado, asegurando una entrega final de calidad.",
                 image: "/images/desarrollo_1.jpg"
               },
               {
@@ -256,7 +256,7 @@ const QualityAssurance = () => {
                 image: "/images/planeacion_1.jpg"
               }
             ]}
-            title="Compromiso de Excelencia 100% Garantizado"
+            title="Compromiso con la Excelencia"
             autoPlayInterval={4000}
             className="py-0"
           />
