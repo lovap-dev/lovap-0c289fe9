@@ -4,10 +4,9 @@ import Header from '../../components/ui/Header';
 import ProcessHero from './components/ProcessHero';
 import ProcessTimelineNew from './components/ProcessTimelineNew';
 import ProjectTypes from './components/ProjectTypes';
-// import QualityAssurance from './components/QualityAssurance';
+import QualityAssurance from './components/QualityAssurance';
 import TestimonialsSection from '../../components/ui/testimonials-columns-1';
 import ProcessCTA from './components/ProcessCTA';
-import FloatingCTA from '../homepage/components/FloatingCTA';
 import Footer from '../../components/ui/Footer';
 
 const ProcessPage = () => {
@@ -33,11 +32,10 @@ const ProcessPage = () => {
           <ProcessHero />
           <ProcessTimelineNew />
           {/* <ProjectTypes />  */}
-          {/* <QualityAssurance /> */}
+          <QualityAssurance />
           <TestimonialsSection />
           <ProcessCTA />
         </main>
-        <FloatingCTA />
         <Footer />
       </div>
     </>
