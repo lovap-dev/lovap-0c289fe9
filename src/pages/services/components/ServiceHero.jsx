@@ -21,14 +21,7 @@ const ServiceHero = () => {
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
-                variant="default" 
-                size="lg"
-                iconName="Calculator"
-                iconPosition="left"
-                className="bg-primary text-primary-foreground hover:bg-accent">
-                Calcular ROI Estimado
-              </Button>
-              <Button 
+                
                 variant="outline" 
                 size="lg"
                 iconName="Play"
@@ -37,12 +30,6 @@ const ServiceHero = () => {
                 Ver Casos de Éxito
               </Button>
             </div>
-
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/20">
-              <div className="text-center">
-                <div className="text-3xl font-gilroy font-bold text-primary">150%</div>
-                <div className="text-sm text-gray-300">Aumento Promedio en Conversiones</div>
-              </div>
               <div className="text-center">
                 <div className="text-3xl font-gilroy font-bold text-primary">2h</div>
                 <div className="text-sm text-gray-300">Tiempo de Respuesta</div>
