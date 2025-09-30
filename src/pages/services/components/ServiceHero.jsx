@@ -72,7 +72,6 @@ const ServiceHero = () => {
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 };

@@ -27,7 +27,6 @@ const ServicesPage = () => {
         <TechnicalSpecs />
         {/* <ComparisonMatrix />*/}
         <CTASection />
-        {/* */}
       </main>
       <FloatingCTA />
       <Footer />
