@@ -9,7 +9,7 @@ const TeamSection = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Juan Pablo Pabón",
+      name: "Juan Pablo Pabón Pabón",
       role: "CEO & Fundador",
       specialization: "Estrategia Digital",
       experience: "12+ años",
@@ -24,7 +24,7 @@ const TeamSection = () => {
     },
     {
       id: 2,
-      name: "Alejandro Tobón",
+      name: "Alejandro Tobón Rivera",
       role: "CTO & Fundador",
       specialization: "Diseño de Experiencias",
       experience: "7+ años",
@@ -39,18 +39,17 @@ const TeamSection = () => {
     },
     {
       id: 3,
-      name: "Stefany",
+      name: "Stefanny Quintero Gómez",
       role: "Lead UX/UI Designer",
       specialization: "Growth Marketing",
-      experience: "6+ años",
+      experience: "4+ años",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
       bio: `Estratega de marketing digital que transforma datos en decisiones. Especialista en optimización de conversiones y campañas de crecimiento escalable.`,
       skills: ["SEO/SEM", "Analytics", "Conversion Rate Optimization", "Content Strategy"],
-      certifications: ["Google Analytics 4", "HubSpot Marketing", "Facebook Blueprint"],
-      projects: 80,
-      category: "marketing",
-      linkedin: "#",
-      github: "#"
+      certifications: ["UX/UI", "Tecnica laboral en diseño"],
+      projects: 30,
+      category: "Designer",
+      behance: "#"
     },
   ];
 
