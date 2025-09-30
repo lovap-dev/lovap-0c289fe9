@@ -26,6 +26,10 @@ const Header = () => {
   ];
 
   const isActivePath = (path) => {
+    // Handle both / and /homepage as the home page
+    if (path === '/homepage') {
+      return location?.pathname === '/' || location?.pathname === '/homepage';
+    }
     return location?.pathname === path;
   };
 

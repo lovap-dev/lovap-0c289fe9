@@ -7,6 +7,7 @@ import ProjectTypes from './components/ProjectTypes';
 // import QualityAssurance from './components/QualityAssurance';
 import TestimonialsSection from '../../components/ui/testimonials-columns-1';
 import ProcessCTA from './components/ProcessCTA';
+import FloatingCTA from '../homepage/components/FloatingCTA';
 import Footer from '../../components/ui/Footer';
 
 const ProcessPage = () => {
@@ -36,6 +37,7 @@ const ProcessPage = () => {
           <TestimonialsSection />
           <ProcessCTA />
         </main>
+        <FloatingCTA />
         <Footer />
       </div>
     </>
