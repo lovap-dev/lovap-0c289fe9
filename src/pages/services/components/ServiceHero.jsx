@@ -36,6 +36,7 @@ const ServiceHero = () => {
                   <div className="text-sm text-gray-300">Casos de éxito</div>
               </div>
             </div>
+          </div>
 
           <div className="relative">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
@@ -73,6 +74,7 @@ const ServiceHero = () => {
             </div>
           </div>
         </div>
+      </div>
     </section>
   );
 };
