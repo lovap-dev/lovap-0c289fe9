@@ -4,11 +4,11 @@ import { Hero } from '@/components/ui/hero-1';
 
 const AnimatedText = () => {
   const texts = [
-    'Desarrollo Web',
-    'Aplicaciones Móviles',
-    'E-Commerce',
-    'Plataformas SaaS',
-    'Sistemas Personalizados'
+    'Ideas en Soluciones',
+    'Diseños en Experiencias',
+    'Prototipos en Productos',
+    'Código en Valor',
+    'Visiones en Realidad'
   ];
   
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -72,7 +72,7 @@ Espero coordinar una reunión pronto`);
 
   const title = (
     <>
-      Nuestro Proceso de
+      Transformamos
       <span className="block mt-2">
         <AnimatedText />
       </span>
@@ -83,7 +83,7 @@ Espero coordinar una reunión pronto`);
     <Hero
       eyebrow="Metodología Transparente"
       title={title}
-      subtitle="Descubre nuestra metodología probada que combina excelencia técnica con resultados de negocio medibles. Cada fase está diseñada para maximizar el ROI y minimizar los riesgos del proyecto."
+      subtitle="Nuestra metodología probada garantiza un equilibrio entre tecnología de primer nivel y objetivos de negocio. Diseñamos cada etapa para ofrecer resultados medibles, mayor retorno y menor riesgo."
       ctaLabel="Agendar Consultoría Gratuita"
       onCtaClick={handleWhatsAppContact}
       secondaryCtaLabel="Ver Nuestros Servicios"
