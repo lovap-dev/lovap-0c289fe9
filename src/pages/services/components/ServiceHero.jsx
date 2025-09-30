@@ -29,6 +29,11 @@ const ServiceHero = () => {
                 <div className="text-sm text-gray-300">Uptime Garantizado</div>
               </div>
             </div>
+            <div className="text-center">
+                <div className="text-3xl font-gilroy font-bold text-primary">+5</div>
+                <div className="text-sm text-gray-300">Casos de éxito</div>
+              </div>
+            </div>
           </div>
 
           <div className="relative">
@@ -53,8 +58,6 @@ const ServiceHero = () => {
                     <span className="text-sm">Roadmap técnico detallado</span>
                   </div>
                 </div>
-
-             
                 <Button 
                   variant="default" 
                   fullWidth
@@ -65,9 +68,6 @@ const ServiceHero = () => {
                    <a href="https://wa.me/573006719235" target="_blank" rel="noopener noreferrer"> Agendar Consulta</a>   
                 </Button>
        
-
-
-                
               </div>
             </div>
           </div>

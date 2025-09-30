@@ -18,14 +18,16 @@ const ServicesPage = () => {
       <Header />
       
       <main className="pt-16">
+        
         <ServiceHero />
         <ServiceGrid />
         {/*<ROICalculator /> */} 
         <CaseStudyShowcase />
-        <ProcessOverview /> 
+        {/*<ProcessOverview /> */} 
         <TechnicalSpecs />
-        <ComparisonMatrix />
+        {/* <ComparisonMatrix />*/}
         <CTASection />
+        {/* */}
       </main>
       <FloatingCTA />
       <Footer />
