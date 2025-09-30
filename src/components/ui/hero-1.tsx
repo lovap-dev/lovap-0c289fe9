@@ -76,7 +76,7 @@ export function Hero({
 
         {/* Title */}
         <h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl
+          className="text-6xl lg:text-7xl xl:text-8xl
           font-bold leading-[1.1] tracking-tight
           text-white font-gilroy
           mb-6 md:mb-8 px-4"
@@ -89,7 +89,7 @@ export function Hero({
 
         {/* Subtitle */}
         <p
-          className="text-base sm:text-lg md:text-xl lg:text-2xl
+          className="text-base sm:text-lg md:text-xl
           leading-relaxed tracking-tight 
           text-gray-400 
           mb-10 md:mb-12 max-w-4xl mx-auto px-4"
@@ -124,7 +124,7 @@ export function Hero({
               variant="outline"
               size="lg"
               className="w-full sm:w-auto min-w-[200px] h-12 md:h-14 text-base md:text-lg
-              border-2 border-white/30 bg-transparent text-white font-semibold
+              border-2 border-white/30 bg-transparent text-white hover:text-white font-semibold
               hover:bg-white/10 hover:border-white/50
               rounded-full
               transition-all duration-300 hover:scale-[1.02] inline-flex items-center gap-2"

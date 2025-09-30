@@ -34,7 +34,7 @@ const QualityAssurance = () => {
         { label: 'SSL/TLS', target: 'A+', description: 'Certificado de seguridad premium' },
         { label: 'Vulnerabilidades', target: '0', description: 'Escaneo de seguridad completo' },
         { label: 'Headers Seguridad', target: '100%', description: 'Configuración headers HTTP' },
-        { label: 'Backup Automático', target: 'Diario', description: 'Respaldo automático de datos' }
+        {/*{ label: 'Backup Automático', target: 'Diario', description: 'Respaldo automático de datos' }*/}
       ],
       processes: [
         'Escaneo de vulnerabilidades OWASP',
@@ -52,7 +52,6 @@ const QualityAssurance = () => {
       metrics: [
         { label: 'WCAG Compliance', target: 'AA', description: 'Estándar internacional accesibilidad' },
         { label: 'Contraste Color', target: '4.5:1', description: 'Ratio de contraste mínimo' },
-        { label: 'Navegación Teclado', target: '100%', description: 'Acceso completo por teclado' },
         { label: 'Screen Readers', target: 'Compatible', description: 'Lectores de pantalla' }
       ],
       processes: [

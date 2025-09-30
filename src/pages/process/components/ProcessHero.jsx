@@ -81,7 +81,7 @@ Espero coordinar una reunión pronto`);
 
   return (
     <Hero
-      eyebrow="Metodología Transparente"
+      eyebrow="Sin Letras Pequeñas"
       title={title}
       subtitle="Nuestra metodología probada garantiza un equilibrio entre tecnología de primer nivel y objetivos de negocio. Diseñamos cada etapa para ofrecer resultados medibles, mayor retorno y menor riesgo."
       ctaLabel="Agendar Consultoría Gratuita"

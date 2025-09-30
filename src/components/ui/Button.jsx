@@ -158,10 +158,11 @@ const Button = React.forwardRef(({
             {loading && <LoadingSpinner />}
             {iconName && iconPosition === 'left' && renderIcon()}
             {children}
-            {iconName && iconPosition === 'right' && renderIcon()}
         </Comp>
     );
 });
 
 Button.displayName = "Button";
 export default Button;
+// Also provide a named export to avoid import issues when resolving by name/case
+export { Button };
