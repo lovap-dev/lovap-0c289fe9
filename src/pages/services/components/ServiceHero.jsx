@@ -20,20 +20,22 @@ const ServiceHero = () => {
             </div>
 
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/20">
+              
               <div className="text-center">
                 <div className="text-3xl font-gilroy font-bold text-primary">2h</div>
                 <div className="text-sm text-gray-300">Tiempo de Respuesta</div>
               </div>
+              
               <div className="text-center">
                 <div className="text-3xl font-gilroy font-bold text-primary">99%</div>
                 <div className="text-sm text-gray-300">Uptime Garantizado</div>
               </div>
-            </div>
+              
               <div className="text-center">
                   <div className="text-3xl font-gilroy font-bold text-primary">+5</div>
                   <div className="text-sm text-gray-300">Casos de éxito</div>
               </div>
-          </div>
+            </div>
 
           <div className="relative">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
