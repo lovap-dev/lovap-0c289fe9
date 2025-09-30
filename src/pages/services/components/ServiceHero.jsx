@@ -10,10 +10,6 @@ const ServiceHero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center space-x-2 bg-gray-700 text-primary px-4 py-2 rounded-full text-sm font-medium">
-                <Icon name="Zap" size={16} />
-                <span>Servicios Estratégicos</span>
-              </div>
               <h1 className="text-4xl lg:text-6xl font-gilroy font-bold leading-tight">
                 Soluciones Web que 
                 <span className="text-primary"> Impulsan Resultados</span>
@@ -22,40 +18,22 @@ const ServiceHero = () => {
                 Transformamos tu presencia digital en una máquina de conversión con servicios especializados que combinan diseño estratégico, desarrollo técnico y optimización de rendimiento.
               </p>
             </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                variant="default" 
-                size="lg"
-                iconName="Calculator"
-                iconPosition="left"
-                className="bg-primary text-primary-foreground hover:bg-accent"
-              >
-                Calcular ROI Estimado
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                iconName="Play"
-                iconPosition="left"
-                className="border-white/30 text-white hover:bg-white/10"
-              >
-                Ver Casos de Éxito
-              </Button>
-            </div>
 
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/20">
-              <div className="text-center">
-                <div className="text-3xl font-gilroy font-bold text-primary">150%</div>
-                <div className="text-sm text-gray-300">Aumento Promedio en Conversiones</div>
-              </div>
+              
               <div className="text-center">
                 <div className="text-3xl font-gilroy font-bold text-primary">2h</div>
                 <div className="text-sm text-gray-300">Tiempo de Respuesta</div>
               </div>
+              
               <div className="text-center">
                 <div className="text-3xl font-gilroy font-bold text-primary">99%</div>
                 <div className="text-sm text-gray-300">Uptime Garantizado</div>
+              </div>
+              
+              <div className="text-center">
+                  <div className="text-3xl font-gilroy font-bold text-primary">+5</div>
+                  <div className="text-sm text-gray-300">Casos de éxito</div>
               </div>
             </div>
           </div>
@@ -82,7 +60,6 @@ const ServiceHero = () => {
                     <span className="text-sm">Roadmap técnico detallado</span>
                   </div>
                 </div>
-
                 <Button 
                   variant="default" 
                   fullWidth
@@ -90,8 +67,9 @@ const ServiceHero = () => {
                   iconPosition="right"
                   className="bg-primary text-primary-foreground hover:bg-accent"
                 >
-                  Agendar Consulta
+                   <a href="https://wa.me/573006719235" target="_blank" rel="noopener noreferrer"> Agendar Consulta</a>   
                 </Button>
+       
               </div>
             </div>
           </div>

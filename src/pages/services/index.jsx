@@ -2,12 +2,13 @@ import React from 'react';
 import Header from '../../components/ui/Header';
 import ServiceHero from './components/ServiceHero';
 import ServiceGrid from './components/ServiceGrid';
-import ROICalculator from './components/ROICalculator';
+//import ROICalculator from './components/ROICalculator';
 import PortfolioShowcase from './components/PortfolioShowcase';
+import CaseStudyShowcase from '../homepage/components/CaseStudyShowcase';
 import ProcessOverview from './components/ProcessOverview';
 import TechnicalSpecs from './components/TechnicalSpecs';
 import ComparisonMatrix from './components/ComparisonMatrix';
-import CTASection from './components/CTASection';
+import ProcessCTA from '../process/components/ProcessCTA';
 import FloatingCTA from '../homepage/components/FloatingCTA';
 import Footer from '../../components/ui/Footer';
 
@@ -17,14 +18,15 @@ const ServicesPage = () => {
       <Header />
       
       <main className="pt-16">
+        
         <ServiceHero />
         <ServiceGrid />
-        <ROICalculator /> 
-        <PortfolioShowcase />
-        <ProcessOverview /> 
+        {/*<ROICalculator /> */} 
+        <CaseStudyShowcase />
+        {/*<ProcessOverview /> */} 
         <TechnicalSpecs />
-        <ComparisonMatrix />
-        <CTASection />
+        {/* <ComparisonMatrix />*/}
+        <ProcessCTA />
       </main>
       <FloatingCTA />
       <Footer />

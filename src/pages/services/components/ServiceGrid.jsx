@@ -214,28 +214,6 @@ const services = [
             </div>
           ))}
         </div>
-
-        <div className="text-center mt-16">
-          <div className="space-y-4">
-            <Button
-              variant="default"
-              size="lg"
-              iconName="MessageCircle"
-              iconPosition="left"
-              className="bg-secondary text-secondary-foreground hover:bg-secondary/90"
-              onClick={() => {
-                const url = buildGeneralWhatsAppUrl();
-                window.open(url, '_blank', 'noopener,noreferrer');
-              }}
-              aria-label="Abrir WhatsApp para consulta estratégica gratuita"
-            >
-              Consulta Estratégica Gratuita
-            </Button>
-            <p className="text-sm text-text-secondary">
-              Sin compromiso • Análisis personalizado • Respuesta rápida
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );
