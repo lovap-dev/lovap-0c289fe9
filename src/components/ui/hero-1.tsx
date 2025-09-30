@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { ChevronRight } from "lucide-react"
+import { ChevronRight, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -19,14 +19,14 @@ interface HeroProps {
 }
 
 export function Hero({
-  eyebrow = "Innovate Without Limits",
+  eyebrow = "Metodología Lovap",
   title,
   subtitle,
-  ctaLabel = "Explore Now",
-  ctaHref = "#",
+  ctaLabel = "Conoce Nuestro Proceso",
+  ctaHref = "#proceso",
   onCtaClick,
-  secondaryCtaLabel,
-  secondaryCtaHref,
+  secondaryCtaLabel = "Inicia Tu Proyecto",
+  secondaryCtaHref = "#contacto",
   onSecondaryCtaClick,
   className,
 }: HeroProps) {
@@ -42,7 +42,7 @@ export function Hero({
     >
       {/* Grid BG */}
       <div
-        className="absolute inset-0 opacity-40 w-full h-full
+        className="absolute inset-0 opacity-30 w-full h-full
         bg-[linear-gradient(to_right,#333_1px,transparent_1px),linear-gradient(to_bottom,#333_1px,transparent_1px)]
         bg-[size:6rem_5rem] 
         [mask-image:radial-gradient(ellipse_80%_60%_at_50%_20%,#000_60%,transparent_100%)]"
@@ -53,6 +53,7 @@ export function Hero({
         className="absolute left-1/2 bottom-0 
         h-[400px] w-[800px] md:h-[600px] md:w-[1200px] lg:h-[800px] lg:w-[1600px] 
         -translate-x-1/2 translate-y-1/2 rounded-[50%]
+        opacity-80
         bg-[radial-gradient(closest-side,#ffffff_0%,#e8e8e8_20%,#8a8a8a_50%,#2a2a2a_75%,#000_100%)]"
       />
 
@@ -80,7 +81,7 @@ export function Hero({
           text-white font-gilroy
           mb-6 md:mb-8 px-4"
           style={{
-            textShadow: '0 2px 20px rgba(0,0,0,0.3)'
+            textShadow: "0 2px 20px rgba(0,0,0,0.3)",
           }}
         >
           {title}
@@ -106,7 +107,7 @@ export function Hero({
               className="w-full sm:w-auto min-w-[200px] h-12 md:h-14 text-base md:text-lg
               bg-white hover:bg-gray-100 text-black font-semibold
               rounded-full shadow-lg hover:shadow-xl
-              transition-all duration-300 hover:scale-105"
+              transition-all duration-300 hover:scale-[1.02]"
             >
               {onCtaClick ? (
                 <span>{ctaLabel}</span>
@@ -126,12 +127,15 @@ export function Hero({
               border-2 border-white/30 bg-transparent text-white font-semibold
               hover:bg-white/10 hover:border-white/50
               rounded-full
-              transition-all duration-300 hover:scale-105"
+              transition-all duration-300 hover:scale-[1.02] inline-flex items-center gap-2"
             >
               {onSecondaryCtaClick ? (
                 <span>{secondaryCtaLabel}</span>
               ) : (
-                <a href={secondaryCtaHref}>{secondaryCtaLabel}</a>
+                <a href={secondaryCtaHref} className="flex items-center gap-2">
+                  {secondaryCtaLabel}
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               )}
             </Button>
           )}
