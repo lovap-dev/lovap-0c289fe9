@@ -29,11 +29,10 @@ const ServiceHero = () => {
                 <div className="text-sm text-gray-300">Uptime Garantizado</div>
               </div>
             </div>
-            <div className="text-center">
-                <div className="text-3xl font-gilroy font-bold text-primary">+5</div>
-                <div className="text-sm text-gray-300">Casos de éxito</div>
+              <div className="text-center">
+                  <div className="text-3xl font-gilroy font-bold text-primary">+5</div>
+                  <div className="text-sm text-gray-300">Casos de éxito</div>
               </div>
-            </div>
           </div>
 
           <div className="relative">
