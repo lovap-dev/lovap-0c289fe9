@@ -36,7 +36,7 @@ export function Hero({
       className={cn(
         "relative mx-auto w-full pt-32 md:pt-40 px-6 text-center md:px-8",
         "min-h-screen flex flex-col items-center justify-center overflow-hidden",
-        "bg-[linear-gradient(to_bottom,#000,#000_40%,#1a1a1a_70%,#4a4a4a_85%,#e8e8e8_100%)]",
+        "bg-[linear-gradient(to_bottom,#000_0%,#1a1a1a_30%,#4a4a4a_60%,#8a8a8a_80%,#ffffff_100%)]",
         className
       )}
     >
@@ -53,7 +53,7 @@ export function Hero({
         className="absolute left-1/2 bottom-0 
         h-[400px] w-[800px] md:h-[600px] md:w-[1200px] lg:h-[800px] lg:w-[1600px] 
         -translate-x-1/2 translate-y-1/2 rounded-[50%]
-        bg-[radial-gradient(closest-side,#000_40%,#2a2a2a_60%,#e8e8e8_90%,#ffffff_100%)]"
+        bg-[radial-gradient(closest-side,#ffffff_0%,#e8e8e8_20%,#8a8a8a_50%,#2a2a2a_75%,#000_100%)]"
       />
 
       <div className="relative z-10 max-w-6xl mx-auto">
