@@ -43,11 +43,7 @@ const Header = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-background shadow-card' 
-          : 'bg-background border-b border-border'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background shadow-card`}
     >
       <div className="w-full">
         <div className="flex items-center justify-between h-16 px-6 lg:px-8">
@@ -113,16 +109,15 @@ const Header = () => {
 
           {/* CTA Button & Mobile Menu Toggle */}
           <div className="flex items-center space-x-4">
-            <Button
-              asChild
-              variant="cta"
-              size="lg"
-              className="hidden sm:flex rounded-full font-semibold"
-              iconName="ArrowRight"
-              iconPosition="right"
+            <a
+              href="https://wa.me/573006719235"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex items-center gap-2 px-5 bg-accent py-2 rounded-xl font-semibold text-white bg-accent/10 border border-accent/40 shadow-sm hover:bg-accent/15 hover:border-accent/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/30 transition-smooth"
             >
-              <a href="https://wa.me/573006719235" target="_blank" rel="noopener noreferrer">Cotización Estratégica</a>
-            </Button>
+              <span>Cotización Estratégica</span>
+              <Icon name="ArrowRight" size={18} />
+            </a>
 
             {/* Mobile Menu Button */}
             <button

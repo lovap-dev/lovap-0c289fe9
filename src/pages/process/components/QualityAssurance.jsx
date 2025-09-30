@@ -126,28 +126,42 @@ const QualityAssurance = () => {
 
         {/* Quality Tabs */}
         <div className="max-w-6xl mx-auto mb-16">
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
+          <div
+            className="flex flex-wrap justify-center gap-6 mb-8 border-b border-border/60"
+            role="tablist"
+            aria-label="Pestañas de Garantía de Calidad"
+          >
             {qualityTabs?.map((tab, index) => (
               <button
                 key={tab?.id}
                 onClick={() => setActiveTab(index)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                role="tab"
+                aria-selected={activeTab === index}
+                aria-controls={`qa-panel-${tab?.id}`}
+                id={`qa-tab-${tab?.id}`}
+                tabIndex={activeTab === index ? 0 : -1}
+                className={`relative flex items-center space-x-2 px-5 py-3 -mb-px rounded-t-md transition-colors duration-300 focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 ${
                   activeTab === index
-                    ? 'bg-primary text-primary-foreground shadow-lg'
-                    : 'bg-card text-text-primary hover:bg-primary/10 shadow-card'
+                    ? 'text-accent font-semibold bg-card border border-accent border-b-0 shadow-sm'
+                    : 'text-text-primary/60 font-medium border-b border-transparent hover:text-accent/90 hover:border-border/80'
                 }`}
               >
-                <Icon name={tab?.icon} size={20} />
+                <Icon name={tab?.icon} size={20} className={activeTab === index ? 'text-accent' : 'text-text-primary/60'} />
                 <span>{tab?.title}</span>
               </button>
             ))}
           </div>
 
           {/* Active Tab Content */}
-          <div className="bg-card rounded-2xl shadow-card-elevated p-8 lg:p-12">
+          <div
+            className="bg-card rounded-2xl shadow-card-elevated p-8 lg:p-12 mt-[-1px]"
+            role="tabpanel"
+            id={`qa-panel-${qualityTabs?.[activeTab]?.id}`}
+            aria-labelledby={`qa-tab-${qualityTabs?.[activeTab]?.id}`}
+          >
             <div className="flex items-center space-x-4 mb-6">
-              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-                <Icon name={qualityTabs?.[activeTab]?.icon} size={24} className="text-primary-foreground" />
+              <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center">
+                <Icon name={qualityTabs?.[activeTab]?.icon} size={24} className="text-accent-foreground" />
               </div>
               <div>
                 <h3 className="text-2xl font-gilroy font-bold text-secondary">
