@@ -18,7 +18,7 @@ const ServiceHero = () => {
                 Transformamos tu presencia digital en una máquina de conversión con servicios especializados que combinan diseño estratégico, desarrollo técnico y optimización de rendimiento.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/20">
               <div className="text-center">
                 <div className="text-3xl font-gilroy font-bold text-primary">2h</div>
@@ -62,9 +62,9 @@ const ServiceHero = () => {
                   iconPosition="right"
                   className="bg-primary text-primary-foreground hover:bg-accent"
                 >
-                  Agendar Consulta
+                   <a href="https://wa.me/573006719235" target="_blank" rel="noopener noreferrer"> Agendar Consulta</a>   
                 </Button>
-            
+       
 
 
                 
