@@ -77,6 +77,7 @@ const ServiceHero = () => {
                   </div>
                 </div>
 
+               <Link to="/contact">
                 <Button 
                   variant="default" 
                   fullWidth
@@ -86,6 +87,10 @@ const ServiceHero = () => {
                 >
                   Agendar Consulta
                 </Button>
+              </Link>
+
+
+                
               </div>
             </div>
           </div>
