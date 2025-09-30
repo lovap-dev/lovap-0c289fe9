@@ -36,6 +36,7 @@ const ProcessPage = () => {
           <TestimonialsSection />
           <ProcessCTA />
         </main>
+        <FloatingCTA />
         <Footer />
       </div>
     </>
