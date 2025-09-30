@@ -19,9 +19,9 @@ const ServicesPage = () => {
       <main className="pt-16">
         <ServiceHero />
         <ServiceGrid />
-        {/* <ROICalculator /> */}
+        <ROICalculator /> 
         <PortfolioShowcase />
-        {/* <ProcessOverview />  */}
+        <ProcessOverview /> 
         <TechnicalSpecs />
         <ComparisonMatrix />
         <CTASection />
