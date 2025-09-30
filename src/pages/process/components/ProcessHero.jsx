@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Hero } from '../../components/ui/hero-1';
+import { Hero } from '@/components/ui/hero-1';
 
 const AnimatedText = () => {
   const texts = [
