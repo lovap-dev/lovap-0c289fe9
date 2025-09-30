@@ -8,7 +8,7 @@ import CaseStudyShowcase from '../homepage/components/CaseStudyShowcase';
 import ProcessOverview from './components/ProcessOverview';
 import TechnicalSpecs from './components/TechnicalSpecs';
 import ComparisonMatrix from './components/ComparisonMatrix';
-import CTASection from './components/CTASection';
+import CTASection from '..process/components/ProcessCTA';
 import FloatingCTA from '../homepage/components/FloatingCTA';
 import Footer from '../../components/ui/Footer';
 
