@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
 import ProcessHero from './components/ProcessHero';
 import ProcessTimelineNew from './components/ProcessTimelineNew';
+import ProcessBenefits from './components/ProcessBenefits';
 import ProjectTypes from './components/ProjectTypes';
 import QualityAssurance from './components/QualityAssurance';
 import TestimonialsSection from '../../components/ui/testimonials-columns-1';
@@ -32,6 +33,7 @@ const ProcessPage = () => {
         
         <main className="pt-16">
           <ProcessHero />
+          <ProcessBenefits />
           <ProcessTimelineNew />
           {/* <ProjectTypes />  */}
           <QualityAssurance />

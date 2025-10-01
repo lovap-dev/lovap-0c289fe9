@@ -90,7 +90,7 @@ const CTASection = () => {
               iconPosition="left"
               className="border-white/20 text-white hover:bg-white/10"
             >
-              +34 900 123 456
+              +57 300 671 9235
             </Button>
           </div>
           

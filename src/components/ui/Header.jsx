@@ -113,7 +113,7 @@ const Header = () => {
               href="https://wa.me/573006719235"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-2 px-5 bg-accent py-2 rounded-xl font-semibold text-white bg-accent/10 border border-accent/40 shadow-sm hover:bg-accent/15 hover:border-accent/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/30 transition-smooth"
+              className="hidden sm:inline-flex items-center gap-2 px-5 bg-accent py-2 rounded-xl font-semibold text-secondary bg-accent/10 border border-accent/40 shadow-sm hover:bg-accent/15 hover:border-accent/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/30 transition-smooth"
             >
               <span>Cotización Estratégica</span>
               <Icon name="ArrowRight" size={18} />
@@ -161,18 +161,16 @@ const Header = () => {
               
               {/* Mobile CTA */}
               <div className="pt-4 border-t border-border mt-4">
-                <Button
-                  asChild
-                  variant="default"
-                  size="lg"
-                  fullWidth
-                  iconName="ArrowRight"
-                  iconPosition="right"
-                  className="rounded-full bg-primary text-primary-foreground shadow-lg ring-1 ring-primary/30 hover:bg-primary/90"
+                <a
+                  href="https://wa.me/573006719235"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={closeMenu}
+                  className="inline-flex w-full items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-secondary bg-accent border border-accent/60 shadow-md hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/30 transition-smooth"
                 >
-                  <a href="https://wa.me/573006719235" target="_blank" rel="noopener noreferrer">Cotización Estratégica</a>
-                </Button>
+                  <span>Cotización Estratégica</span>
+                  <Icon name="ArrowRight" size={18} />
+                </a>
               </div>
             </div>
           </nav>

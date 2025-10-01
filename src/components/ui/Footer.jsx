@@ -89,16 +89,16 @@ const Footer = () => {
               </div>
               <div className="text-sm">
                 <div className="text-white/60 mb-1">Teléfono</div>
-                <a href="tel:+34900123456" className="text-white/80 hover:text-primary transition-colors">
-                  +34 900 123 456
+                <a href="tel:+573006719235" className="text-white/80 hover:text-primary transition-colors">
+                  +57 300 671 9235
                 </a>
               </div>
               <div className="text-sm">
                 <div className="text-white/60 mb-1">Horario</div>
                 <div className="text-white/80">
-                  Lun - Vie: 9:00 - 18:00
+                  Lun - Vie: 7:00 - 18:00
                   <br />
-                  Sáb: 10:00 - 14:00
+                  Sáb: 07:00 - 14:00
                 </div>
               </div>
             </div>
@@ -116,9 +116,6 @@ const Footer = () => {
             </a>
             <a href="#" className="text-white/60 hover:text-primary transition-colors">
               Términos de Servicio
-            </a>
-            <a href="#" className="text-white/60 hover:text-primary transition-colors">
-              Cookies
             </a>
           </div>
         </div>

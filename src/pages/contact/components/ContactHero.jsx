@@ -90,7 +90,7 @@ const ContactHero = () => {
                   </div>
                   <div className="flex items-center space-x-2">
                     <Icon name="Phone" size={14} />
-                    <span>+34 900 123 456</span>
+                    <span>+57 300 671 9235</span>
                   </div>
                 </div>
               </div>

@@ -62,7 +62,7 @@ const ProcessFAQ = () => {
 
   return (
     <section className="py-20 bg-gradient-to-b from-background to-muted/30">
-      <div className="container mx-auto px-4 max-w-4xl">
+      <div className="container mx-auto px-8 md:px-10 lg:px-12 max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-3">
             Preguntas <span className="text-accent">Frecuentes</span>
@@ -78,7 +78,7 @@ const ProcessFAQ = () => {
             <AccordionItem
               key={faq.id}
               value={faq.id}
-              className="px-0"
+              className=""
             >
               <AccordionTrigger className="text-left font-semibold text-base md:text-lg hover:no-underline py-5">
                 {faq.question}

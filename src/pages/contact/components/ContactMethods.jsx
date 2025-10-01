@@ -19,7 +19,7 @@ const ContactMethods = () => {
       icon: 'Phone',
       title: 'Llamada Directa',
       description: 'Para consultas urgentes y discusión inmediata',
-      contact: '+34 900 123 456',
+      contact: '+57 300 671 9235',
       action: 'Llamar Ahora',
       responseTime: 'Lun-Vie 9:00-18:00 CET',
       variant: 'secondary'
@@ -29,7 +29,7 @@ const ContactMethods = () => {
       icon: 'MessageCircle',
       title: 'WhatsApp Business',
       description: 'Para comunicación rápida y seguimiento de proyectos',
-      contact: '+34 600 789 123',
+      contact: '+57 300 671 9235',
       action: 'Abrir WhatsApp',
       responseTime: 'Respuesta inmediata',
       variant: 'accent'
