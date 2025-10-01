@@ -61,13 +61,13 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[85vh] md:min-h-screen flex items-start justify-start md:items-center md:justify-center bg-gradient-to-br from-background via-background to-muted overflow-hidden pt-20 md:pt-0 pb-20 md:pb-28">
+    <section className="relative min-h-[85vh] md:min-h-screen flex items-start justify-start md:items-center md:justify-center bg-gradient-to-br from-background via-background to-muted overflow-hidden overflow-x-hidden pt-20 md:pt-0 pb-20 md:pb-28">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 hidden md:block">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
       </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
           {/* Content */}
           <div className="space-y-8">
@@ -79,11 +79,11 @@ const HeroSection = () => {
             >
             
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-gilroy font-bold text-secondary leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-gilroy font-bold text-secondary leading-tight">
                 Sitios web que
                 <DynamicTextSlider
                   text="transforman negocios"
-                  className="block text-gray-400 font-gilroy font-bold text-3xl sm:text-4xl md:text-5xl leading-tight"
+                  className="block text-gray-400 font-gilroy font-bold text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight"
                   height={sliderHeight}
                 />
               </h1>
@@ -125,7 +125,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 w-full"
             >
               <Button
                 asChild
@@ -133,7 +133,7 @@ const HeroSection = () => {
                 size="xl"
                 iconName="ArrowRight"
                 iconPosition="right"
-                className="rounded-full px-8 py-4 text-base w-full sm:w-auto bg-primary text-primary-foreground shadow-lg shadow-primary/30 hover:bg-primary/90 hover:opacity-90 transition-opacity focus-visible:ring-2 focus-visible:ring-primary/40 border border-primary/20"
+                className="rounded-full px-6 sm:px-8 py-4 text-base w-full sm:w-auto bg-primary text-primary-foreground shadow-lg shadow-primary/30 hover:bg-primary/90 hover:opacity-90 transition-opacity focus-visible:ring-2 focus-visible:ring-primary/40 border border-primary/20"
               >
                 <a href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`} target="_blank" rel="noopener noreferrer">
                   Solicitar Cotización
@@ -146,7 +146,7 @@ const HeroSection = () => {
                 size="xl"
                 iconName="Play"
                 iconPosition="left"
-                className="group border-2 border-secondary/20 text-secondary hover:bg-secondary hover:text-secondary-foreground font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                className="group border-2 border-secondary/20 text-secondary hover:bg-secondary hover:text-secondary-foreground font-semibold px-6 sm:px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
               >
                 <span className="flex items-center space-x-2">
                   <Link to="/services">Ver Servicios</Link>
