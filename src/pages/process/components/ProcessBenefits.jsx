@@ -25,7 +25,7 @@ const ProcessBenefits = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-20 bg-background">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center mb-10">
           <h2 className="text-2xl md:text-5xl font-gilroy font-bold text-secondary">
@@ -35,8 +35,8 @@ const ProcessBenefits = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => (
-            <div key={index} className="text-center bg-card rounded-2xl p-6 shadow-card">
-              <div className="w-16 h-16 bg-accent/15 rounded-xl flex items-center justify-center mx-auto mb-4 overflow-hidden">
+            <div key={index} className="text-center bg-white rounded-2xl p-6 shadow-card">
+              <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4 overflow-hidden">
                 <img
                   src={`/images/${benefit.image}`}
                   alt={benefit.title}

@@ -7,7 +7,7 @@ const ProcessCTA = () => {
   const openWhatsApp = () => {
     const phone = '573006719235';
     const text = encodeURIComponent(
-      'Hola, me gustaría agendar una consultoría estratégica para mi proyecto web. ¿Podemos coordinar?'
+      'Hola, me gustaría agendar una consultoría estratégica para mi proyecto web'
     );
     window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
   };
@@ -21,7 +21,7 @@ const ProcessCTA = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-background relative overflow-hidden">
+    <section className="py-20 bg-muted/10 relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-8 relative">
         {/* Main CTA Section */}
         <div className="max-w-4xl mx-auto text-center mb-16">

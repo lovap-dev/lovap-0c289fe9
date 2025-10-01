@@ -61,8 +61,8 @@ const ProcessFAQ = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/30">
-      <div className="container mx-auto px-8 md:px-10 lg:px-12 max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
+    <section className="py-20 bg-gray-50">
+      <div className="container mx-auto px-6 lg:px-8 max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-3">
             Preguntas <span className="text-accent">Frecuentes</span>

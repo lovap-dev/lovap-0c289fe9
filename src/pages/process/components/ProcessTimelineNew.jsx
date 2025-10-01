@@ -156,9 +156,11 @@ const ProcessTimelineNew = () => {
   ];
 
   return (
-    <div className="w-full">
-      <Timeline data={data} />
-    </div>
+    <section className="py-20 bg-gradient-to-b from-background to-muted/5">
+      <div className="w-full">
+        <Timeline data={data} />
+      </div>
+    </section>
   );
 };
 

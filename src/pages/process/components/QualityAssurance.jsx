@@ -111,7 +111,7 @@ const QualityAssurance = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-20 bg-background">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">

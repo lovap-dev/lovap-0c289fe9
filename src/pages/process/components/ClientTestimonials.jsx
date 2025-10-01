@@ -99,7 +99,7 @@ const ClientTestimonials = () => {
   const currentTestimonial = testimonials?.[activeTestimonial];
 
   return (
-    <section className="py-20 lg:py-32 bg-muted/30">
+    <section className="py-20 lg:py-20 bg-muted/20">
       <div className="container mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
