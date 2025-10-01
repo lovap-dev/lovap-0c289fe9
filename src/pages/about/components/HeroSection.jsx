@@ -26,31 +26,35 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-           <a
-              href="https://wa.me/573006719235"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-2 px-5 bg-accent py-2 rounded-xl font-semibold text-secondary bg-accent/10 border border-accent/40 shadow-sm hover:bg-accent/15 hover:border-accent/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/30 transition-smooth"
+            <Button
+             asChild
+              variant="outline"
+              size="lg"
+              iconName="ArrowRight"
+              iconPosition="left"
+              className="border-border text-secondary hover:bg-foreground hover:text-background hover:border-foreground"
+           
             >
-              <span>Hablanos de tu proyecto</span>
-              <Icon name="ArrowRight" size={18} />
-            </a>
+              Hablemos de tu Proyecto
+            </Button>
             
-          <a
-              href="/process"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-2 px-5 bg-accent py-2 rounded-xl font-semibold text-secondary bg-accent/10 border border-accent/40 shadow-sm hover:bg-accent/15 hover:border-accent/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/30 transition-smooth"
+            <Button
+             asChild
+              variant="outline"
+              size="lg"
+              iconName="ArrowRight"
+              iconPosition="left"
+              className="border-border text-secondary hover:bg-foreground hover:text-background hover:border-foreground"
+           
             >
-              <span>Ver nuestro proceso</span>
-              <Icon name="ArrowRight" size={18} />
-            </a>
+              Ver Nuestro Proceso
+            </Button>
           </div>
         </div>
         
         <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           <div className="space-y-2">
-            <div className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary bg-primary px-2 py-1 rounded-lg">5+</div>
+            <div className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary bg-primary px-2 py-1 rounded-lg">150+</div>
             <div className="text-sm text-text-primary/70">Proyectos Exitosos</div>
           </div>
           <div className="space-y-2">
@@ -58,7 +62,7 @@ const HeroSection = () => {
             <div className="text-sm text-text-primary/70">Satisfacción Cliente</div>
           </div>
           <div className="space-y-2">
-            <div className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary bg-primary px-2 py-1 rounded-lg">1+</div>
+            <div className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary bg-primary px-2 py-1 rounded-lg">5+</div>
             <div className="text-sm text-text-primary/70">Años Experiencia</div>
           </div>
           <div className="space-y-2">
