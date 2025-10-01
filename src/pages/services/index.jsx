@@ -6,7 +6,7 @@ import ServiceGrid from './components/ServiceGrid';
 import PortfolioShowcase from './components/PortfolioShowcase';
 import CaseStudyShowcase from '../homepage/components/CaseStudyShowcase';
 import ProcessOverview from './components/ProcessOverview';
-import TechnicalSpecs from './components/TechnicalSpecs';
+import QualityAssurance from '../process/components/QualityAssurance';
 import ComparisonMatrix from './components/ComparisonMatrix';
 import ProcessCTA from '../process/components/ProcessCTA';
 import FloatingCTA from '../homepage/components/FloatingCTA';
@@ -24,7 +24,7 @@ const ServicesPage = () => {
         {/*<ROICalculator /> */} 
         <CaseStudyShowcase />
         {/*<ProcessOverview /> */} 
-        <TechnicalSpecs />
+        <QualityAssurance />
         {/* <ComparisonMatrix />*/}
         <ProcessCTA />
       </main>
