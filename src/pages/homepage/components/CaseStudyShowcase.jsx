@@ -254,22 +254,6 @@ const CaseStudyShowcase = () => {
             </div>
           </div>
         </div>
-
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center space-x-2 bg-success/10 text-success px-6 py-3 rounded-full text-sm font-medium mb-6">
-            <Icon name="Award" size={16} />
-            <span>Resultados promedio: +400% ROI en los primeros 12 meses</span>
-          </div>
-          <Button
-            variant="default"
-            size="lg"
-            iconName="ArrowRight"
-            iconPosition="right"
-            className="bg-secondary text-secondary-foreground hover:bg-secondary/90"
-          >
-            Ver Todos los Casos de Estudio
-          </Button>
-        </div>
       </div>
     </section>
   );
