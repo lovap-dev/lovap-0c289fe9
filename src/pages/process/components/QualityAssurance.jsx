@@ -21,7 +21,6 @@ const QualityAssurance = () => {
         'Auditoría de rendimiento automatizada',
         'Optimización de código y assets',
         'Implementación de CDN global',
-        'Compresión y minificación avanzada',
         'Testing de velocidad en múltiples dispositivos'
       ]
     },
@@ -39,7 +38,6 @@ const QualityAssurance = () => {
       processes: [
         'Escaneo de vulnerabilidades OWASP',
         'Implementación de headers de seguridad',
-        'Configuración de firewall web',
         'Auditoría de dependencias y librerías',
         'Testing de penetración básico'
       ]
@@ -57,9 +55,7 @@ const QualityAssurance = () => {
       processes: [
         'Auditoría de accesibilidad automatizada',
         'Testing con lectores de pantalla',
-        'Validación de navegación por teclado',
-        'Optimización de etiquetas semánticas',
-        'Testing con usuarios con discapacidades'
+        'Optimización de etiquetas semánticas'
       ]
     },
     {
@@ -80,33 +76,6 @@ const QualityAssurance = () => {
         'Configuración de sitemaps XML',
         'Testing de rastreabilidad e indexación'
       ]
-    }
-  ];
-
-  const certifications = [
-    {
-      name: "Google Lighthouse",
-      description: "Auditoría automatizada de rendimiento",
-      icon: "Award",
-      status: "Certificado"
-    },
-    {
-      name: "WCAG 2.1 AA",
-      description: "Estándar de accesibilidad web",
-      icon: "CheckCircle",
-      status: "Cumplimiento"
-    },
-    {
-      name: "OWASP Top 10",
-      description: "Protección contra vulnerabilidades",
-      icon: "Shield",
-      status: "Verificado"
-    },
-    {
-      name: "Core Web Vitals",
-      description: "Métricas esenciales de Google",
-      icon: "Zap",
-      status: "Optimizado"
     }
   ];
 
@@ -211,40 +180,6 @@ const QualityAssurance = () => {
             </div>
           </div>
         </div>
-
-        {/* Certifications
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center bg-primary/10 border border-primary/20 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
-              Certificaciones
-            </div>
-            <h3 className="text-2xl lg:text-3xl font-gilroy font-bold text-secondary">
-              Estándares de Calidad Verificados
-            </h3>
-            <p className="text-text-primary/70 mt-3 max-w-2xl mx-auto">
-              Cumplimos con los estándares más exigentes de la industria para garantizar la excelencia en cada proyecto.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {certifications?.map((cert, index) => (
-              <div key={index} className="group bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 text-center shadow-lg shadow-primary/5 hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 transition-all duration-300">
-                <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300">
-                  <Icon name={cert?.icon} size={28} className="text-primary group-hover:scale-110 transition-transform duration-300" />
-                </div>
-                <h4 className="font-gilroy font-bold text-secondary mb-2 text-lg">
-                  {cert?.name}
-                </h4>
-                <p className="text-sm text-text-primary/70 mb-4 leading-relaxed">
-                  {cert?.description}
-                </p>
-                <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-success/10 to-success/5 border border-success/20 text-success rounded-full text-sm font-semibold">
-                  <Icon name="Check" size={14} className="mr-2" />
-                  {cert?.status}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div> */}
 
         {/* Quality Promise - New Design */}
         <div className="max-w-6xl mx-auto mt-8">
