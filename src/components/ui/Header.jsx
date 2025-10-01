@@ -113,8 +113,8 @@ const Header = () => {
               href="https://wa.me/573006719235"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-2 px-5 bg-accent py-2 rounded-xl font-semibold text-secondary bg-accent/10 border border-accent/40 shadow-sm hover:bg-accent/15 hover:border-accent/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/30 transition-smooth"
-            >
+            className="hidden sm:inline-flex items-center gap-2 px-5 bg-blue-500/10 py-2 rounded-xl font-semibold text-blue-600 border border-blue-500/40 shadow-sm hover:bg-blue-500/15 hover:border-blue-500/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white-500/30 transition-smooth"
+              >
               <span>Cotización Estratégica</span>
               <Icon name="ArrowRight" size={18} />
             </a>
