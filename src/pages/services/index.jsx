@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../../components/ui/Header';
 import ServiceHero from './components/ServiceHero';
 import ServiceGrid from './components/ServiceGrid';
-//import ROICalculator from './components/ROICalculator';
 import PortfolioShowcase from './components/PortfolioShowcase';
 import CaseStudyShowcase from '../homepage/components/CaseStudyShowcase';
 import ProcessOverview from './components/ProcessOverview';
@@ -21,12 +20,8 @@ const ServicesPage = () => {
         
         <ServiceHero />
         <ServiceGrid />
-        {/*<ROICalculator /> */} 
         <CaseStudyShowcase />
         {/*<ProcessOverview /> */} 
-        <QualityAssurance />
-        {/* <ComparisonMatrix />*/}
-        <ProcessCTA />
       </main>
       <FloatingCTA />
       <Footer />
