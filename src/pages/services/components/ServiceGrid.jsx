@@ -143,21 +143,6 @@ const services = [
                   ))}
                 </div>
 
-                <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-muted rounded-xl">
-                  <div className="text-center">
-                    <div className="text-lg font-gilroy font-bold text-secondary">{service?.metrics?.conversion}</div>
-                    <div className="text-xs text-text-secondary">Conversión</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-lg font-gilroy font-bold text-secondary">{service?.metrics?.loadTime}</div>
-                    <div className="text-xs text-text-secondary">Carga</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-lg font-gilroy font-bold text-secondary">{service?.metrics?.roi}</div>
-                    <div className="text-xs text-text-secondary">ROI</div>
-                  </div>
-                </div>
-
                 <div className="space-y-3">
                   <Button
                     variant="default"
