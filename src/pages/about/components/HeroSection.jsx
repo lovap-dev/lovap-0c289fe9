@@ -27,21 +27,27 @@ const HeroSection = () => {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
-              variant="default"
+             asChild
+              variant="outline"
               size="lg"
-              iconName="MessageCircle"
-              iconPosition="right"
+              iconName="ArrowRight"
+              iconPosition="left"
+              className="border-border text-secondary hover:bg-foreground hover:text-background hover:border-foreground"
+           
             >
               Hablemos de tu Proyecto
             </Button>
             
             <Button
+             asChild
               variant="outline"
               size="lg"
-              iconName="Play"
+              iconName="ArrowRight"
               iconPosition="left"
+              className="border-border text-secondary hover:bg-foreground hover:text-background hover:border-foreground"
+           
             >
-             Ver Nuestro Proceso
+              Ver Nuestro Proceso
             </Button>
           </div>
         </div>
