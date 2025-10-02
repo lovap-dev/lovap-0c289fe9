@@ -21,7 +21,7 @@ const ServicesPage = () => {
         <ServiceHero />
         <ServiceGrid />
         <CaseStudyShowcase />
-        {/*<ProcessOverview /> */} 
+        <ProcessOverview />
       </main>
       <FloatingCTA />
       <Footer />
