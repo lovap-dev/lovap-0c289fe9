@@ -17,11 +17,6 @@ const services = [
       'Formularios inteligentes que reducen leads no calificados',
       'Integración con CRM y plataformas de marketing'
     ],
-    metrics: {
-      conversion: '15-25%',
-      loadTime: '<2s',
-      roi: '300-500%'
-    },
     price: 'Desde $100',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80'
   },
@@ -36,11 +31,6 @@ const services = [
       'Optimización SEO para posicionar en Google',
       'Escalable e integrable con sistemas empresariales'
     ],
-    metrics: {
-      conversion: '10-18%',
-      loadTime: '<2s',
-      roi: '400-600%'
-    },
     price: 'Desde $250',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80'
   },
@@ -55,33 +45,9 @@ const services = [
       'Automatización de procesos',
       'Documentación técnica clara y soporte continuo'
     ],
-    metrics: {
-      conversion: '20-30%',
-      loadTime: '<2.5s',
-      roi: '400-800%'
-    },
     price: 'Desde $1000',
     image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80'
   },
-    /*{
-      id: 'integrations',
-      title: 'Integraciones y Automatización',
-      description: 'Conexiones inteligentes entre sistemas que optimizan flujos de trabajo y eliminan tareas manuales.',
-      icon: 'Workflow',
-      features: [
-        'APIs y webhooks personalizados',
-        'Automatización de procesos',
-        'Sincronización de datos en tiempo real',
-        'Monitoreo y alertas inteligentes'
-      ],
-      metrics: {
-        conversion: '25-40%',
-        loadTime: '<1s',
-        roi: '500-1000%'
-      },
-      price: 'Desde €4,000',
-      image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80'
-    }*/
   ];
 
   // Índice fijo del servicio destacado
