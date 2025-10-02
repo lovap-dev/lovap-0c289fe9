@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from '../../../components/ui/Button';
 import Icon from '../../../components/AppIcon';
 
 const ServiceGrid = () => {
-  const [activeService, setActiveService] = useState(0);
+  // Destacar siempre "Sitios Web Corporativos"
 
 const services = [
   {
@@ -84,6 +84,12 @@ const services = [
     }*/
   ];
 
+  // Índice fijo del servicio destacado
+  const highlightedIndex = (() => {
+    const i = services.findIndex((s) => s.id === 'corporate-sites');
+    return i !== -1 ? i : 0;
+  })();
+
   const buildWhatsAppUrl = (service) => {
     const phone = '573006719235';
     const templateLines = [
@@ -137,17 +143,16 @@ const services = [
           {services?.map((service, index) => (
             <div
               key={service?.id}
-              className={`group relative bg-white rounded-2xl border-2 transition-all duration-300 cursor-pointer ${
-                activeService === index
+              className={`group relative bg-white rounded-2xl border-2 transition-all duration-300 ${
+                index === highlightedIndex
                   ? 'border-primary shadow-card-elevated-strong scale-105'
                   : 'border-border hover:border-primary/50 hover:shadow-card-elevated'
               }`}
-              onClick={() => setActiveService(index)}
             >
               <div className="p-8">
                 <div className="flex items-center space-x-4 mb-6">
                   <div className={`p-3 rounded-xl transition-colors ${
-                    activeService === index ? 'bg-primary text-primary-foreground' : 'bg-muted text-secondary'
+                    index === highlightedIndex ? 'bg-primary text-primary-foreground' : 'bg-muted text-secondary'
                   }`}>
                     <Icon name={service?.icon} size={24} />
                   </div>
@@ -206,7 +211,7 @@ const services = [
                 </div>
               </div>
 
-              {activeService === index && (
+              {index === highlightedIndex && (
                 <div className="absolute -top-2 -right-2 bg-primary text-primary-foreground p-2 rounded-full">
                   <Icon name="Star" size={16} />
                 </div>

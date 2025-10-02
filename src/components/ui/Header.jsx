@@ -53,40 +53,15 @@ const Header = () => {
             className="flex items-center space-x-2 transition-smooth hover:opacity-80"
             onClick={closeMenu}
           >
-            <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-lg">
-              <svg 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                className="text-primary-foreground"
-              >
-                <path 
-                  d="M12 2L2 7L12 12L22 7L12 2Z" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                />
-                <path 
-                  d="M2 17L12 22L22 17" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                />
-                <path 
-                  d="M2 12L12 17L22 12" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-            <span className="text-xl font-gilroy font-bold text-secondary">
-              Lovap Corporate
-            </span>
+            <img
+              src="/images/LOGO-02.webp"
+              alt="Lovap Corporate logo"
+              className="h-8 w-auto"
+              loading="eager"
+              width="120"
+              height="32"
+            />
+            <span className="sr-only">Lovap Corporate</span>
           </Link>
 
           {/* Desktop Navigation */}

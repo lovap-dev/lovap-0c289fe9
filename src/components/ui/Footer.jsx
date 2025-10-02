@@ -8,38 +8,15 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
-              <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-lg">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="text-primary-foreground"
-                >
-                  <path
-                    d="M12 2L2 7L12 12L22 7L12 2Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M2 17L12 22L22 17"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M2 12L12 17L22 12"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <span className="text-2xl font-gilroy font-bold">Lovap Corporate</span>
+              <img
+                src="/images/LOGO-04.webp"
+                alt="Lovap Corporate logo"
+                className="h-10 w-auto"
+                loading="eager"
+                width="140"
+                height="40"
+              />
+              <span className="sr-only">Lovap Corporate</span>
             </div>
             <p className="text-white/80 leading-relaxed mb-6 max-w-md">
               Transformamos ideas en experiencias digitales que impulsan el crecimiento empresarial.
