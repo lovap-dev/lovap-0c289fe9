@@ -64,7 +64,7 @@ const ContactSection = () => {
 
   const budgetRanges = [
     '350.000 - 500.000 COP',
-    '$600.000 - 1.000.000 COP',
+    '600.000 - 1.000.000 COP',
     '1.200.000+ COP',
     'Por definir'
   ];
