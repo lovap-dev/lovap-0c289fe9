@@ -75,24 +75,25 @@ const ContactSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-lovap-neutral-light">
+    <section className="relative min-h-screen flex items-center py-20 bg-gradient-to-br from-background via-background to-muted overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-lovap-primary/5 to-transparent"></div>
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
       </div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-          <div className="text-lovap-accent">
-            <h2 className="text-4xl lg:text-6xl font-bold mb-6 font-gilroy">
+          <div>
+            <h2 className="text-4xl lg:text-6xl font-bold mb-6 font-gilroy text-secondary leading-tight">
               Cuéntanos cómo
               <br />
-              <span className="text-lovap-primary">
+              <span className="text-primary">
                 podemos ayudarte
               </span>
             </h2>
-            <p className="text-xl text-lovap-surface mb-8 leading-relaxed font-gilroy">
+            <p className="text-xl text-text-secondary mb-8 leading-relaxed font-inter">
               Recibe una propuesta personalizada para tu proyecto. 
               La consulta inicial es completamente gratuita y sin compromiso.
             </p>
@@ -106,16 +107,16 @@ const ContactSection = () => {
                 'Equipo especializado'
               ].map((benefit, index) => (
                 <div key={index} className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-lovap-primary flex-shrink-0" />
-                  <span className="text-lovap-surface font-gilroy">{benefit}</span>
+                  <CheckCircle className="w-5 h-5 text-success flex-shrink-0" />
+                  <span className="text-text-secondary font-inter">{benefit}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Right Form Card */}
-          <div className="bg-lovap-accent rounded-3xl p-8 shadow-2xl">
-            <h3 className="text-2xl font-bold text-lovap-secondary mb-6 font-gilroy">
+          <div className="bg-card rounded-3xl p-8 shadow-card-strong border border-border">
+            <h3 className="text-2xl font-bold text-secondary mb-6 font-gilroy">
               Solicitar propuesta
             </h3>
             
@@ -123,7 +124,7 @@ const ContactSection = () => {
               {/* Name and Email */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-lovap-secondary mb-2 font-gilroy">
+                  <label htmlFor="name" className="block text-sm font-medium text-secondary mb-2 font-inter">
                     Nombre *
                   </label>
                   <Input
@@ -133,12 +134,12 @@ const ContactSection = () => {
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full bg-lovap-background border-lovap-neutral/20 text-lovap-secondary"
+                    className="w-full bg-background border-border text-foreground"
                     placeholder="Tu nombre"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-lovap-secondary mb-2 font-gilroy">
+                  <label htmlFor="email" className="block text-sm font-medium text-secondary mb-2 font-inter">
                     Email *
                   </label>
                   <Input
@@ -148,7 +149,7 @@ const ContactSection = () => {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full bg-lovap-background border-lovap-neutral/20 text-lovap-secondary"
+                    className="w-full bg-background border-border text-foreground"
                     placeholder="tu@empresa.com"
                   />
                 </div>
@@ -157,7 +158,7 @@ const ContactSection = () => {
               {/* Company and Phone */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-lovap-secondary mb-2 font-gilroy">
+                  <label htmlFor="company" className="block text-sm font-medium text-secondary mb-2 font-inter">
                     Empresa
                   </label>
                   <Input
@@ -166,12 +167,12 @@ const ContactSection = () => {
                     type="text"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="w-full bg-lovap-background border-lovap-neutral/20 text-lovap-secondary"
+                    className="w-full bg-background border-border text-foreground"
                     placeholder="Nombre de tu empresa"
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-lovap-secondary mb-2 font-gilroy">
+                  <label htmlFor="phone" className="block text-sm font-medium text-secondary mb-2 font-inter">
                     Teléfono
                   </label>
                   <Input
@@ -180,7 +181,7 @@ const ContactSection = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full bg-lovap-background border-lovap-neutral/20 text-lovap-secondary"
+                    className="w-full bg-background border-border text-foreground"
                     placeholder="+52 (55) 1234-5678"
                   />
                 </div>
@@ -189,7 +190,7 @@ const ContactSection = () => {
               {/* Project Type and Budget */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="projectType" className="block text-sm font-medium text-lovap-secondary mb-2 font-gilroy">
+                  <label htmlFor="projectType" className="block text-sm font-medium text-secondary mb-2 font-inter">
                     Tipo de proyecto *
                   </label>
                   <select
@@ -198,7 +199,7 @@ const ContactSection = () => {
                     required
                     value={formData.projectType}
                     onChange={handleInputChange}
-                    className="w-full h-10 px-3 rounded-md border border-lovap-neutral/20 bg-lovap-background text-sm focus:ring-2 focus:ring-lovap-primary focus:border-lovap-primary text-lovap-secondary font-gilroy"
+                    className="w-full h-10 px-3 rounded-md border border-border bg-background text-sm focus:ring-2 focus:ring-ring focus:border-primary text-foreground font-inter"
                   >
                     <option value="">Selecciona un tipo</option>
                     {projectTypes.map((type) => (
@@ -207,7 +208,7 @@ const ContactSection = () => {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="budget" className="block text-sm font-medium text-lovap-secondary mb-2 font-gilroy">
+                  <label htmlFor="budget" className="block text-sm font-medium text-secondary mb-2 font-inter">
                     Presupuesto estimado
                   </label>
                   <select
@@ -215,7 +216,7 @@ const ContactSection = () => {
                     name="budget"
                     value={formData.budget}
                     onChange={handleInputChange}
-                    className="w-full h-10 px-3 rounded-md border border-lovap-neutral/20 bg-lovap-background text-sm focus:ring-2 focus:ring-lovap-primary focus:border-lovap-primary text-lovap-secondary font-gilroy"
+                    className="w-full h-10 px-3 rounded-md border border-border bg-background text-sm focus:ring-2 focus:ring-ring focus:border-primary text-foreground font-inter"
                   >
                     <option value="">Selecciona un rango</option>
                     {budgetRanges.map((range) => (
@@ -227,7 +228,7 @@ const ContactSection = () => {
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-lovap-secondary mb-2 font-gilroy">
+                <label htmlFor="message" className="block text-sm font-medium text-secondary mb-2 font-inter">
                   Cuéntanos sobre tu proyecto *
                 </label>
                 <Textarea
@@ -237,7 +238,7 @@ const ContactSection = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={4}
-                  className="w-full bg-lovap-background border-lovap-neutral/20 text-lovap-secondary"
+                  className="w-full bg-background border-border text-foreground"
                   placeholder="Describe tu proyecto, objetivos y cualquier detalle relevante..."
                 />
               </div>
@@ -246,11 +247,11 @@ const ContactSection = () => {
               <Button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="w-full bg-lovap-primary hover:bg-lovap-light text-lovap-secondary py-3 px-6 rounded-xl font-semibold transition-colors duration-200 font-gilroy"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 px-6 rounded-xl font-semibold transition-all duration-300 font-gilroy shadow-lg shadow-primary/30"
               >
                 {isSubmitting ? (
                   <>
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-lovap-secondary mr-2"></div>
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-foreground mr-2"></div>
                     Enviando...
                   </>
                 ) : (
