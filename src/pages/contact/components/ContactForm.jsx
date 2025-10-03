@@ -305,7 +305,7 @@ const ContactForm = () => {
               <Icon name="Clock" size={24} className="text-primary" />
             </div>
             <h3 className="font-gilroy font-semibold text-secondary mb-2">Respuesta Rápida</h3>
-            <p className="text-sm text-text-secondary">Te contactaremos en las próximas 24 horas</p>
+            <p className="text-sm text-text-secondary">Te contactaremos el mismo día</p>
           </div>
 
           <div className="bg-white rounded-lg p-6 text-center shadow-sm border border-border">
