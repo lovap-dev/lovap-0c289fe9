@@ -12,12 +12,11 @@ const services = [
     description: 'Páginas enfocadas en una sola acción, captar clientes de manera inmediata con foco en conversión.',
     icon: 'Target',
     features: [
-      'Optimización con pruebas A/B',
-      'Carga ultrarrápida en menos de 2 segundos',
-      'Formularios inteligentes que reducen leads no calificados',
-      'Integración con CRM y plataformas de marketing'
+      'Diseño responsivo y optimizado para conversión',
+      'Velocidad de carga optimizada',
+      'Formularios conectados a correo o CRM',
     ],
-    price: 'Desde $100',
+    price: 'Desde 350.000COP',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80'
   },
   {
@@ -26,12 +25,12 @@ const services = [
     description: 'El centro digital de tu empresa: credibilidad, autoridad y confianza en un sitio web hecho 100% a la medida en código puro.',
     icon: 'Building2',
     features: [
-      'Diseño premium alineado a tu identidad de marca',
-      'Código limpio y seguro (sin CMS ni plugins inseguros)',
-      'Optimización SEO para posicionar en Google',
-      'Escalable e integrable con sistemas empresariales'
+      'Diseño alineado con la identidad visual de tu marca',
+      'Hasta 6 secciones principales (Inicio, Nosotros, Servicios, Contacto, etc.)',
+      'Panel de administración para gestionar contenido',
+      'Optimización SEO básica'
     ],
-    price: 'Desde $250',
+    price: 'Desde 600.000COP',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80'
   },
   {
@@ -41,11 +40,11 @@ const services = [
     icon: 'Code2',
     features: [
       'Arquitectura modular y escalable',
-      'Integraciones mediante APIs RESTful o GraphQL',
-      'Automatización de procesos',
-      'Documentación técnica clara y soporte continuo'
+      'Integraciones personalizadas',
+      'Automatización de procesos internos.',
+      'Documentación técnica y soporte inicial.'
     ],
-    price: 'Desde $1000',
+    price: 'Bajo cotización',
     image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80'
   },
   ];
