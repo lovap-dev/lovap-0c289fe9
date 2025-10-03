@@ -31,8 +31,6 @@ const AboutPage = () => {
           <ValuesSection />
           {/* <ClientLogosSection /> */ }
           {/* <TimelineSection /> */ }
-          <CTASection />
-        </main>
         <Footer />
       </div>
     </>
