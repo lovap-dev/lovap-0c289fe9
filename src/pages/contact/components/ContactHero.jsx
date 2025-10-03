@@ -1,8 +1,8 @@
 import React from 'react';
-import Button from '../../../components/ui/Button';
-import Icon from '../../../components/AppIcon';
+import { Button } from '@/components/ui/button';
+import { MessageCircle, Calendar, Phone, Zap, Mail, Calculator } from 'lucide-react';
 
-const ContactHero = () => {
+const ContactSection = () => {
   return (
     <section className="relative bg-gradient-to-br from-secondary via-secondary to-secondary/90 text-white overflow-hidden">
       {/* Background Pattern */}
@@ -18,7 +18,7 @@ const ContactHero = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <div className="inline-flex items-center space-x-2 bg-gray-700 text-primary px-4 py-2 rounded-full text-sm font-medium">
-                <Icon name="MessageCircle" size={16} />
+                <MessageCircle size={16} />
                 <span>Centro de Conversión</span>
               </div>
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-gilroy font-bold leading-tight">
@@ -51,19 +51,17 @@ const ContactHero = () => {
               <Button
                 variant="default"
                 size="lg"
-                iconName="Calendar"
-                iconPosition="left"
                 className="bg-primary text-primary-foreground hover:bg-accent"
               >
+                <Calendar className="mr-2" size={20} />
                 Agendar Consultoría
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                iconName="Phone"
-                iconPosition="left"
                 className="border-white text-white hover:bg-white hover:text-secondary"
               >
+                <Phone className="mr-2" size={20} />
                 Llamar Ahora
               </Button>
             </div>
@@ -76,7 +74,7 @@ const ContactHero = () => {
               <div className="bg-black/20 backdrop-blur-sm border border-white/20 rounded-xl p-6">
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                    <Icon name="Zap" size={20} className="text-primary-foreground" />
+                    <Zap size={20} className="text-primary-foreground" />
                   </div>
                   <div>
                     <h3 className="font-gilroy font-semibold">Contacto Rápido</h3>
@@ -85,11 +83,11 @@ const ContactHero = () => {
                 </div>
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center space-x-2">
-                    <Icon name="Mail" size={14} />
+                    <Mail size={14} />
                     <span>lovap.dev@gmail.com</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Icon name="Phone" size={14} />
+                    <Phone size={14} />
                     <span>+57 300 671 9235</span>
                   </div>
                 </div>
@@ -99,7 +97,7 @@ const ContactHero = () => {
               <div className="bg-black/20 backdrop-blur-sm border border-primary/30 rounded-xl p-6">
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                    <Icon name="Calculator" size={20} className="text-secondary" />
+                    <Calculator size={20} className="text-secondary" />
                   </div>
                   <div>
                     <h3 className="font-gilroy font-semibold">Cotización Proyecto</h3>
@@ -118,4 +116,4 @@ const ContactHero = () => {
   );
 };
 
-export default ContactHero;
+export default ContactSection;
