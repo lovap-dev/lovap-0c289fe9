@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../../components/ui/Header';
 import ContactHero from './components/ContactHero';
 import ContactMethods from './components/ContactMethods';
-import ContactForm from './components/ContactForm';
 import QuoteRequestForm from './components/QuoteRequestForm';
 import TrustSignals from './components/TrustSignals';
 import FloatingCTA from './components/FloatingCTA';
@@ -23,10 +22,7 @@ const ContactPage = () => {
         {/* Trust Signals */}
         <TrustSignals />
         
-        {/* Contact Form */}
-        <div id="contact-form">
-          <ContactForm />
-        </div>
+     
         
         {/* Quote Request Form */}
         <div id="quote-form">
