@@ -85,7 +85,7 @@ const QualityAssurance = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-gilroy font-bold text-secondary mb-6">
-            Garantía de Calidad Total
+            Garantía de calidad total
           </h2>
           <p className="text-lg text-text-primary/80 max-w-3xl mx-auto">
             Nuestro proceso de QA asegura que cada proyecto cumpla con los más altos estándares 
@@ -146,7 +146,7 @@ const QualityAssurance = () => {
               {/* Metrics */}
               <div>
                 <h4 className="text-lg font-gilroy font-semibold text-secondary mb-6">
-                  Métricas de Calidad
+                  Métricas de calidad
                 </h4>
                 <div className="space-y-4">
                   {qualityTabs?.[activeTab]?.metrics?.map((metric, index) => (
@@ -166,7 +166,7 @@ const QualityAssurance = () => {
               {/* Processes */}
               <div>
                 <h4 className="text-lg font-gilroy font-semibold text-secondary mb-6">
-                  Procesos de Verificación
+                  Procesos de verificación
                 </h4>
                 <ul className="space-y-3">
                   {qualityTabs?.[activeTab]?.processes?.map((process, index) => (

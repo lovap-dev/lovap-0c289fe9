@@ -29,7 +29,7 @@ const ProcessBenefits = () => {
       <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center mb-10">
           <h2 className="text-2xl md:text-5xl font-gilroy font-bold text-secondary">
-            Beneficios de Nuestro Proceso
+            Beneficios de nuestro proceso
           </h2>
         </div>
 

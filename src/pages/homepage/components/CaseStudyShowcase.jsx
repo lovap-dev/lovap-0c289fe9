@@ -79,8 +79,8 @@ const CaseStudyShowcase = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-gilroy font-bold text-secondary mb-6">
-            Casos de Éxito 
-            <span className="text-primary"> Comprobados</span>
+            Casos de éxito 
+            <span className="text-primary"> comprobados</span>
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             Resultados reales de clientes que han transformado su negocio con nuestras soluciones estratégicas.
