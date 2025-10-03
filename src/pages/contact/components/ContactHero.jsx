@@ -59,18 +59,13 @@ const ContactSection = () => {
     'Sitio Corporativo',
     'Desarrollo a la Medida',
     'Rediseño de sitio existente',
-    'E-commerce',
-    'Aplicación Web',
-    'Consultoría Digital',
     'Otro'
   ];
 
   const budgetRanges = [
-    '$5,000 - $15,000 USD',
-    '$15,000 - $30,000 USD',
-    '$30,000 - $50,000 USD',
-    '$50,000 - $100,000 USD',
-    '$100,000+ USD',
+    '350.000 - 500.000 COP',
+    '$600.000 - 1.000.000 COP',
+    '1.200.000+ COP',
     'Por definir'
   ];
 
@@ -151,7 +146,7 @@ const ContactSection = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     className="w-full bg-background border-border text-foreground"
-                    placeholder="tu@empresa.com"
+                    placeholder="correo@empresa.com"
                   />
                 </div>
               </div>
@@ -183,7 +178,7 @@ const ContactSection = () => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     className="w-full bg-background border-border text-foreground"
-                    placeholder="+52 (55) 1234-5678"
+                    placeholder="+57 321 000 00 00"
                   />
                 </div>
               </div>
