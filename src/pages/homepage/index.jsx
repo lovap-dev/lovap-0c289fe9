@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
 import HeroSection from './components/HeroSection';
-import ServicePreview from './components/ServicePreview';
 import TestimonialCarousel from './components/TestimonialCarousel';
 import CaseStudyShowcase from './components/CaseStudyShowcase';
 import TrustBadges from './components/TrustBadges';
@@ -42,9 +41,6 @@ const Homepage = () => {
         <main className="pt-16">
           {/* Hero Section */}
           <HeroSection />
-
-          {/* Service Preview */}
-          <ServicePreview />
 
           {/* Portfolio Showcase */}
           <CaseStudyShowcase />
