@@ -6,8 +6,6 @@ import TeamSection from './components/TeamSection';
 import ValuesSection from './components/ValuesSection';
 import ClientLogosSection from './components/ClientLogosSection';
 import TimelineSection from './components/TimelineSection';
-import CTASection from './components/CTASection';
-import FloatingCTA from '../homepage/components/FloatingCTA';
 import Footer from '../../components/ui/Footer';
 
 const AboutPage = () => {
@@ -35,7 +33,6 @@ const AboutPage = () => {
           {/* <TimelineSection /> */ }
           <CTASection />
         </main>
-        <FloatingCTA />
         <Footer />
       </div>
     </>
