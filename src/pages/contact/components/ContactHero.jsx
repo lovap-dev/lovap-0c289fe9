@@ -71,7 +71,7 @@ const ContactSection = () => {
 
   return (
     
-  <section className="section-padding bg-gray-50 py-20 sm:py-24 lg:py-32 min-h-[900px] lg:min-h-screen">
+ <section className="section-padding bg-gray-50 px-6 sm:px-10 lg:px-20 py-16 sm:py-20 lg:py-28">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
