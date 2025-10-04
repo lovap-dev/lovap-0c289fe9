@@ -16,7 +16,7 @@ const services = [
       'Velocidad de carga optimizada',
       'Formularios conectados a correo o CRM',
     ],
-    price: 'Desde 350.000COP',
+    price: 'Desde 350.000 COP',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80'
   },
   {
@@ -30,7 +30,7 @@ const services = [
       'Panel de administración para gestionar contenido',
       'Optimización SEO básica'
     ],
-    price: 'Desde 600.000COP',
+    price: 'Desde 600.000 COP',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80'
   },
   {

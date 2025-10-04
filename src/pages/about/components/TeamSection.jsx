@@ -17,7 +17,7 @@ const TeamSection = () => {
       bio: `Desarrollador y estudiante de Ingeniería Informática con más de 3 años de experiencia creando soluciones tecnológicas eficientes y orientadas a resultados.`,
       skills: ["Liderazgo Estratégico", "Arquitectura de Sistemas", "Transformación Digital"],
       certifications: ["AWS Solutions Architect", "Google Cloud Professional", "Scrum Master"],
-      projects: 30,
+      projects: 25,
       category: "leadership",
     },
     {
@@ -30,7 +30,7 @@ const TeamSection = () => {
       bio: `Ingeniero Informático con más de un año de experiencia en desarrollo de software y optimización de soluciones tecnológicas.`,
       skills: ["User Research", "Prototyping", "Design Systems", "Conversion Optimization"],
       certifications: ["Google UX Design", "Adobe Certified Expert", "Figma Professional"],
-      projects: 20,
+      projects: 10,
       category: "design",
     },
     {
