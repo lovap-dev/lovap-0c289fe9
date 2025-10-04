@@ -8,42 +8,42 @@ const ValuesSection = () => {
       icon: "Target",
       title: "Orientados a Resultados",
       description: `Cada línea de código, cada pixel de diseño, cada estrategia implementada tiene un propósito claro: generar resultados medibles que impulsen el crecimiento de tu negocio.`,
-      metrics: "ROI promedio +340%"
+ 
     },
     {
       id: 2,
       icon: "Users",
       title: "Asociación Estratégica",
       description: `No somos proveedores, somos socios. Trabajamos codo a codo contigo, entendiendo tu visión y transformándola en realidad digital con transparencia total en cada paso.`,
-      metrics: "98% retención clientes"
+
     },
     {
       id: 3,
       icon: "Zap",
       title: "Innovación Continua",
       description: `Mantenemos el pulso de las últimas tecnologías y tendencias digitales para asegurar que tu solución web esté siempre a la vanguardia del mercado.`,
-      metrics: "Tecnologías más recientes"
+    
     },
     {
       id: 4,
       icon: "Shield",
       title: "Calidad Inquebrantable",
       description: `Cada proyecto pasa por rigurosos procesos de calidad. No entregamos hasta que cada detalle cumple con nuestros estándares de excelencia y los tuyos.`,
-      metrics: "99% uptime garantizado"
+     
     },
     {
       id: 5,
       icon: "Clock",
       title: "Velocidad con Propósito",
       description: `Entendemos que el tiempo es dinero. Nuestros procesos optimizados garantizan entregas rápidas sin comprometer la calidad ni la funcionalidad.`,
-      metrics: "50% más rápido promedio"
+     
     },
     {
       id: 6,
       icon: "Heart",
       title: "Pasión por la Excelencia",
       description: `Cada miembro del equipo Lovap vive y respira desarrollo web. Esta pasión se refleja en cada proyecto, convirtiendo desafíos en oportunidades de crecimiento.`,
-      metrics: "Satisfacción 100% equipo"
+     
     }
   ];
 
@@ -119,26 +119,26 @@ const ValuesSection = () => {
                   <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
                     <Icon name="Users" size={16} className="text-secondary" />
                   </div>
-                  <span className="text-text-primary">Colaboración y mentoring interno</span>
+                  <span className="text-text-primary">Colaboración y mentoria interna</span>
                 </div>
                 
                 <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
                     <Icon name="Award" size={16} className="text-secondary" />
                   </div>
-                  <span className="text-text-primary">Certificaciones profesionales patrocinadas</span>
+                  <span className="text-text-primary">Certificaciones profesionales</span>
                 </div>
               </div>
             </div>
             
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center p-6 bg-muted/50 rounded-2xl">
-                <div className="text-3xl font-gilroy font-bold text-secondary bg-primary px-3 py-1 rounded-lg mb-2">40+</div>
-                <div className="text-sm text-text-primary/70">Horas Formación/Mes</div>
+                <div className="text-3xl font-gilroy font-bold text-secondary bg-primary px-3 py-1 rounded-lg mb-2">5+</div>
+                <div className="text-sm text-text-primary/70">Proyectos completados</div>
               </div>
               
               <div className="text-center p-6 bg-muted/50 rounded-2xl">
-                <div className="text-3xl font-gilroy font-bold text-secondary bg-primary px-3 py-1 rounded-lg mb-2">25+</div>
+                <div className="text-3xl font-gilroy font-bold text-secondary bg-primary px-3 py-1 rounded-lg mb-2">6+</div>
                 <div className="text-sm text-text-primary/70">Certificaciones Activas</div>
               </div>
               

@@ -26,13 +26,13 @@ const HeroSection = () => {
           </p>
         </div>
         
-        <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div className="mt-16 grid grid-cols-2 lg:grid-cols-3 gap-8 text-center">
           <div className="space-y-2">
             <div className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary bg-primary px-2 py-1 rounded-lg">5+</div>
             <div className="text-sm text-text-primary/70">Proyectos Exitosos</div>
           </div>
           <div className="space-y-2">
-            <div className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary bg-primary px-2 py-1 rounded-lg">5+</div>
+            <div className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary bg-primary px-2 py-1 rounded-lg">1+</div>
             <div className="text-sm text-text-primary/70">Años Experiencia</div>
           </div>
           <div className="space-y-2">
