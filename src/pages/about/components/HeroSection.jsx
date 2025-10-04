@@ -24,42 +24,12 @@ const HeroSection = () => {
             visiones empresariales en experiencias web que impulsan el crecimiento medible. 
             Cada proyecto es una asociación estratégica hacia el éxito.
           </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button
-             asChild
-              variant="outline"
-              size="lg"
-              iconName="ArrowRight"
-              iconPosition="left"
-              className="border-border text-secondary hover:bg-foreground hover:text-background hover:border-foreground"
-           
-            >
-              Hablemos de tu Proyecto
-            </Button>
-            
-            <Button
-             asChild
-              variant="outline"
-              size="lg"
-              iconName="ArrowRight"
-              iconPosition="left"
-              className="border-border text-secondary hover:bg-foreground hover:text-background hover:border-foreground"
-           
-            >
-              Ver Nuestro Proceso
-            </Button>
-          </div>
         </div>
         
         <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           <div className="space-y-2">
-            <div className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary bg-primary px-2 py-1 rounded-lg">150+</div>
+            <div className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary bg-primary px-2 py-1 rounded-lg">5+</div>
             <div className="text-sm text-text-primary/70">Proyectos Exitosos</div>
-          </div>
-          <div className="space-y-2">
-            <div className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary bg-primary px-2 py-1 rounded-lg">98%</div>
-            <div className="text-sm text-text-primary/70">Satisfacción Cliente</div>
           </div>
           <div className="space-y-2">
             <div className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary bg-primary px-2 py-1 rounded-lg">5+</div>

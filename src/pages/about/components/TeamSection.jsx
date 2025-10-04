@@ -11,31 +11,27 @@ const TeamSection = () => {
       id: 1,
       name: "Juan Pablo Pabón Pabón",
       role: "CEO & Fundador",
-      specialization: "Estrategia Digital",
-      experience: "12+ años",
+      specialization: "Desarrollador Fullstack",
+      experience: "3+ años",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-      bio: `Visionario tecnológico con más de una década transformando ideas empresariales en soluciones digitales exitosas. Especialista en arquitectura de sistemas escalables y estrategias de crecimiento digital.`,
+      bio: `Desarrollador y estudiante de Ingeniería Informática con más de 3 años de experiencia creando soluciones tecnológicas eficientes y orientadas a resultados.`,
       skills: ["Liderazgo Estratégico", "Arquitectura de Sistemas", "Transformación Digital"],
       certifications: ["AWS Solutions Architect", "Google Cloud Professional", "Scrum Master"],
-      projects: 150,
+      projects: 30,
       category: "leadership",
-      linkedin: "#",
-      github: "#"
     },
     {
       id: 2,
       name: "Alejandro Tobón Rivera",
       role: "CTO & Fundador",
-      specialization: "Diseño de Experiencias",
-      experience: "7+ años",
+      specialization: "Ingeniero Informatico",
+      experience: "1+ años",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      bio: `Diseñador centrado en el usuario que combina psicología del comportamiento con estética moderna para crear interfaces que convierten visitantes en clientes.`,
+      bio: `Ingeniero Informático con más de un año de experiencia en desarrollo de software y optimización de soluciones tecnológicas.`,
       skills: ["User Research", "Prototyping", "Design Systems", "Conversion Optimization"],
       certifications: ["Google UX Design", "Adobe Certified Expert", "Figma Professional"],
-      projects: 95,
+      projects: 20,
       category: "design",
-      linkedin: "#",
-      github: "#"
     },
     {
       id: 3,
@@ -44,7 +40,7 @@ const TeamSection = () => {
       specialization: "Growth Marketing",
       experience: "4+ años",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
-      bio: `Estratega de marketing digital que transforma datos en decisiones. Especialista en optimización de conversiones y campañas de crecimiento escalable.`,
+      bio: `Lead UX/UI Designer con más de 4 años de experiencia diseñando experiencias digitales atractivas, funcionales y centradas en el usuario.`,
       skills: ["SEO/SEM", "Analytics", "Conversion Rate Optimization", "Content Strategy"],
       certifications: ["UX/UI", "Tecnica laboral en diseño"],
       projects: 30,
@@ -129,8 +125,8 @@ const TeamSection = () => {
                 {member?.bio}
               </p>
 
-              {/* Skills */}
-              <div className="mb-6">
+              {/* Skills
+               <div className="mb-6">
                 <h4 className="text-sm font-inter font-semibold text-secondary mb-3">
                   Especialidades Clave
                 </h4>
@@ -144,7 +140,8 @@ const TeamSection = () => {
                     </span>
                   ))}
                 </div>
-              </div>
+              </div>*/}
+             
 
               {/* Stats */}
               <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-muted/50 rounded-lg">
@@ -161,33 +158,7 @@ const TeamSection = () => {
                   <div className="text-xs text-text-primary/70">Certificaciones</div>
                 </div>
               </div>
-
-              {/* Social Links */}
-              <div className="flex items-center justify-between">
-                <div className="flex space-x-3">
-                  <a
-                    href={member?.linkedin}
-                    className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-smooth"
-                  >
-                    <Icon name="Linkedin" size={16} />
-                  </a>
-                  <a
-                    href={member?.github}
-                    className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-smooth"
-                  >
-                    <Icon name="Github" size={16} />
-                  </a>
-                </div>
-                
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  iconName="MessageCircle"
-                  iconPosition="right"
-                >
-                  Contactar
-                </Button>
-              </div>
+  
             </div>
           ))}
         </div>
