@@ -19,10 +19,8 @@ const ContactPage = () => {
         {/* Contact Methods */}
         <ContactMethods />
         
-        {/* Trust Signals */}
-        <TrustSignals />
-        
-     
+        {/* Trust Signals 
+          <TrustSignals />*/}
         
         {/* Quote Request Form */}
         <div id="quote-form">

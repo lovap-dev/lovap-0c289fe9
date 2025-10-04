@@ -42,7 +42,7 @@ const ContactMethods = () => {
       contact: 'Sesión de 45 minutos',
       action: 'Agendar Reunión',
       responseTime: 'Disponible esta semana',
-      variant: 'muted'
+      variant: 'accent'
     },
     {
       id: 'linkedin',
