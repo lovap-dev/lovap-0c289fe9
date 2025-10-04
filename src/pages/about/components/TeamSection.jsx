@@ -16,7 +16,7 @@ const TeamSection = () => {
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
       bio: `Desarrollador y estudiante de Ingeniería Informática con más de 3 años de experiencia creando soluciones tecnológicas eficientes y orientadas a resultados.`,
       skills: ["Liderazgo Estratégico", "Arquitectura de Sistemas", "Transformación Digital"],
-      certifications: ["AWS Solutions Architect", "Google Cloud Professional", "Scrum Master"],
+      certifications: ["AWS Solutions Architect", "Google Cloud Professional", "Scrum Master", "OWASP Top 10", "Laravel"],
       projects: 25,
       category: "leadership",
     },
