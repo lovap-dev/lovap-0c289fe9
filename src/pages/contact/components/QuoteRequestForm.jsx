@@ -160,9 +160,9 @@ const QuoteRequestForm = () => {
                 Descripción del Proyecto *
               </label>
               <textarea
-                className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary resize-none font-inter text-foreground bg-background transition-all"
+                className="w-full px-4 py-3 border-2 border-border rounded-xl bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-primary resize-none font-inter transition-all placeholder:text-text-secondary/50"
                 rows="5"
-                placeholder="Describe tu proyecto, objetivos principales y lo que esperas lograr. Mínimo 20 caracteres."
+                placeholder="Describe tu proyecto, objetivos principales y lo que esperas lograr..."
                 value={formData.projectDescription}
                 onChange={(e) => handleInputChange('projectDescription', e.target.value)}
               />
@@ -170,17 +170,16 @@ const QuoteRequestForm = () => {
                 <p className="mt-2 text-sm text-error font-inter">{errors.projectDescription}</p>
               )}
               <p className="mt-2 text-xs text-text-secondary font-inter">
-                {formData.projectDescription.length}/500 caracteres
+                Mínimo 20 caracteres · {formData.projectDescription.length}/500
               </p>
             </div>
             <div>
               <Input
                 label="Audiencia Objetivo"
                 type="text"
-                placeholder="Ej: Empresarios, profesionales, consumidores finales..."
+                placeholder="Ej: Empresarios, profesionales, consumidores finales"
                 value={formData.targetAudience}
                 onChange={(e) => handleInputChange('targetAudience', e.target.value)}
-                description="¿A quién está dirigido tu proyecto?"
               />
             </div>
           </div>
@@ -198,7 +197,7 @@ const QuoteRequestForm = () => {
                 options={designPreferences}
                 value={formData.designPreference}
                 onChange={(value) => handleInputChange('designPreference', value)}
-                description="¿Qué estilo te gustaría para tu proyecto?"
+                placeholder="Selecciona el estilo que prefieres"
               />
             </div>
             <div>
@@ -209,7 +208,7 @@ const QuoteRequestForm = () => {
                 onChange={(value) => handleInputChange('budget', value)}
                 error={errors.budget}
                 required
-                description="Esto nos ayuda a preparar una propuesta adecuada a tus necesidades"
+                placeholder="Selecciona tu rango de presupuesto"
               />
             </div>
             <div>
@@ -218,7 +217,7 @@ const QuoteRequestForm = () => {
                 type="date"
                 value={formData.launchDate}
                 onChange={(e) => handleInputChange('launchDate', e.target.value)}
-                description="Si tienes una fecha específica en mente (opcional)"
+                placeholder="dd/mm/aaaa"
               />
             </div>
           </div>
@@ -267,7 +266,7 @@ const QuoteRequestForm = () => {
                 options={contactMethods}
                 value={formData.preferredContact}
                 onChange={(value) => handleInputChange('preferredContact', value)}
-                description="¿Cómo prefieres que te contactemos?"
+                placeholder="Selecciona tu preferencia"
               />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -286,15 +285,14 @@ const QuoteRequestForm = () => {
                 placeholder="https://tuempresa.com"
                 value={formData.companyWebsite}
                 onChange={(e) => handleInputChange('companyWebsite', e.target.value)}
-                description="Si tienes uno"
               />
             </div>
             <div>
               <label className="block text-sm font-medium text-secondary mb-2 font-inter">
-                Información Adicional
+                Información Adicional (Opcional)
               </label>
               <textarea
-                className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary resize-none font-inter text-foreground bg-background transition-all"
+                className="w-full px-4 py-3 border-2 border-border rounded-xl bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-primary resize-none font-inter transition-all placeholder:text-text-secondary/50"
                 rows="4"
                 placeholder="¿Hay algo más que deberíamos saber sobre tu proyecto?"
                 value={formData.additionalInfo}

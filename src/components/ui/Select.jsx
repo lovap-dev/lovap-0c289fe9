@@ -10,7 +10,7 @@ const Select = React.forwardRef(({
     options = [],
     value,
     defaultValue,
-    placeholder = "Select an option",
+    placeholder = "Selecciona una opción",
     multiple = false,
     disabled = false,
     required = false,
@@ -104,8 +104,8 @@ const Select = React.forwardRef(({
                 <label
                     htmlFor={selectId}
                     className={cn(
-                        "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 mb-2 block",
-                        error ? "text-destructive" : "text-foreground"
+                        "text-sm font-medium font-inter leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 mb-2 block",
+                        error ? "text-destructive" : "text-secondary"
                     )}
                 >
                     {label}
@@ -118,9 +118,9 @@ const Select = React.forwardRef(({
                     id={selectId}
                     type="button"
                     className={cn(
-                        "flex h-10 w-full items-center justify-between rounded-md border border-input bg-white text-black px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+                        "flex h-11 w-full items-center justify-between rounded-xl border-2 border-border bg-background text-foreground px-4 py-2 text-sm font-inter ring-offset-background placeholder:text-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary disabled:cursor-not-allowed disabled:opacity-50 transition-all",
                         error && "border-destructive focus:ring-destructive",
-                        !hasValue && "text-muted-foreground"
+                        !hasValue && "text-text-secondary/50"
                     )}
                     onClick={handleToggle}
                     disabled={disabled}

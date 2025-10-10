@@ -4,7 +4,7 @@ import ContactHero from './components/ContactHero';
 import ContactMethods from './components/ContactMethods';
 import QuoteRequestForm from './components/QuoteRequestForm';
 import TrustSignals from './components/TrustSignals';
-import FloatingCTA from './components/FloatingCTA';
+import FloatingCTA from '../homepage/components/FloatingCTA';
 import Footer from '../../components/ui/Footer';
 
 const ContactPage = () => {

@@ -15,7 +15,7 @@ const Input = React.forwardRef(({
     const inputId = id || `input-${Math.random()?.toString(36)?.substr(2, 9)}`;
 
     // Base input classes
-    const baseInputClasses = "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50";
+    const baseInputClasses = "flex h-11 w-full rounded-xl border-2 border-border bg-background px-4 py-2 text-sm font-inter ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-text-secondary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary disabled:cursor-not-allowed disabled:opacity-50 transition-all";
 
     // Checkbox-specific styles
     if (type === "checkbox") {
@@ -56,8 +56,8 @@ const Input = React.forwardRef(({
                 <label
                     htmlFor={inputId}
                     className={cn(
-                        "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
-                        error ? "text-destructive" : "text-foreground"
+                        "text-sm font-medium font-inter leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
+                        error ? "text-destructive" : "text-secondary"
                     )}
                 >
                     {label}
