@@ -161,48 +161,7 @@ const CaseStudyShowcase = () => {
 
                   </div>
 
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-lg font-gilroy font-bold text-secondary mb-4 flex items-center">
-                        <Icon name="TrendingUp" size={20} className="text-success mr-2" />
-                        Resultados Medibles
-                      </h4>
-                      
-                      <div className="space-y-4">
-                        <div className="flex justify-between items-center p-4 bg-success/10 rounded-xl">
-                          <div>
-                            <div className="text-sm text-text-secondary">Tasa de Conversión</div>
-                            <div className="text-xs text-text-secondary">
-                              {currentCase?.results?.conversionBefore} → {currentCase?.results?.conversionAfter}
-                            </div>
-                          </div>
-                          <div className="text-2xl font-gilroy font-bold text-success">
-                            {currentCase?.results?.leadIncrease}
-                          </div>
-                        </div>
-
-                        <div className="flex justify-between items-center p-4 bg-primary/10 rounded-xl">
-                          <div>
-                            <div className="text-sm text-text-secondary">Reducción de Costos</div>
-                            <div className="text-xs text-text-secondary">Costo por adquisición</div>
-                          </div>
-                          <div className="text-2xl font-gilroy font-bold text-primary">
-                            {currentCase?.results?.costReduction}
-                          </div>
-                        </div>
-
-                        <div className="flex justify-between items-center p-4 bg-warning/10 rounded-xl">
-                          <div>
-                            <div className="text-sm text-text-secondary">ROI Anual</div>
-                            <div className="text-xs text-text-secondary">Retorno de inversión</div>
-                          </div>
-                          <div className="text-2xl font-gilroy font-bold text-warning">
-                            {currentCase?.results?.roi}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
+                  <div className="space-y-6 flex flex-col justify-end">
                     <div className="space-y-3">
                       <Button
                         variant="default"
