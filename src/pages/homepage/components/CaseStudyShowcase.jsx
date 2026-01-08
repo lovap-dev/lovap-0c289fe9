@@ -161,25 +161,6 @@ const CaseStudyShowcase = () => {
                     </div>
                   </div>
 
-                  {/* Testimonio */}
-                  <div className="bg-muted rounded-xl p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                        <Icon name="Quote" size={20} className="text-primary-foreground" />
-                      </div>
-                      <div className="flex-1">
-                        <blockquote className="text-text-secondary italic leading-relaxed mb-3">
-                          {currentCase?.testimonial}
-                        </blockquote>
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold text-secondary">{currentCase?.clientName}</span>
-                          <span className="text-text-secondary">•</span>
-                          <span className="text-sm text-text-secondary">{currentCase?.clientRole}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
                   {/* Botones */}
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Button
@@ -203,6 +184,25 @@ const CaseStudyShowcase = () => {
                         </a>
                       </Button>
                     )}
+                  </div>
+
+                  {/* Testimonio */}
+                  <div className="bg-muted rounded-xl p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                        <Icon name="Quote" size={20} className="text-primary-foreground" />
+                      </div>
+                      <div className="flex-1">
+                        <blockquote className="text-text-secondary italic leading-relaxed mb-3">
+                          {currentCase?.testimonial}
+                        </blockquote>
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold text-secondary">{currentCase?.clientName}</span>
+                          <span className="text-text-secondary">•</span>
+                          <span className="text-sm text-text-secondary">{currentCase?.clientRole}</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
