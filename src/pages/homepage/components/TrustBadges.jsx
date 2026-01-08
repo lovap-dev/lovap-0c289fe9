@@ -180,8 +180,12 @@ const TrustBadges = () => {
           className="mb-16"
         >
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-gilroy font-semibold text-secondary mb-4">Empresas que confían en nosotros</h3>
-            <p className="text-text-secondary">Más de 5+ empresas han transformado su presencia digital con Lovap</p>
+            <h2 className="text-4xl lg:text-5xl font-gilroy font-bold text-secondary mb-6">
+              Empresas que confían en nosotros
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+              Más de 5+ empresas han transformado su presencia digital con Lovap
+            </p>
           </div>
 
           <div className="bg-card border border-border rounded-2xl p-8 card-elevated">
