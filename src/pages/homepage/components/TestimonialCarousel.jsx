@@ -134,53 +134,7 @@ const TestimonialCarousel = () => {
               transition={{ duration: 0.6, ease: "easeInOut" }}
               className="bg-card border border-border rounded-3xl overflow-hidden card-elevated-strong"
             >
-              <div className="grid lg:grid-cols-2 gap-0">
-                {/* Video/Image Section */}
-                <div className="relative h-64 lg:h-full min-h-[400px] overflow-hidden bg-muted">
-                  <Image
-                    src={testimonials?.[currentTestimonial]?.videoThumbnail}
-                    alt={`${testimonials?.[currentTestimonial]?.name} testimonial`}
-                    className="w-full h-full object-cover"
-                  />
-                  
-                  {/* Video Play Overlay */}
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <button
-                      onClick={handleVideoPlay}
-                      className="w-20 h-20 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors group"
-                    >
-                      <Icon 
-                        name="Play" 
-                        size={32} 
-                        className="text-primary-foreground ml-1 group-hover:scale-110 transition-transform" 
-                      />
-                    </button>
-                  </div>
-
-                  {/* Industry Badge */}
-                  <div className="absolute top-6 left-6">
-                    <span className="bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
-                      {testimonials?.[currentTestimonial]?.industry}
-                    </span>
-                  </div>
-
-                  {/* Navigation Controls */}
-                  <div className="absolute bottom-6 right-6 flex space-x-2">
-                    <button
-                      onClick={prevTestimonial}
-                      className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
-                    >
-                      <Icon name="ChevronLeft" size={20} />
-                    </button>
-                    <button
-                      onClick={nextTestimonial}
-                      className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
-                    >
-                      <Icon name="ChevronRight" size={20} />
-                    </button>
-                  </div>
-                </div>
-
+              <div className="grid lg:grid-cols-1 gap-0">
                 {/* Content Section */}
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
                   <div className="space-y-6">
@@ -216,24 +170,31 @@ const TestimonialCarousel = () => {
                     </div>
 
                     {/* Author */}
-                    <div className="flex items-center space-x-4">
-                      <div className="w-16 h-16 rounded-full overflow-hidden">
-                        <Image
-                          src={testimonials?.[currentTestimonial]?.avatar}
-                          alt={testimonials?.[currentTestimonial]?.name}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                    <div className="flex items-center justify-between">
                       <div>
                         <div className="font-gilroy font-semibold text-secondary text-lg">
                           {testimonials?.[currentTestimonial]?.name}
                         </div>
                         <div className="text-text-secondary">
-                          {testimonials?.[currentTestimonial]?.position}
+                          {testimonials?.[currentTestimonial]?.position} · {testimonials?.[currentTestimonial]?.company}
                         </div>
-                        <div className="text-primary font-medium">
-                          {testimonials?.[currentTestimonial]?.company}
-                        </div>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                          {testimonials?.[currentTestimonial]?.industry}
+                        </span>
+                        <button
+                          onClick={prevTestimonial}
+                          className="w-10 h-10 bg-muted rounded-full flex items-center justify-center text-secondary hover:bg-primary/10 transition-colors"
+                        >
+                          <Icon name="ChevronLeft" size={20} />
+                        </button>
+                        <button
+                          onClick={nextTestimonial}
+                          className="w-10 h-10 bg-muted rounded-full flex items-center justify-center text-secondary hover:bg-primary/10 transition-colors"
+                        >
+                          <Icon name="ChevronRight" size={20} />
+                        </button>
                       </div>
                     </div>
                   </div>
