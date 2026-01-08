@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import Image from '../../../components/AppImage';
-import Icon from '../../../components/AppIcon';
-import Button from '../../../components/ui/Button';
+import React, { useState } from "react";
+import Image from "../../../components/AppImage";
+import Icon from "../../../components/AppIcon";
+import Button from "../../../components/ui/Button";
 
 const TeamSection = () => {
-  const [selectedFilter, setSelectedFilter] = useState('all');
+  const [selectedFilter, setSelectedFilter] = useState("all");
 
   const teamMembers = [
     {
@@ -13,10 +13,16 @@ const TeamSection = () => {
       role: "CEO & Fundador",
       specialization: "Desarrollador Fullstack",
       experience: "3+ años",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      image: "",
       bio: `Desarrollador y estudiante de Ingeniería Informática con más de 3 años de experiencia creando soluciones tecnológicas eficientes y orientadas a resultados.`,
       skills: ["Liderazgo Estratégico", "Arquitectura de Sistemas", "Transformación Digital"],
-      certifications: ["AWS Solutions Architect", "Google Cloud Professional", "Scrum Master", "OWASP Top 10", "Laravel"],
+      certifications: [
+        "AWS Solutions Architect",
+        "Google Cloud Professional",
+        "Scrum Master",
+        "OWASP Top 10",
+        "Laravel",
+      ],
       projects: 25,
       category: "leadership",
     },
@@ -26,7 +32,7 @@ const TeamSection = () => {
       role: "CTO & Fundador",
       specialization: "Ingeniero Informatico",
       experience: "1+ años",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      image: "",
       bio: `Ingeniero Informático con más de un año de experiencia en desarrollo de software y optimización de soluciones tecnológicas.`,
       skills: ["User Research", "Prototyping", "Design Systems", "Conversion Optimization"],
       certifications: ["Google UX Design", "Adobe Certified Expert", "Figma Professional"],
@@ -39,13 +45,13 @@ const TeamSection = () => {
       role: "Lead UX/UI Designer",
       specialization: "Diseñadora Gráfica",
       experience: "4+ años",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+      image: "",
       bio: `Diseñadora con más de 4 años de experiencias digitales atractivas, funcionales y centradas en el usuario.`,
       skills: ["SEO/SEM", "Analytics", "Conversion Rate Optimization", "Content Strategy"],
       certifications: ["UX/UI", "Tecnica laboral en diseño"],
       projects: 30,
       category: "Designer",
-      behance: "#"
+      behance: "#",
     },
   ];
 
@@ -58,9 +64,8 @@ const TeamSection = () => {
     { key: 'management', label: 'Gestión', icon: 'Settings' }
   ];  */
 
-  const filteredMembers = selectedFilter === 'all' 
-    ? teamMembers 
-    : teamMembers?.filter(member => member?.category === selectedFilter);
+  const filteredMembers =
+    selectedFilter === "all" ? teamMembers : teamMembers?.filter((member) => member?.category === selectedFilter);
 
   return (
     <section className="py-16 lg:py-24 bg-background">
@@ -71,8 +76,8 @@ const TeamSection = () => {
             <span className="text-primary"> Expertos</span>
           </h2>
           <p className="text-lg text-text-primary/80 max-w-3xl mx-auto">
-            Profesionales apasionados que combinan experiencia técnica con visión estratégica 
-            para entregar soluciones web que superan expectativas y generan resultados medibles.
+            Profesionales apasionados que combinan experiencia técnica con visión estratégica para entregar soluciones
+            web que superan expectativas y generan resultados medibles.
           </p>
         </div>
 
@@ -97,7 +102,10 @@ const TeamSection = () => {
         {/* Team Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredMembers?.map((member) => (
-            <div key={member?.id} className="bg-card rounded-2xl p-6 card-elevated hover:card-elevated-strong transition-smooth">
+            <div
+              key={member?.id}
+              className="bg-card rounded-2xl p-6 card-elevated hover:card-elevated-strong transition-smooth"
+            >
               <div className="text-center mb-6">
                 <div className="relative inline-block mb-4">
                   <Image
@@ -109,21 +117,15 @@ const TeamSection = () => {
                     <Icon name="CheckCircle" size={16} className="text-primary-foreground" />
                   </div>
                 </div>
-                
-                <h3 className="text-xl font-gilroy font-bold text-secondary mb-1">
-                  {member?.name}
-                </h3>
-                <p className="text-primary font-inter font-medium mb-2">
-                  {member?.role}
-                </p>
+
+                <h3 className="text-xl font-gilroy font-bold text-secondary mb-1">{member?.name}</h3>
+                <p className="text-primary font-inter font-medium mb-2">{member?.role}</p>
                 <p className="text-sm text-text-primary/70">
                   {member?.specialization} • {member?.experience}
                 </p>
               </div>
 
-              <p className="text-sm text-text-primary/80 mb-6 leading-relaxed">
-                {member?.bio}
-              </p>
+              <p className="text-sm text-text-primary/80 mb-6 leading-relaxed">{member?.bio}</p>
 
               {/* Skills
                <div className="mb-6">
@@ -141,24 +143,18 @@ const TeamSection = () => {
                   ))}
                 </div>
               </div>*/}
-             
 
               {/* Stats */}
               <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-muted/50 rounded-lg">
                 <div className="text-center">
-                  <div className="text-lg font-gilroy font-bold text-primary">
-                    {member?.projects}+
-                  </div>
+                  <div className="text-lg font-gilroy font-bold text-primary">{member?.projects}+</div>
                   <div className="text-xs text-text-primary/70">Proyectos</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg font-gilroy font-bold text-primary">
-                    {member?.certifications?.length}
-                  </div>
+                  <div className="text-lg font-gilroy font-bold text-primary">{member?.certifications?.length}</div>
                   <div className="text-xs text-text-primary/70">Certificaciones</div>
                 </div>
               </div>
-  
             </div>
           ))}
         </div>
