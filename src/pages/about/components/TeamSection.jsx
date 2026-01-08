@@ -104,17 +104,6 @@ const TeamSection = () => {
               className="bg-card rounded-2xl p-6 card-elevated hover:card-elevated-strong transition-smooth"
             >
               <div className="text-center mb-6">
-                <div className="relative inline-block mb-4">
-                  <Image
-                    src={member?.image}
-                    alt={member?.name}
-                    className="w-24 h-24 rounded-full object-cover mx-auto"
-                  />
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-primary-bg rounded-full flex items-center justify-center">
-                    <Icon name="CheckCircle" size={16} className="text-primary-foreground" />
-                  </div>
-                </div>
-
                 <h3 className="text-xl font-gilroy font-bold text-secondary mb-1">{member?.name}</h3>
                 <p className="text-primary font-inter font-medium mb-2">{member?.role}</p>
                 <p className="text-sm text-text-primary/70">
