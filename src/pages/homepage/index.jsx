@@ -52,7 +52,7 @@ const Homepage = () => {
           <CaseStudyShowcase />
 
           {/* Testimonial Carousel */}
-          {/* <TestimonialCarousel /> */}
+          <TestimonialCarousel />
 
           {/* Trust Badges */}
           {/* <TrustBadges />  */}
