@@ -132,7 +132,7 @@ const TrustBadges = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
         >
           {certifications?.map((cert) => (
             <motion.div
