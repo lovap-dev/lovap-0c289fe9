@@ -55,7 +55,7 @@ const Homepage = () => {
           <TestimonialCarousel />
 
           {/* Trust Badges */}
-          {/* <TrustBadges />  */}
+          <TrustBadges />
         </main>
 
         {/* Floating CTA */}
