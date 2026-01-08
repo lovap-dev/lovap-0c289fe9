@@ -1,7 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import Icon from '../../../components/AppIcon';
-
+import React from "react";
+import { motion } from "framer-motion";
+import Icon from "../../../components/AppIcon";
 
 const TrustBadges = () => {
   const certifications = [
@@ -10,79 +9,72 @@ const TrustBadges = () => {
       name: "SSL Certificado",
       description: "Seguridad garantizada",
       icon: "Shield",
-      color: "success"
+      color: "success",
     },
     {
       id: 2,
       name: "GDPR Compliant",
       description: "Protección de datos",
       icon: "Lock",
-      color: "primary"
+      color: "primary",
     },
     {
       id: 3,
       name: "ISO 27001",
       description: "Seguridad información",
       icon: "Award",
-      color: "secondary"
+      color: "secondary",
     },
-    {
-      id: 4,
-      name: "Google Partner",
-      description: "Partner certificado",
-      icon: "Star",
-      color: "warning"
-    }
   ];
 
   const clientLogos = [
     {
       name: "TechCorp",
-      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=60&fit=crop"
+      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=60&fit=crop",
     },
     {
       name: "InnovateHub",
-      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=60&fit=crop"
+      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=60&fit=crop",
     },
     {
       name: "GreenEco",
-      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=60&fit=crop"
+      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=60&fit=crop",
     },
     {
       name: "HealthPlus",
-      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=60&fit=crop"
+      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=60&fit=crop",
     },
     {
       name: "FinanceFlow",
-      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=60&fit=crop"
+      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=60&fit=crop",
     },
     {
       name: "EduTech",
-      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=60&fit=crop"
-    }
+      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=60&fit=crop",
+    },
   ];
 
   const guarantees = [
     {
       icon: "Clock",
       title: "Entrega Garantizada",
-      description: "Cumplimos los plazos acordados o devolvemos tu dinero"
+      description: "Cumplimos los plazos acordados o devolvemos tu dinero",
     },
     {
       icon: "RefreshCw",
       title: "Revisiones Ilimitadas",
-      description: "Ajustes sin costo hasta que estés 100% satisfecho"
+      description: "Ajustes sin costo hasta que estés 100% satisfecho",
     },
     {
       icon: "Headphones",
       title: "Soporte 24/7",
-      description: "Asistencia técnica disponible todos los días del año"
+      description: "Asistencia técnica disponible todos los días del año",
     },
     {
       icon: "TrendingUp",
       title: "Resultados Medibles",
-      description: "Garantizamos mejoras cuantificables en tus métricas"
-    }
+      description: "Garantizamos mejoras cuantificables en tus métricas",
+    },
   ];
 
   const containerVariants = {
@@ -90,9 +82,9 @@ const TrustBadges = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const itemVariants = {
@@ -102,9 +94,9 @@ const TrustBadges = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
@@ -129,8 +121,8 @@ const TrustBadges = () => {
           </h2>
 
           <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-            Certificaciones, garantías y el respaldo de más de 150 empresas que confían en nosotros 
-            para sus proyectos digitales más importantes.
+            Certificaciones, garantías y el respaldo de más de 5 empresas que confían en nosotros para sus proyectos
+            digitales más importantes.
           </p>
         </motion.div>
 
@@ -148,27 +140,33 @@ const TrustBadges = () => {
               variants={itemVariants}
               className="bg-card border border-border rounded-2xl p-6 text-center card-elevated hover:card-elevated-strong transition-all duration-300 hover:-translate-y-1"
             >
-              <div className={`w-16 h-16 mx-auto rounded-xl flex items-center justify-center mb-4 ${
-                cert?.color === 'success' ? 'bg-success/10' :
-                cert?.color === 'primary' ? 'bg-primary/10' :
-                cert?.color === 'secondary'? 'bg-secondary/10' : 'bg-warning/10'
-              }`}>
-                <Icon 
-                  name={cert?.icon} 
-                  size={24} 
+              <div
+                className={`w-16 h-16 mx-auto rounded-xl flex items-center justify-center mb-4 ${
+                  cert?.color === "success"
+                    ? "bg-success/10"
+                    : cert?.color === "primary"
+                      ? "bg-primary/10"
+                      : cert?.color === "secondary"
+                        ? "bg-secondary/10"
+                        : "bg-warning/10"
+                }`}
+              >
+                <Icon
+                  name={cert?.icon}
+                  size={24}
                   className={
-                    cert?.color === 'success' ? 'text-success' :
-                    cert?.color === 'primary' ? 'text-primary' :
-                    cert?.color === 'secondary'? 'text-secondary' : 'text-warning'
+                    cert?.color === "success"
+                      ? "text-success"
+                      : cert?.color === "primary"
+                        ? "text-primary"
+                        : cert?.color === "secondary"
+                          ? "text-secondary"
+                          : "text-warning"
                   }
                 />
               </div>
-              <h3 className="font-gilroy font-semibold text-secondary mb-2">
-                {cert?.name}
-              </h3>
-              <p className="text-sm text-text-secondary">
-                {cert?.description}
-              </p>
+              <h3 className="font-gilroy font-semibold text-secondary mb-2">{cert?.name}</h3>
+              <p className="text-sm text-text-secondary">{cert?.description}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -182,12 +180,8 @@ const TrustBadges = () => {
           className="mb-16"
         >
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-gilroy font-semibold text-secondary mb-4">
-              Empresas que confían en nosotros
-            </h3>
-            <p className="text-text-secondary">
-              Más de 150+ empresas han transformado su presencia digital con Lovap
-            </p>
+            <h3 className="text-2xl font-gilroy font-semibold text-secondary mb-4">Empresas que confían en nosotros</h3>
+            <p className="text-text-secondary">Más de 5+ empresas han transformado su presencia digital con Lovap</p>
           </div>
 
           <div className="bg-card border border-border rounded-2xl p-8 card-elevated">
@@ -198,9 +192,7 @@ const TrustBadges = () => {
                   className="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity"
                 >
                   <div className="w-20 h-10 bg-muted rounded-lg flex items-center justify-center">
-                    <span className="text-xs font-medium text-text-secondary">
-                      {client?.name}
-                    </span>
+                    <span className="text-xs font-medium text-text-secondary">{client?.name}</span>
                   </div>
                 </div>
               ))}
@@ -227,12 +219,8 @@ const TrustBadges = () => {
                   <Icon name={guarantee?.icon} size={20} className="text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-gilroy font-semibold text-secondary mb-2">
-                    {guarantee?.title}
-                  </h3>
-                  <p className="text-text-secondary leading-relaxed">
-                    {guarantee?.description}
-                  </p>
+                  <h3 className="text-xl font-gilroy font-semibold text-secondary mb-2">{guarantee?.title}</h3>
+                  <p className="text-text-secondary leading-relaxed">{guarantee?.description}</p>
                 </div>
               </div>
             </motion.div>
@@ -250,14 +238,11 @@ const TrustBadges = () => {
           <div className="bg-card border border-border rounded-2xl p-8 card-elevated">
             <div className="flex items-center justify-center space-x-2 mb-4">
               <Icon name="Shield" size={24} className="text-success" />
-              <h3 className="text-2xl font-gilroy font-semibold text-secondary">
-                Seguridad Garantizada
-              </h3>
+              <h3 className="text-2xl font-gilroy font-semibold text-secondary">Seguridad Garantizada</h3>
             </div>
             <p className="text-text-secondary max-w-2xl mx-auto leading-relaxed">
-              Todos nuestros proyectos incluyen certificados SSL, cumplimiento GDPR, 
-              copias de seguridad automáticas y monitoreo 24/7 para garantizar la máxima 
-              seguridad y disponibilidad de tu sitio web.
+              Todos nuestros proyectos incluyen certificados SSL, cumplimiento GDPR, copias de seguridad automáticas y
+              monitoreo 24/7 para garantizar la máxima seguridad y disponibilidad de tu sitio web.
             </p>
             <div className="flex items-center justify-center space-x-6 mt-6 text-sm text-text-secondary">
               <div className="flex items-center space-x-2">
