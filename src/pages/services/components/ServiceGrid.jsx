@@ -15,6 +15,7 @@ const ServiceGrid = () => {
         "Diseño responsivo y optimizado para conversión",
         "Velocidad de carga optimizada",
         "Formularios conectados a correo o CRM",
+        "Compatible con WordPress, Shopify y otros CMS",
       ],
       price: "",
       image:
