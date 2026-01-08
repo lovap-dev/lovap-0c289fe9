@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Icon from '../../../components/AppIcon';
-import Image from '../../../components/AppImage';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Icon from "../../../components/AppIcon";
+import Image from "../../../components/AppImage";
 
 const TestimonialCarousel = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -19,10 +19,10 @@ const TestimonialCarousel = () => {
       results: {
         metric: "+340%",
         description: "Aumento en conversiones",
-        timeframe: "3 meses"
+        timeframe: "3 meses",
       },
       videoThumbnail: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop",
-      industry: "Tecnología"
+      industry: "Tecnología",
     },
     {
       id: 2,
@@ -35,10 +35,10 @@ const TestimonialCarousel = () => {
       results: {
         metric: "400%",
         description: "ROI primer año",
-        timeframe: "12 meses"
+        timeframe: "12 meses",
       },
       videoThumbnail: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop",
-      industry: "E-commerce"
+      industry: "E-commerce",
     },
     {
       id: 3,
@@ -51,10 +51,10 @@ const TestimonialCarousel = () => {
       results: {
         metric: "+280%",
         description: "Nuevos pacientes",
-        timeframe: "6 meses"
+        timeframe: "6 meses",
       },
       videoThumbnail: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=300&fit=crop",
-      industry: "Salud"
+      industry: "Salud",
     },
     {
       id: 4,
@@ -67,11 +67,11 @@ const TestimonialCarousel = () => {
       results: {
         metric: "+195%",
         description: "Eficiencia operativa",
-        timeframe: "4 meses"
+        timeframe: "4 meses",
       },
       videoThumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
-      industry: "Finanzas"
-    }
+      industry: "Finanzas",
+    },
   ];
 
   useEffect(() => {
@@ -118,8 +118,8 @@ const TestimonialCarousel = () => {
           </h2>
 
           <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-            Más de 150+ empresas confían en nosotros para transformar su presencia digital. 
-            Escucha sus historias de éxito.
+            Más de 5+ empresas confían en nosotros para transformar su presencia digital. Escucha sus historias de
+            éxito.
           </p>
         </motion.div>
 
@@ -210,7 +210,7 @@ const TestimonialCarousel = () => {
                 key={idx}
                 onClick={() => setCurrentTestimonial(idx)}
                 className={`w-3 h-3 rounded-full transition-colors ${
-                  idx === currentTestimonial ? 'bg-primary' : 'bg-border'
+                  idx === currentTestimonial ? "bg-primary" : "bg-border"
                 }`}
               />
             ))}
@@ -226,18 +226,13 @@ const TestimonialCarousel = () => {
           className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-16"
         >
           {[
-            { number: "150+", label: "Clientes satisfechos" },
-            { number: "98%", label: "Tasa de satisfacción" },
-            { number: "340%", label: "Conversión promedio" },
-            { number: "24/7", label: "Soporte técnico" }
+            { number: "5+", label: "Clientes satisfechos" },
+            { number: "100%", label: "Tasa de satisfacción" },
+            { number: "24/7", label: "Soporte técnico" },
           ]?.map((stat, idx) => (
             <div key={idx} className="text-center">
-              <div className="text-3xl lg:text-4xl font-gilroy font-bold text-primary mb-2">
-                {stat?.number}
-              </div>
-              <div className="text-text-secondary">
-                {stat?.label}
-              </div>
+              <div className="text-3xl lg:text-4xl font-gilroy font-bold text-primary mb-2">{stat?.number}</div>
+              <div className="text-text-secondary">{stat?.label}</div>
             </div>
           ))}
         </motion.div>
