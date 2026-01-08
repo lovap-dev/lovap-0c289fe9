@@ -13,7 +13,6 @@ const TeamSection = () => {
       role: "CEO & Fundador",
       specialization: "Desarrollador Fullstack",
       experience: "3+ años",
-      image: "",
       bio: `Desarrollador y estudiante de Ingeniería Informática con más de 3 años de experiencia creando soluciones tecnológicas eficientes y orientadas a resultados.`,
       skills: ["Liderazgo Estratégico", "Arquitectura de Sistemas", "Transformación Digital"],
       certifications: [
@@ -32,7 +31,6 @@ const TeamSection = () => {
       role: "CTO & Fundador",
       specialization: "Ingeniero Informatico",
       experience: "1+ años",
-      image: "",
       bio: `Ingeniero Informático con más de un año de experiencia en desarrollo de software y optimización de soluciones tecnológicas.`,
       skills: ["User Research", "Prototyping", "Design Systems", "Conversion Optimization"],
       certifications: ["Google UX Design", "Adobe Certified Expert", "Figma Professional"],
@@ -45,7 +43,6 @@ const TeamSection = () => {
       role: "Lead UX/UI Designer",
       specialization: "Diseñadora Gráfica",
       experience: "4+ años",
-      image: "",
       bio: `Diseñadora con más de 4 años de experiencias digitales atractivas, funcionales y centradas en el usuario.`,
       skills: ["SEO/SEM", "Analytics", "Conversion Rate Optimization", "Content Strategy"],
       certifications: ["UX/UI", "Tecnica laboral en diseño"],
