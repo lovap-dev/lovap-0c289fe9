@@ -137,76 +137,72 @@ const CaseStudyShowcase = () => {
               </div>
 
               <div className="p-8">
-                <div className="grid lg:grid-cols-2 gap-8">
-                  <div className="space-y-6">
-                    <div>
+                <div className="space-y-6">
+                  {/* Desafío y Solución */}
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-error/5 border border-error/20 rounded-xl p-5">
                       <h4 className="text-lg font-gilroy font-bold text-secondary mb-3 flex items-center">
                         <Icon name="AlertCircle" size={20} className="text-error mr-2" />
                         Desafío
                       </h4>
-                      <p className="text-text-secondary leading-relaxed">
+                      <p className="text-text-secondary leading-relaxed text-sm">
                         {currentCase?.challenge}
                       </p>
                     </div>
 
-                    <div>
+                    <div className="bg-success/5 border border-success/20 rounded-xl p-5">
                       <h4 className="text-lg font-gilroy font-bold text-secondary mb-3 flex items-center">
-                        <Icon name="Lightbulb" size={20} className="text-warning mr-2" />
+                        <Icon name="Lightbulb" size={20} className="text-success mr-2" />
                         Solución
                       </h4>
-                      <p className="text-text-secondary leading-relaxed">
+                      <p className="text-text-secondary leading-relaxed text-sm">
                         {currentCase?.solution}
                       </p>
                     </div>
-
                   </div>
 
-                  <div className="space-y-6 flex flex-col justify-end">
-                    <div className="space-y-3">
-                      <Button
-                        variant="default"
-                        fullWidth
-                        iconName="MessageCircle"
-                        iconPosition="left"
-                        className="bg-primary text-primary-foreground hover:bg-accent"
-                      >
-                        Solicitar Caso Similar
-                      </Button>
-                      {currentCase?.website && (
-                        <Button
-                          asChild
-                          variant="secondary"
-                          fullWidth
-                          iconName="ExternalLink"
-                          iconPosition="left"
-                          className=""
-                        >
-                          <a href={currentCase?.website} target="_blank" rel="noopener noreferrer">
-                            Ver sitio web
-                          </a>
-                        </Button>
-                      )}
-                    </div>
-                  </div>
-                  <div className="lg:col-span-2 bg-muted rounded-xl p-6">
-                    <h4 className="text-lg font-gilroy font-bold text-secondary mb-4 flex items-center">
-                      <Icon name="MessageSquare" size={20} className="text-gray-500 mr-2" />
-                      Testimonio
-                    </h4>
-                    <blockquote className="text-text-secondary italic leading-relaxed mb-4">
-                      {currentCase?.testimonial}
-                    </blockquote>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                        <Icon name="User" size={20} className="text-primary-foreground" />
+                  {/* Testimonio */}
+                  <div className="bg-muted rounded-xl p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                        <Icon name="Quote" size={20} className="text-primary-foreground" />
                       </div>
-                      <div>
-                        <div className="font-semibold text-secondary flex items-center flex-wrap">
-                          <span>{currentCase?.clientName}</span>
+                      <div className="flex-1">
+                        <blockquote className="text-text-secondary italic leading-relaxed mb-3">
+                          {currentCase?.testimonial}
+                        </blockquote>
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold text-secondary">{currentCase?.clientName}</span>
+                          <span className="text-text-secondary">•</span>
+                          <span className="text-sm text-text-secondary">{currentCase?.clientRole}</span>
                         </div>
-                        <div className="text-sm text-text-secondary">{currentCase?.clientRole}</div>
                       </div>
                     </div>
+                  </div>
+
+                  {/* Botones */}
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button
+                      variant="default"
+                      iconName="MessageCircle"
+                      iconPosition="left"
+                      className="bg-primary text-primary-foreground hover:bg-accent flex-1"
+                    >
+                      Solicitar Caso Similar
+                    </Button>
+                    {currentCase?.website && (
+                      <Button
+                        asChild
+                        variant="secondary"
+                        iconName="ExternalLink"
+                        iconPosition="left"
+                        className="flex-1"
+                      >
+                        <a href={currentCase?.website} target="_blank" rel="noopener noreferrer">
+                          Ver sitio web
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>
