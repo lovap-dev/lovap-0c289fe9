@@ -226,16 +226,7 @@ const ClientLogosSection = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                <Icon name="Award" size={24} className="text-primary" />
-              </div>
-              <div className="text-sm font-inter font-medium text-secondary">
-                Google Partner
-              </div>
-              <div className="text-xs text-text-primary/70">Certificado</div>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             
             <div className="text-center">
               <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
