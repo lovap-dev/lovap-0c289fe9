@@ -9,7 +9,7 @@ const TrustBadges = () => {
       name: "SSL Certificado",
       description: "Seguridad garantizada",
       icon: "Shield",
-      color: "success",
+      color: "primary",
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ const TrustBadges = () => {
       name: "ISO 27001",
       description: "Seguridad información",
       icon: "Award",
-      color: "secondary",
+      color: "primary",
     },
   ];
 
