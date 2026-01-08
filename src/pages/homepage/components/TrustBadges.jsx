@@ -4,6 +4,37 @@ import Icon from '../../../components/AppIcon';
 
 
 const TrustBadges = () => {
+  const certifications = [
+    {
+      id: 1,
+      name: "SSL Certificado",
+      description: "Seguridad garantizada",
+      icon: "Shield",
+      color: "success"
+    },
+    {
+      id: 2,
+      name: "GDPR Compliant",
+      description: "Protección de datos",
+      icon: "Lock",
+      color: "primary"
+    },
+    {
+      id: 3,
+      name: "ISO 27001",
+      description: "Seguridad información",
+      icon: "Award",
+      color: "secondary"
+    },
+    {
+      id: 4,
+      name: "Google Partner",
+      description: "Partner certificado",
+      icon: "Star",
+      color: "warning"
+    }
+  ];
+
   const clientLogos = [
     {
       name: "TechCorp",
@@ -101,6 +132,45 @@ const TrustBadges = () => {
             Certificaciones, garantías y el respaldo de más de 150 empresas que confían en nosotros 
             para sus proyectos digitales más importantes.
           </p>
+        </motion.div>
+
+        {/* Certifications */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+        >
+          {certifications?.map((cert) => (
+            <motion.div
+              key={cert?.id}
+              variants={itemVariants}
+              className="bg-card border border-border rounded-2xl p-6 text-center card-elevated hover:card-elevated-strong transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className={`w-16 h-16 mx-auto rounded-xl flex items-center justify-center mb-4 ${
+                cert?.color === 'success' ? 'bg-success/10' :
+                cert?.color === 'primary' ? 'bg-primary/10' :
+                cert?.color === 'secondary'? 'bg-secondary/10' : 'bg-warning/10'
+              }`}>
+                <Icon 
+                  name={cert?.icon} 
+                  size={24} 
+                  className={
+                    cert?.color === 'success' ? 'text-success' :
+                    cert?.color === 'primary' ? 'text-primary' :
+                    cert?.color === 'secondary'? 'text-secondary' : 'text-warning'
+                  }
+                />
+              </div>
+              <h3 className="font-gilroy font-semibold text-secondary mb-2">
+                {cert?.name}
+              </h3>
+              <p className="text-sm text-text-secondary">
+                {cert?.description}
+              </p>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Client Logos */}
