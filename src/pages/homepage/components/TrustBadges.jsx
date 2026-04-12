@@ -1,6 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Icon from "../../../components/AppIcon";
+
+function ClientLogoCard({ client }) {
+  const [failed, setFailed] = useState(false);
+
+  return (
+    <div className="group flex h-full flex-col rounded-2xl border border-border/70 bg-background/90 p-4 shadow-sm transition-all duration-300 hover:border-primary/35 hover:shadow-md sm:p-5">
+      <div className="relative flex min-h-[76px] flex-1 items-center justify-center sm:min-h-[88px]">
+        {!failed ? (
+          <img
+            src={client.logo}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            referrerPolicy="no-referrer"
+            onError={() => setFailed(true)}
+            className="max-h-12 w-full max-w-[180px] object-contain object-center transition duration-300 group-hover:scale-[1.02] sm:max-h-14"
+          />
+        ) : (
+          <div className="flex h-12 w-full max-w-[180px] items-center justify-center rounded-lg bg-muted px-2">
+            <Icon name="Building2" size={28} className="text-text-secondary/80" aria-hidden />
+          </div>
+        )}
+      </div>
+      <p
+        className="mt-3 line-clamp-2 min-h-[2.5rem] text-center text-xs font-medium leading-snug text-secondary sm:text-sm"
+        title={client.name}
+      >
+        {client.name}
+      </p>
+    </div>
+  );
+}
 
 const TrustBadges = () => {
   const certifications = [
@@ -29,28 +61,20 @@ const TrustBadges = () => {
 
   const clientLogos = [
     {
-      name: "TechCorp",
-      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=60&fit=crop",
+      name: "Café Uribe",
+      logo: "https://cafeuribe.com/logo_claro.webp",
     },
     {
-      name: "InnovateHub",
-      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=60&fit=crop",
+      name: "Unidad Jurídica Lawyer & Law",
+      logo: "https://unidadjuridica.vercel.app/logo-unidad-juridica.png",
     },
     {
-      name: "GreenEco",
-      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=60&fit=crop",
+      name: "ProSalud",
+      logo: "https://prosalud.org.co/images/logo_prosalud_fondo.png",
     },
     {
-      name: "HealthPlus",
-      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=60&fit=crop",
-    },
-    {
-      name: "FinanceFlow",
-      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=60&fit=crop",
-    },
-    {
-      name: "EduTech",
-      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=60&fit=crop",
+      name: "U2RED SAS",
+      logo: "https://www.u2red.co/images/logo.png",
     },
   ];
 
@@ -100,29 +124,30 @@ const TrustBadges = () => {
   };
 
   return (
-    <section className="py-20 bg-muted">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="relative overflow-hidden border-t border-border/30 bg-gradient-to-b from-muted via-muted/95 to-background py-20">
+      <div className="pointer-events-none absolute -left-32 top-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl" aria-hidden />
+      <div className="pointer-events-none absolute -right-32 bottom-32 h-80 w-80 rounded-full bg-secondary/[0.06] blur-3xl" aria-hidden />
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <div className="inline-flex items-center space-x-2 bg-gray-200 text-secondary px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <Icon name="Shield" size={16} />
+          <div className="mb-6 inline-flex items-center space-x-2 rounded-full border border-border/60 bg-card/80 px-4 py-2 text-sm font-medium text-secondary shadow-sm backdrop-blur-sm">
+            <Icon name="Shield" size={16} className="text-primary" />
             <span>Confianza & Seguridad</span>
           </div>
 
-          <h2 className="text-4xl lg:text-5xl font-gilroy font-bold text-secondary mb-6">
-            Trabajamos con
-            <span className="text-secondary"> total transparencia</span>
+          <h2 className="mb-6 font-gilroy text-4xl font-bold tracking-tight text-secondary lg:text-5xl">
+            Trabajamos con total transparencia
           </h2>
 
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-            Certificaciones, garantías y el respaldo de más de 5 empresas que confían en nosotros para sus proyectos
-            digitales más importantes.
+          <p className="mx-auto max-w-3xl text-lg leading-relaxed text-text-secondary sm:text-xl">
+            Certificaciones, garantías y el respaldo de empresas que confían en nosotros para sus proyectos digitales más
+            importantes.
           </p>
         </motion.div>
 
@@ -179,26 +204,20 @@ const TrustBadges = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <div className="text-center mb-8">
-            <h2 className="text-4xl lg:text-5xl font-gilroy font-bold text-secondary mb-6">
+          <div className="mb-10 text-center">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary">Clientes</p>
+            <h3 className="font-gilroy text-2xl font-bold tracking-tight text-secondary sm:text-3xl">
               Empresas que confían en nosotros
-            </h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-              Más de 5+ empresas han transformado su presencia digital con Lovap
+            </h3>
+            <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
+              Marcas y organizaciones que ya transformaron su presencia digital con Lovap.
             </p>
           </div>
 
-          <div className="bg-card border border-border rounded-2xl p-8 card-elevated">
-            <div className="grid grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-              {clientLogos?.map((client, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity"
-                >
-                  <div className="w-20 h-10 bg-muted rounded-lg flex items-center justify-center">
-                    <span className="text-xs font-medium text-text-secondary">{client?.name}</span>
-                  </div>
-                </div>
+          <div className="rounded-3xl border border-border/60 bg-card/95 p-6 shadow-card backdrop-blur-sm sm:p-8 md:p-10">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+              {clientLogos?.map((client) => (
+                <ClientLogoCard key={client.name} client={client} />
               ))}
             </div>
           </div>

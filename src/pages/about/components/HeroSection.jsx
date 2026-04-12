@@ -4,7 +4,7 @@ import Button from '../../../components/ui/Button';
 
 const HeroSection = () => {
   return (
-    <section className="relative bg-gradient-to-br from-background via-muted/30 to-primary/5 pt-24 pb-16 lg:pt-32 lg:pb-24">
+    <section className="relative border-b border-border/30 bg-gradient-to-br from-background via-primary/[0.07] to-muted/35 pt-24 pb-16 lg:pt-32 lg:pb-24">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23B8FF65%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
       
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">

@@ -3,6 +3,11 @@ import { Link, useLocation } from 'react-router-dom';
 import Icon from '../AppIcon';
 import Button from './Button';
 
+/** Mismo número que HeroSection / FloatingCTA / contacto. */
+const WHATSAPP_COTIZACION_HREF = `https://wa.me/573006719235?text=${encodeURIComponent(
+  'Hola, quiero una cotización estratégica.'
+)}`;
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -85,7 +90,7 @@ const Header = () => {
           {/* CTA Button & Mobile Menu Toggle */}
           <div className="flex items-center space-x-4">
             <a
-              href="https://wa.me/573006719235"
+              href={WHATSAPP_COTIZACION_HREF}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-2 px-5 bg-accent py-2 rounded-xl font-semibold text-secondary bg-accent/10 border border-accent/40 shadow-sm hover:bg-accent/15 hover:border-accent/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/30 transition-smooth"
@@ -137,7 +142,7 @@ const Header = () => {
               {/* Mobile CTA */}
               <div className="pt-4 border-t border-border mt-4">
                 <a
-                  href="https://wa.me/573006719235"
+                  href={WHATSAPP_COTIZACION_HREF}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={closeMenu}

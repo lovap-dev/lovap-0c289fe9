@@ -2,68 +2,42 @@ import React from 'react';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 
+const WHATSAPP_PHONE = '573006719235';
+const MEETING_REQUEST_MESSAGE =
+  'Hola, me gustaría coordinar una reunión para alinear el proyecto y resolver dudas antes de la cotización. ¿Qué horarios tienen disponibles?';
+
 const ContactMethods = () => {
   const contactMethods = [
     {
       id: 'email',
       icon: 'Mail',
-      title: 'Email Directo',
-      description: 'Para consultas detalladas y documentación de proyectos',
+      title: 'Email',
+      description: 'Cotizaciones y consultas con detalle; adjunta referencias o brief.',
       contact: 'lovap.dev@gmail.com',
-      action: 'Enviar Email',
-      responseTime: 'Respuesta en 2-4 horas',
-      variant: 'primary'
-    },
-    {
-      id: 'phone',
-      icon: 'Phone',
-      title: 'Llamada Directa',
-      description: 'Para consultas urgentes y discusión inmediata',
-      contact: '+57 300 671 9235',
-      action: 'Llamar Ahora',
-      responseTime: 'Lun-Vie 9:00-18:00 CET',
-      variant: 'secondary'
+      action: 'Enviar email',
+      responseTime: 'Respuesta en 24 h',
+      variant: 'primary',
     },
     {
       id: 'whatsapp',
       icon: 'MessageCircle',
-      title: 'WhatsApp Business',
-      description: 'Para comunicación rápida y seguimiento de proyectos',
+      title: 'WhatsApp',
+      description: 'Mensajes rápidos y seguimiento del proyecto en el mismo hilo.',
       contact: '+57 300 671 9235',
       action: 'Abrir WhatsApp',
-      responseTime: 'Respuesta inmediata',
-      variant: 'accent'
+      responseTime: 'Respuesta el mismo día',
+      variant: 'accent',
     },
     {
       id: 'calendar',
       icon: 'Calendar',
-      title: 'Reunión Estratégica',
-      description: 'Para discusión profunda de objetivos y estrategia',
-      contact: 'Sesión de 45 minutos',
-      action: 'Agendar Reunión',
-      responseTime: 'Disponible esta semana',
-      variant: 'accent'
+      title: 'Reunión',
+      description: 'Abre WhatsApp con un mensaje listo para pedir una videollamada y acordar horario.',
+      contact: '+57 300 671 9235',
+      action: 'Solicitar reunión',
+      responseTime: 'Según disponibilidad',
+      variant: 'secondary',
     },
-    {
-      id: 'linkedin',
-      icon: 'Linkedin',
-      title: 'LinkedIn Profesional',
-      description: 'Para networking y conexiones empresariales',
-      contact: '/company/lovap-corporate',
-      action: 'Conectar LinkedIn',
-      responseTime: 'Red profesional activa',
-      variant: 'primary'
-    },
-    {
-      id: 'support',
-      icon: 'Headphones',
-      title: 'Soporte Técnico',
-      description: 'Para clientes existentes y soporte post-lanzamiento',
-      contact: 'soporte@lovapcorporate.com',
-      action: 'Contactar Soporte',
-      responseTime: '24/7 para emergencias',
-      variant: 'warning'
-    }
   ];
 
   const getVariantStyles = (variant) => {
@@ -92,12 +66,6 @@ const ContactMethods = () => {
         icon: 'text-muted-foreground',
         iconBg: 'bg-muted'
       },
-      warning: {
-        bg: 'bg-warning/5 hover:bg-warning/10',
-        border: 'border-warning/20',
-        icon: 'text-warning',
-        iconBg: 'bg-warning/10'
-      }
     };
     return styles[variant] || styles.primary;
   };
@@ -107,22 +75,14 @@ const ContactMethods = () => {
       case 'email':
         window.location.href = `mailto:${method?.contact}`;
         break;
-      case 'phone':
-        window.location.href = `tel:${method?.contact}`;
-        break;
       case 'whatsapp':
-        window.open(`https://wa.me/34600789123`, '_blank');
+        window.open(`https://wa.me/${WHATSAPP_PHONE}`, '_blank');
         break;
-      case 'calendar':
-        // In real app, this would open calendar booking
-        alert('Funcionalidad de calendario se abriría aquí');
+      case 'calendar': {
+        const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(MEETING_REQUEST_MESSAGE)}`;
+        window.open(url, '_blank');
         break;
-      case 'linkedin':
-        window.open('https://linkedin.com/company/lovap-corporate', '_blank');
-        break;
-      case 'support':
-        window.location.href = `mailto:${method?.contact}`;
-        break;
+      }
       default:
         break;
     }
@@ -135,14 +95,14 @@ const ContactMethods = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-gray-200 text-secondary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Icon name="Users" size={16} />
-            <span>Múltiples Canales</span>
+            <span>Contacto</span>
           </div>
           <h2 className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary mb-6">
-            Elige Tu Método de
-            <span className="text-secondary bg-primary px-2 py-1 rounded-lg block">Contacto Preferido</span>
+            Cómo
+            <span className="text-secondary bg-primary px-2 py-1 rounded-lg block sm:inline sm:ml-2">contactarnos</span>
           </h2>
           <p className="text-lg text-text-secondary max-w-3xl mx-auto">
-            Ofrecemos múltiples formas de conectar contigo. Selecciona el canal que mejor se adapte a tu estilo de comunicación y urgencia del proyecto.
+            Escríbenos por email o WhatsApp. Para una reunión, usa la tarjeta y se abrirá WhatsApp con un mensaje listo.
           </p>
         </div>
 

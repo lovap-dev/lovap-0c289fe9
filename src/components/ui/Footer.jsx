@@ -20,7 +20,7 @@ const Footer = () => {
             </div>
             <p className="text-white/80 leading-relaxed mb-6 max-w-md">
               Transformamos ideas en experiencias digitales que impulsan el crecimiento empresarial.
-              Más de 150 empresas confían en nosotros para sus proyectos más importantes.
+              Más de 5 empresas confían en nosotros para sus proyectos más importantes.
             </p>
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2 text-sm">

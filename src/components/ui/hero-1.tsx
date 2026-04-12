@@ -16,6 +16,8 @@ interface HeroProps {
   secondaryCtaHref?: string
   onSecondaryCtaClick?: () => void
   className?: string
+  /** When `transparent`, decorative backgrounds are removed (e.g. behind Aurora). */
+  surface?: "default" | "transparent"
 }
 
 export function Hero({
@@ -29,33 +31,42 @@ export function Hero({
   secondaryCtaHref = "#contacto",
   onSecondaryCtaClick,
   className,
+  surface = "default",
 }: HeroProps) {
+  const isTransparent = surface === "transparent"
+
   return (
     <section
       id="hero"
       className={cn(
         "relative mx-auto w-full pt-32 md:pt-40 px-6 text-center md:px-8",
         "min-h-screen flex flex-col items-center justify-center overflow-hidden",
-        "bg-[linear-gradient(to_bottom,#000_0%,#1a1a1a_30%,#4a4a4a_60%,#8a8a8a_80%,#ffffff_100%)]",
+        isTransparent
+          ? "bg-transparent"
+          : "bg-[linear-gradient(to_bottom,#000_0%,#1a1a1a_30%,#4a4a4a_60%,#8a8a8a_80%,#ffffff_100%)]",
         className
       )}
     >
-      {/* Grid BG */}
-      <div
-        className="absolute inset-0 opacity-30 w-full h-full
-        bg-[linear-gradient(to_right,#333_1px,transparent_1px),linear-gradient(to_bottom,#333_1px,transparent_1px)]
-        bg-[size:6rem_5rem] 
-        [mask-image:radial-gradient(ellipse_80%_60%_at_50%_20%,#000_60%,transparent_100%)]"
-      />
+      {!isTransparent && (
+        <>
+          {/* Grid BG */}
+          <div
+            className="absolute inset-0 opacity-30 w-full h-full
+            bg-[linear-gradient(to_right,#333_1px,transparent_1px),linear-gradient(to_bottom,#333_1px,transparent_1px)]
+            bg-[size:6rem_5rem] 
+            [mask-image:radial-gradient(ellipse_80%_60%_at_50%_20%,#000_60%,transparent_100%)]"
+          />
 
-      {/* Radial Accent at bottom */}
-      <div
-        className="absolute left-1/2 bottom-0 
-        h-[400px] w-[800px] md:h-[600px] md:w-[1200px] lg:h-[800px] lg:w-[1600px] 
-        -translate-x-1/2 translate-y-1/2 rounded-[50%]
-        opacity-80
-        bg-[radial-gradient(closest-side,#ffffff_0%,#e8e8e8_20%,#8a8a8a_50%,#2a2a2a_75%,#000_100%)]"
-      />
+          {/* Radial Accent at bottom */}
+          <div
+            className="absolute left-1/2 bottom-0 
+            h-[400px] w-[800px] md:h-[600px] md:w-[1200px] lg:h-[800px] lg:w-[1600px] 
+            -translate-x-1/2 translate-y-1/2 rounded-[50%]
+            opacity-80
+            bg-[radial-gradient(closest-side,#ffffff_0%,#e8e8e8_20%,#8a8a8a_50%,#2a2a2a_75%,#000_100%)]"
+          />
+        </>
+      )}
 
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Eyebrow */}

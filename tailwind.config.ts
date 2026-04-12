@@ -90,6 +90,7 @@ export default {
         'slide-up': 'slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
         'scale-in': 'scaleIn 0.2s ease-out',
         'bounce-gentle': 'bounceGentle 0.4s ease-out',
+        aurora: 'aurora 60s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -108,6 +109,10 @@ export default {
           '0%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.02)' },
           '100%': { transform: 'scale(1)' },
+        },
+        aurora: {
+          from: { backgroundPosition: '50% 50%, 50% 50%' },
+          to: { backgroundPosition: '350% 50%, 350% 50%' },
         },
       },
       transitionTimingFunction: {

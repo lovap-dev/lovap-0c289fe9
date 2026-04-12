@@ -53,9 +53,9 @@ const TimelineSection = () => {
       year: "2024",
       title: "Liderazgo en Excelencia",
       description: "Consolidación como líder en desarrollo web estratégico. Implementación de nuevas tecnologías y procesos de vanguardia.",
-      achievement: "150+ Proyectos Exitosos",
+      achievement: "5+ Proyectos Exitosos",
       icon: "Crown",
-      stats: { projects: 150, team: 25, clients: 120 }
+      stats: { projects: 5, team: 25, clients: 120 }
     }
   ];
 

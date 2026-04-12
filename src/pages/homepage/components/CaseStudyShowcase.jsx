@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import Button from '../../../components/ui/Button';
 import Icon from '../../../components/AppIcon';
 import Image from '../../../components/AppImage';
+
+/** Mismo número que HeroSection / Header (WhatsApp Business CO). */
+const WHATSAPP_NUMBER = '573006719235';
 
 const CaseStudyShowcase = () => {
   const [activeCase, setActiveCase] = useState(0);
@@ -22,7 +25,7 @@ const CaseStudyShowcase = () => {
         roi: '450%'
       },
       timeline: '3 semanas',
-      image: 'https://cafeuribe.com/images/galeria/logo_tasa_cafe_uribe.jpeg',
+      image: '/images/cafe-uribe.png',
       website: 'https://cafeuribe.com',
       testimonial: `"El cambio fue enorme. Pasamos de tener una página que no nos representaba a contar con un sitio web que realmente refleja quiénes somos y lo que ofrecemos. Ahora nuestros clientes nos perciben como una empresa seria, cercana e innovadora."`,
       clientName: 'Álvaro Javier Uribe',
@@ -30,6 +33,30 @@ const CaseStudyShowcase = () => {
     },
     {
       id: 2,
+      client: 'Unidad Jurídica',
+      industry: 'Bufete de abogados · Medellín',
+      service: 'Sitio web corporativo + captación de leads',
+      challenge:
+        'El bufete necesitaba un canal digital que transmitiera solvencia jurídica y cercanía con el cliente, con información clara por áreas del derecho (civil, penal, laboral, administrativo, familia y seguros) y formularios que convirtieran visitas en solicitudes de asesoría, sin sacrificar la confidencialidad ni el posicionamiento local en Medellín.',
+      solution:
+        'Implementamos un sitio corporativo con arquitectura orientada a servicios y ubicación, secciones de equipo y trayectoria, FAQ orientadas a búsquedas habituales, blog para autoridad de contenido y llamadas a la acción visibles en todo el recorrido (teléfono, correo y formularios). El diseño refuerza confianza y facilita el primer contacto desde cualquier dispositivo.',
+      results: {
+        conversionBefore: '1.8%',
+        conversionAfter: '11.0%',
+        leadIncrease: '+380%',
+        costReduction: '-52%',
+        roi: '290%'
+      },
+      timeline: '4 semanas',
+      image: '/images/unidad-juridica.png',
+      website: 'https://unidadjuridica.vercel.app/',
+      testimonial:
+        '“Explicamos cada paso con claridad, analizamos el riesgo jurídico con rigor y acompañamos sus decisiones con un equipo que entiende tanto la norma como el impacto humano de cada proceso. El sitio refleja esa misma claridad y profesionalismo desde el primer clic.”',
+      clientName: 'James Acevedo Pamplona',
+      clientRole: 'Abogada · Derecho Civil, Comercial y de Familia'
+    },
+    {
+      id: 3,
       client: 'ProSalud',
       industry: 'Sindicato de profesionales de la salud',
       service: 'Portal web de autogestión + Chatbot IA',
@@ -50,7 +77,7 @@ const CaseStudyShowcase = () => {
       clientRole: 'Sindicato de Profesionales de la Salud'
     },
     {
-      id: 3,
+      id: 4,
       client: 'U2Red S.A.S',
       industry: 'Telecomunicaciones',
       service: 'Rediseño sitio web corporativo',
@@ -69,13 +96,46 @@ const CaseStudyShowcase = () => {
       testimonial: "“Con el nuevo sitio web ahora cumplimos con las normas, mostramos de forma clara nuestros servicios y tenemos un canal confiable para nuestros usuarios. La diferencia frente a lo que teníamos antes es abismal.”",
       clientName: 'Álvaro Uribe',
       clientRole: 'Director de Operaciones'
+    },
+    {
+      id: 5,
+      client: 'ENTOMOID',
+      industry: 'Música electrónica · marca artística',
+      service: 'Landing experiencial + presencia digital',
+      challenge:
+        'El proyecto requería una presencia online que sintetizara la identidad del proyecto musical: atmósfera inmersiva, mensaje memorable y un punto de entrada único para fans y curadores, sin depender solo de redes sociales y con una experiencia visual coherente con el universo creativo del artista.',
+      solution:
+        'Diseñamos una landing con narrativa visual fuerte, jerarquía tipográfica clara y recorridos de interacción que invitan a explorar el “enjambre” de la marca. Se priorizó rendimiento, contraste y una estructura mínima pero contundente para enlazar con el ecosistema del artista y reforzar el posicionamiento como proyecto de música electrónica.',
+      results: {
+        conversionBefore: '0.9%',
+        conversionAfter: '6.4%',
+        leadIncrease: '+210%',
+        costReduction: '-40%',
+        roi: '180%'
+      },
+      timeline: '2 semanas',
+      image: '/images/entomoid.png',
+      website: 'https://entomoid.vercel.app/',
+      testimonial:
+        '“Quería que la web sintiera como un show antes de apretar play: oscura, precisa y con personalidad. El resultado captura el espíritu del proyecto y me da un hogar digital que sí representa lo que hago.”',
+      clientName: 'ENTOMOID',
+      clientRole: 'Artista · música electrónica'
     }
   ];
 
   const currentCase = caseStudies?.[activeCase];
 
+  const similarCaseWhatsAppUrl = useMemo(() => {
+    const client = currentCase?.client ?? '';
+    const service = currentCase?.service ?? '';
+    const text = encodeURIComponent(
+      `Hola Lovap, vi el caso de éxito de "${client}" en su sitio web y me interesa un proyecto similar (${service}). ¿Podemos coordinar una conversación?`
+    );
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+  }, [currentCase?.client, currentCase?.service, activeCase]);
+
   return (
-    <section className="py-20 bg-background">
+    <section className="relative border-t border-border/30 bg-muted py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-gilroy font-bold text-secondary mb-6">
@@ -91,35 +151,45 @@ const CaseStudyShowcase = () => {
           {/* Case Study Navigation */}
           <div className="lg:col-span-1">
             <div className="space-y-4">
-              {caseStudies?.map((caseStudy, index) => (
+              {caseStudies?.map((caseStudy, index) => {
+                const isActive = activeCase === index;
+                return (
                 <button
                   key={caseStudy?.id}
                   onClick={() => setActiveCase(index)}
                   className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-300 ${
-                    activeCase === index
-                      ? 'border-primary bg-primary/5' :'border-border hover:border-primary/50 bg-white'
+                    isActive
+                      ? 'border-primary bg-primary text-primary-foreground shadow-lg shadow-primary/30'
+                      : 'border-border bg-white hover:border-primary/50'
                   }`}
                 >
                   <div className="space-y-2">
-                    <div className="font-gilroy font-bold text-secondary">{caseStudy?.client}</div>
-                    <div className="text-sm text-text-secondary">{caseStudy?.industry}</div>
-                    <div className="text-xs text-gray-300 font-medium">{caseStudy?.service}</div>
+                    <div className={`font-gilroy font-bold ${isActive ? 'text-primary-foreground' : 'text-secondary'}`}>
+                      {caseStudy?.client}
+                    </div>
+                    <div className={`text-sm ${isActive ? 'text-primary-foreground/90' : 'text-text-secondary'}`}>
+                      {caseStudy?.industry}
+                    </div>
+                    <div className={`text-xs font-medium ${isActive ? 'text-primary-foreground/75' : 'text-text-secondary/60'}`}>
+                      {caseStudy?.service}
+                    </div>
                   </div>
                 </button>
-              ))}
+                );
+              })}
             </div>
           </div>
 
           {/* Case Study Details */}
           <div className="lg:col-span-3">
             <div className="bg-white rounded-2xl shadow-card-elevated overflow-hidden">
-              <div className="relative h-64 lg:h-80">
+              <div className="relative h-80 sm:h-96 lg:h-[26rem] xl:h-[30rem] bg-muted">
                 <Image
                   src={currentCase?.image}
                   alt={`Caso de estudio ${currentCase?.client}`}
-                  className="w-full h-full object-cover"
+                  className="absolute inset-0 h-full w-full object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="flex items-center space-x-2 mb-2">
                     <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
@@ -164,12 +234,20 @@ const CaseStudyShowcase = () => {
                   {/* Botones */}
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Button
+                      asChild
                       variant="default"
                       iconName="MessageCircle"
                       iconPosition="left"
                       className="bg-primary text-primary-foreground hover:bg-accent flex-1"
                     >
-                      Solicitar Caso Similar
+                      <a
+                        href={similarCaseWhatsAppUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Solicitar por WhatsApp un proyecto similar al caso ${currentCase?.client ?? ''}`}
+                      >
+                        Solicitar Caso Similar
+                      </a>
                     </Button>
                     {currentCase?.website && (
                       <Button

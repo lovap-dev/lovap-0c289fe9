@@ -179,19 +179,19 @@ const CTASection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
               <div className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary bg-primary px-2 py-1 rounded-lg mb-2">
-                150+
+                5+
               </div>
               <div className="text-white/70 text-sm">Proyectos Exitosos</div>
             </div>
             <div>
               <div className="text-3xl lg:text-4xl font-gilroy font-bold text-secondary bg-primary px-2 py-1 rounded-lg mb-2">
-                98%
+                100%
               </div>
               <div className="text-white/70 text-sm">Satisfacción Cliente</div>
             </div>
             <div>
               <div className="text-3xl lg:text-4xl font-gilroy font-bold text-primary mb-2">
-                340%
+                300%
               </div>
               <div className="text-white/70 text-sm">ROI Promedio</div>
             </div>

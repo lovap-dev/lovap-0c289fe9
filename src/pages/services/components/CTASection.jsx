@@ -48,7 +48,7 @@ const CTASection = () => {
           </h2>
           
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Únete a más de 150 empresas que han multiplicado sus conversiones y ingresos con nuestras soluciones estratégicas.
+            Únete a más de 5 empresas que han multiplicado sus conversiones y ingresos con nuestras soluciones estratégicas.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">

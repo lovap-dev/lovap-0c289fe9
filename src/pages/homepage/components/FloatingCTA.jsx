@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import Button from '../../../components/ui/Button';
 import Icon from '../../../components/AppIcon';
 
+const WHATSAPP_URL = 'https://wa.me/573006719235';
+const MAILTO = 'mailto:lovap.dev@gmail.com?subject=Cotización%20desde%20lovap';
+
 const FloatingCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -16,7 +19,7 @@ const FloatingCTA = () => {
       color: "primary"
     },
     {
-      text: "Cotización en 24 horas",
+      text: "Cotización el mismo día",
       icon: "Clock",
       color: "success"
     },
@@ -116,36 +119,44 @@ const FloatingCTA = () => {
                       </span>
                     </motion.div>
 
-                    {/* Action Buttons */}
+                    {/* Action Buttons — <a>+nested <button> breaks clicks; use asChild */}
                     <div className="space-y-3">
-                      <Link to="/contact">
-                        <Button
-                          variant="default"
-                          size="sm"
-                          fullWidth
-                          iconName="ArrowRight"
-                          iconPosition="right"
-                        >
-                          Solicitar Cotización
-                        </Button>
-                      </Link>
-                      
+                      <Button
+                        asChild
+                        variant="default"
+                        size="sm"
+                        fullWidth
+                        iconName="ArrowRight"
+                        iconPosition="right"
+                        className="rounded-xl shadow-sm font-gilroy font-semibold"
+                      >
+                        <Link to="/contact#quote-form">Solicitar cotización</Link>
+                      </Button>
+
                       <div className="grid grid-cols-2 gap-2">
                         <Button
+                          type="button"
                           variant="outline"
-                          size="xs"
-                          iconName="Phone"
+                          size="sm"
+                          iconName="MessageCircle"
                           iconPosition="left"
+                          className="w-full rounded-xl border-2 border-border bg-background font-gilroy font-medium shadow-sm hover:bg-muted/80"
+                          onClick={() => window.open(WHATSAPP_URL, '_blank', 'noopener,noreferrer')}
                         >
-                          Llamar
+                          WhatsApp
                         </Button>
                         <Button
+                          type="button"
                           variant="outline"
-                          size="xs"
-                          iconName="MessageSquare"
+                          size="sm"
+                          iconName="Mail"
                           iconPosition="left"
+                          className="w-full rounded-xl border-2 border-border bg-background font-gilroy font-medium shadow-sm hover:bg-muted/80"
+                          onClick={() => {
+                            window.location.href = MAILTO;
+                          }}
                         >
-                          Chat
+                          Email
                         </Button>
                       </div>
                     </div>
@@ -157,11 +168,11 @@ const FloatingCTA = () => {
                         <div className="text-xs text-text-secondary">Respuesta</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-lg font-gilroy font-bold text-success">150+</div>
+                        <div className="text-lg font-gilroy font-bold text-success">5+</div>
                         <div className="text-xs text-text-secondary">Clientes</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-lg font-gilroy font-bold text-warning">98%</div>
+                        <div className="text-lg font-gilroy font-bold text-warning">100%</div>
                         <div className="text-xs text-text-secondary">Satisfacción</div>
                       </div>
                     </div>

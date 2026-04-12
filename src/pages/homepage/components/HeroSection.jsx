@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Button from '../../../components/ui/Button';
@@ -9,6 +9,8 @@ import { DynamicTextSlider } from '@/components/ui/dynamic-text-slider';
 const HeroSection = () => {
   const [currentValueProp, setCurrentValueProp] = useState(0);
   const [sliderHeight, setSliderHeight] = useState(110);
+  const [scrollHintVisible, setScrollHintVisible] = useState(true);
+  const heroRef = useRef(null);
   const whatsappNumber = '573006719235'; // +57 (CO) + número provisto 3006719235
   const whatsappText = encodeURIComponent('Hola, me interesa una cotización estratégica para mi sitio web. Mi nombre es [Tu nombre]. ¿Podemos coordinar una llamada esta semana?');
 
@@ -43,52 +45,72 @@ const HeroSection = () => {
 
   useEffect(() => {
     const mq = window.matchMedia('(min-width: 768px)');
-    const update = () => setSliderHeight(mq.matches ? 78 : 110);
+    const mqXl = window.matchMedia('(min-width: 1280px)');
+    const update = () => {
+      if (mqXl.matches) setSliderHeight(84);
+      else if (mq.matches) setSliderHeight(70);
+      else setSliderHeight(100);
+    };
     update();
     if (mq.addEventListener) {
       mq.addEventListener('change', update);
+      mqXl.addEventListener('change', update);
     } else {
-      // Safari fallback
       mq.addListener(update);
+      mqXl.addListener(update);
     }
     return () => {
       if (mq.removeEventListener) {
         mq.removeEventListener('change', update);
+        mqXl.removeEventListener('change', update);
       } else {
         mq.removeListener(update);
+        mqXl.removeListener(update);
       }
     };
   }, []);
 
+  useEffect(() => {
+    const el = heroRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') return;
+    const io = new IntersectionObserver(
+      ([entry]) => setScrollHintVisible(entry.isIntersecting && entry.intersectionRatio > 0.05),
+      { threshold: [0, 0.05, 0.2, 0.5] }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <section className="relative min-h-[85vh] md:min-h-screen flex items-start justify-start md:items-center md:justify-center bg-gradient-to-br from-background via-background to-muted overflow-hidden pt-20 md:pt-0 pb-20 md:pb-28">
+    <section
+      ref={heroRef}
+      className="relative min-h-[100dvh] flex flex-col bg-gradient-to-b from-background via-background to-muted/80 pt-20 md:pt-0"
+    >
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5 hidden md:block">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-5 hidden md:block">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
       </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
-          {/* Content */}
-          <div className="space-y-8">
+      <div className="relative z-10 flex flex-1 flex-col justify-center min-h-0 w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-6 md:py-8 lg:py-10 pb-24 md:pb-28 lg:pb-32">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-10 lg:gap-x-12 xl:gap-x-16 items-center">
+          {/* Content — z-index por encima del Spline para que el titular no quede tapado */}
+          <div className="relative z-20 min-w-0 space-y-5 md:space-y-6 xl:space-y-7 pr-0 lg:pr-2 xl:pr-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-6"
+              className="space-y-3 md:space-y-4 xl:space-y-5"
             >
-            
-
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-gilroy font-bold text-secondary leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-gilroy font-bold text-secondary leading-[1.1] tracking-tight lg:max-w-[min(100%,40ch)]">
                 Sitios web que
                 <DynamicTextSlider
                   text="transforman negocios"
-                  className="block text-gray-400 font-gilroy font-bold text-3xl sm:text-4xl md:text-5xl leading-tight"
+                  className="block text-gray-400 font-gilroy font-bold text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl leading-[1.1] tracking-tight"
                   height={sliderHeight}
                 />
               </h1>
 
-              <p className="text-base sm:text-lg md:text-xl text-text-secondary leading-relaxed max-w-full md:max-w-xl">
+              <p className="text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed max-w-full md:max-w-lg lg:max-w-xl">
                 Creamos experiencias digitales que convierten visitantes en clientes y aceleran el crecimiento de tu empresa con resultados medibles.
               </p>
             </motion.div>
@@ -99,21 +121,21 @@ const HeroSection = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-card border border-border rounded-2xl p-6 card-elevated"
+              className="bg-card border border-border rounded-2xl p-5 md:p-6 xl:p-8 card-elevated"
             >
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-4 xl:space-x-5">
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 rounded-xl flex items-center justify-center">
-                    <span className="text-xl md:text-2xl font-gilroy font-bold text-yellow-500">
+                  <div className="w-14 h-14 xl:w-16 xl:h-16 rounded-xl flex items-center justify-center">
+                    <span className="text-xl md:text-2xl xl:text-3xl font-gilroy font-bold text-yellow-500">
                       {valuePropositions?.[currentValueProp]?.metric}
                     </span>
                   </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-gilroy font-semibold text-secondary">
+                <div className="min-w-0">
+                  <h3 className="text-base md:text-lg xl:text-xl font-gilroy font-semibold text-secondary">
                     {valuePropositions?.[currentValueProp]?.title}
                   </h3>
-                  <p className="text-text-secondary">
+                  <p className="text-sm md:text-base xl:text-lg text-text-secondary">
                     {valuePropositions?.[currentValueProp]?.subtitle}
                   </p>
                 </div>
@@ -159,50 +181,51 @@ const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="flex flex-wrap items-center gap-3 sm:gap-6 pt-4 mb-12"
+              className="flex flex-wrap items-center gap-3 sm:gap-6 pt-2 md:pt-4"
             >
-              <div className="flex items-center space-x-2 text-xs sm:text-sm text-text-secondary">
-                <Icon name="Shield" size={16} className="text-success" />
+              <div className="flex items-center space-x-2 text-xs sm:text-sm md:text-base text-text-secondary">
+                <Icon name="Shield" size={18} className="text-success shrink-0" />
                 <span>SSL Seguro</span>
               </div>
-              <div className="flex items-center space-x-2 text-xs sm:text-sm text-text-secondary">
-                <Icon name="Clock" size={16} className="text-success" />
+              <div className="flex items-center space-x-2 text-xs sm:text-sm md:text-base text-text-secondary">
+                <Icon name="Clock" size={18} className="text-success shrink-0" />
                 <span>Entrega 21 días</span>
               </div>
-              <div className="flex items-center space-x-2 text-xs sm:text-sm text-text-secondary">
-                <Icon name="Award" size={16} className="text-success" />
+              <div className="flex items-center space-x-2 text-xs sm:text-sm md:text-base text-text-secondary">
+                <Icon name="Award" size={18} className="text-success shrink-0" />
                 <span>Soporte dedicado</span>
               </div>
             </motion.div>
           </div>
 
-          {/* Visual Element */}
+          {/* Visual — z-0 y recorte para que el canvas no invada la columna del texto */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative hidden md:block"
+            className="relative z-0 hidden md:block w-full min-w-0 min-h-0 overflow-hidden rounded-2xl [&_.rounded-2xl]:h-[min(440px,46vh)] [&_.rounded-2xl]:lg:h-[min(480px,48vh)] [&_.rounded-2xl]:xl:h-[min(500px,50vh)]"
           >
             <SplineSceneBasic />
           </motion.div>
         </div>
       </div>
-      {/* Scroll Indicator */}
+      {/* Scroll indicator: fijo al pie del viewport (el hero a veces supera 100vh; absolute quedaba fuera de vista) */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        animate={{ opacity: scrollHintVisible ? 1 : 0 }}
+        transition={{ duration: 0.35 }}
+        className="pointer-events-none fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-1/2 z-30 -translate-x-1/2 flex flex-col items-center gap-1.5 px-4"
+        aria-hidden
       >
-        <div className="flex flex-col items-center space-y-2">
-          <span className="text-sm text-text-secondary underline">Descubre más</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <Icon name="ChevronDown" size={20} className="text-text-secondary" />
-          </motion.div>
-        </div>
+        <span className="text-sm md:text-base text-text-secondary underline decoration-text-secondary/40 underline-offset-4">
+          Descubre más
+        </span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <Icon name="ChevronDown" size={24} className="text-text-secondary" />
+        </motion.div>
       </motion.div>
     </section>
   );

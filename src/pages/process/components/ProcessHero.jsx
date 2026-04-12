@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuroraBackground } from '@/components/ui/aurora-background';
 import { Hero } from '@/components/ui/hero-1';
 
 const AnimatedText = () => {
@@ -80,16 +81,19 @@ Espero coordinar una reunión pronto`);
   );
 
   return (
-    <Hero
-      eyebrow="Sin Letras Pequeñas"
-      title={title}
-      subtitle="Nuestra metodología probada garantiza un equilibrio entre tecnología de primer nivel y objetivos de negocio. Diseñamos cada etapa para ofrecer resultados medibles, mayor retorno y menor riesgo."
-      ctaLabel="Agendar Consultoría Gratuita"
-      onCtaClick={handleWhatsAppContact}
-      secondaryCtaLabel="Ver Nuestros Servicios"
-      onSecondaryCtaClick={handleGoToServices}
-      className="py-16 lg:py-24"
-    />
+    <AuroraBackground appearance="dark" showRadialGradient className="min-h-screen">
+      <Hero
+        eyebrow="Sin Letras Pequeñas"
+        title={title}
+        subtitle="Nuestra metodología probada garantiza un equilibrio entre tecnología de primer nivel y objetivos de negocio. Diseñamos cada etapa para ofrecer resultados medibles, mayor retorno y menor riesgo."
+        ctaLabel="Agendar Consultoría Gratuita"
+        onCtaClick={handleWhatsAppContact}
+        secondaryCtaLabel="Ver Nuestros Servicios"
+        onSecondaryCtaClick={handleGoToServices}
+        surface="transparent"
+        className="py-16 lg:py-24 flex-1 justify-center"
+      />
+    </AuroraBackground>
   );
 };
 

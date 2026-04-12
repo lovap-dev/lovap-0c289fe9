@@ -5,6 +5,7 @@ import HeroSection from "./components/HeroSection";
 import TestimonialCarousel from "./components/TestimonialCarousel";
 import CaseStudyShowcase from "./components/CaseStudyShowcase";
 import TrustBadges from "./components/TrustBadges";
+import HomeClosingCTA from "./components/HomeClosingCTA";
 import FloatingCTA from "./components/FloatingCTA";
 import Footer from "../../components/ui/Footer";
 
@@ -56,6 +57,9 @@ const Homepage = () => {
 
           {/* Trust Badges */}
           <TrustBadges />
+
+          {/* Closing CTA */}
+          <HomeClosingCTA />
         </main>
 
         {/* Floating CTA */}

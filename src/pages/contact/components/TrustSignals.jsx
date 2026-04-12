@@ -101,13 +101,13 @@ const TrustSignals = () => {
 
   const stats = [
     {
-      number: '150+',
+      number: '5+',
       label: 'Proyectos Completados',
       icon: 'CheckCircle',
       color: 'text-green-600'
     },
     {
-      number: '98%',
+      number: '100%',
       label: 'Satisfacción Cliente',
       icon: 'Heart',
       color: 'text-red-600'
@@ -140,7 +140,7 @@ const TrustSignals = () => {
             <span className="text-gray-400 block">Líderes en Colombia</span>
           </h2>
           <p className="text-lg text-text-secondary max-w-3xl mx-auto">
-            Más de 150 empresas han confiado en nosotros para transformar su presencia digital y acelerar su crecimiento online.
+            Más de 5 empresas han confiado en nosotros para transformar su presencia digital y acelerar su crecimiento online.
           </p>
         </div>
 
