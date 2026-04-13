@@ -18,13 +18,12 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
+        // Do not isolate React in its own chunk: it caused a circular import with the main vendor chunk
+        // and undefined React at lucide-react init (forwardRef).
         manualChunks(id) {
           if (!id.includes("node_modules")) return;
           if (id.includes("@splinetool") || id.includes("splinetool")) return "spline";
           if (id.includes("framer-motion")) return "framer";
-          if (id.includes("react-dom") || id.includes("/react/") || id.includes("react-router")) {
-            return "react-vendor";
-          }
           return "vendor";
         },
       },
