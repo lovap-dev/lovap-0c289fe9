@@ -184,11 +184,11 @@ function OpenSourceSlider({ width: initialWidth, height = 70, handleSize = 28, o
   };
 
   return (
-    <div
-      className="relative select-none transition-transform duration-300 ease-out"
+    <span
+      className="relative block select-none transition-transform duration-300 ease-out"
       style={{ width, height, transform: `rotate(${dynamicRotation}deg)`  }}
     >
-      <div className="absolute inset-0 rounded-2xl border border-yellow-500 pointer-events-none hidden md:block" />
+      <span className="pointer-events-none absolute inset-0 hidden md:block rounded-2xl border border-yellow-500" aria-hidden />
       {["left", "right"].map((handle) => {
         const x = handle === "left" ? left : right - handleSize;
         const scaleClass = draggingHandle === (handle as any) ? "scale-125" : "hover:scale-110";
@@ -197,7 +197,7 @@ function OpenSourceSlider({ width: initialWidth, height = 70, handleSize = 28, o
           <button
             key={handle}
             type="button"
-            aria-label={handle === "left" ? "Adjust start" : "Adjust end"}
+            aria-label={handle === "left" ? "Ajustar inicio del recorte del texto" : "Ajustar fin del recorte del texto"}
             onPointerDown={(e) => startDrag(handle as "left" | "right", e)}
             onKeyDown={nudgeHandle(handle as "left" | "right")}
             className={`z-20 absolute top-0 h-full w-7 rounded-full bg-[#262626] border border-yellow-500 hidden md:flex items-center justify-center cursor-ew-resize focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-transform duration-150 ease-in-out opacity-100 ${scaleClass}` }
@@ -208,13 +208,13 @@ function OpenSourceSlider({ width: initialWidth, height = 70, handleSize = 28, o
         );
       })}
       {/* Decreased font size for label text to be smaller than the main title */}
-      <div
-        className={`flex z-10 items-center justify-center w-full h-full px-4 overflow-hidden pointer-events-none ${className}`}
+      <span
+        className={`flex z-10 h-full w-full items-center justify-center overflow-hidden px-4 pointer-events-none ${className}`}
         style={{ clipPath: `inset(0 ${width - right}px 0 ${left}px round 1rem)`  }}
       >
         {label}
-      </div>
-    </div>
+      </span>
+    </span>
   );
 }
 
@@ -239,13 +239,13 @@ export function DynamicTextSlider({
   }, [text]);
 
   return (
-    <div className="relative">
+    <span className="relative block w-full max-w-full">
       {/* Hidden measurer that must mirror the font sizing used in the slider */}
       <span ref={measureRef} className={`absolute -left-[9999px] px-4 whitespace-nowrap ${className}`}>
         {text}
       </span>
       <OpenSourceSlider width={textWidth} height={height} label={text} className={className} />
-    </div>
+    </span>
   );
 }
 

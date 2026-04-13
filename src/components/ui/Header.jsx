@@ -103,7 +103,8 @@ const Header = () => {
             <button
               onClick={toggleMenu}
               className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-border hover:bg-muted transition-smooth"
-              aria-label="Toggle menu"
+              aria-label={isMenuOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'}
+              aria-expanded={isMenuOpen}
             >
               <Icon 
                 name={isMenuOpen ? "X" : "Menu"} 

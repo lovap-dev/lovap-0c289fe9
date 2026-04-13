@@ -26,6 +26,17 @@ const ContactPage = () => {
         <div id="quote-form">
           <QuoteRequestForm />
         </div>
+
+        {/* Destinos para enlaces del pie (fragmentos distintos = propósito claro) */}
+        <section className="sr-only" aria-label="Información legal">
+          <h2 className="sr-only">Información legal</h2>
+          <p id="legal-privacidad">
+            Para ejercer derechos de datos o consultas sobre privacidad, escríbenos desde el formulario de contacto.
+          </p>
+          <p id="legal-terminos">
+            Para consultas sobre condiciones de servicio y contratación, utiliza el formulario de contacto.
+          </p>
+        </section>
         
         {/* Floating CTA */}
         <FloatingCTA />

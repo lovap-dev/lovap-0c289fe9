@@ -41,7 +41,10 @@ const ProcessBenefits = () => {
                   src={`/images/${benefit.image}`}
                   alt={benefit.title}
                   className="w-10 h-10 object-contain"
+                  width={40}
+                  height={40}
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <h3 className="font-gilroy font-semibold text-secondary mb-2">

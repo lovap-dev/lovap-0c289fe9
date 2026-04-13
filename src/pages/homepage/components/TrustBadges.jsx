@@ -15,6 +15,8 @@ function ClientLogoCard({ client }) {
             loading="lazy"
             decoding="async"
             referrerPolicy="no-referrer"
+            width={180}
+            height={56}
             onError={() => setFailed(true)}
             className="max-h-12 w-full max-w-[180px] object-contain object-center transition duration-300 group-hover:scale-[1.02] sm:max-h-14"
           />

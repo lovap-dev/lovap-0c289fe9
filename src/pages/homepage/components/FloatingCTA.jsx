@@ -78,10 +78,12 @@ const FloatingCTA = () => {
                 >
                   {/* Close Button */}
                   <button
+                    type="button"
                     onClick={toggleExpanded}
-                    className="absolute top-4 right-4 w-8 h-8 bg-muted rounded-full flex items-center justify-center hover:bg-border transition-colors"
+                    className="absolute top-4 right-4 flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-muted hover:bg-border transition-colors"
+                    aria-label="Cerrar panel de cotización"
                   >
-                    <Icon name="X" size={16} className="text-text-secondary" />
+                    <Icon name="X" size={16} className="text-text-secondary" aria-hidden />
                   </button>
 
                   <div className="space-y-4">
@@ -183,10 +185,17 @@ const FloatingCTA = () => {
 
             {/* Main Floating Button */}
             <motion.button
+              type="button"
               onClick={toggleExpanded}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative w-14 h-14 bg-primary rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
+              className="relative flex h-14 w-14 min-h-[56px] min-w-[56px] items-center justify-center rounded-full bg-primary shadow-lg transition-all duration-300 hover:shadow-xl group"
+              aria-expanded={isExpanded}
+              aria-label={
+                isExpanded
+                  ? 'Cerrar accesos rápidos de cotización y contacto'
+                  : 'Abrir accesos rápidos de cotización y contacto'
+              }
             >
               {/* Pulse Animation */}
               <div className="absolute inset-0 bg-primary rounded-full animate-ping opacity-20"></div>

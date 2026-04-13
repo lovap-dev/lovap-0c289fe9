@@ -155,8 +155,11 @@ const CaseStudyShowcase = () => {
                 const isActive = activeCase === index;
                 return (
                 <button
+                  type="button"
                   key={caseStudy?.id}
                   onClick={() => setActiveCase(index)}
+                  aria-label={`Ver caso de estudio: ${caseStudy?.client}`}
+                  aria-pressed={isActive}
                   className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-300 ${
                     isActive
                       ? 'border-primary bg-primary text-primary-foreground shadow-lg shadow-primary/30'
@@ -170,7 +173,7 @@ const CaseStudyShowcase = () => {
                     <div className={`text-sm ${isActive ? 'text-primary-foreground/90' : 'text-text-secondary'}`}>
                       {caseStudy?.industry}
                     </div>
-                    <div className={`text-xs font-medium ${isActive ? 'text-primary-foreground/75' : 'text-text-secondary/60'}`}>
+                    <div className={`text-xs font-medium ${isActive ? 'text-primary-foreground/90' : 'text-text-secondary/75'}`}>
                       {caseStudy?.service}
                     </div>
                   </div>
@@ -188,6 +191,10 @@ const CaseStudyShowcase = () => {
                   src={currentCase?.image}
                   alt={`Caso de estudio ${currentCase?.client}`}
                   className="absolute inset-0 h-full w-full object-cover object-top"
+                  width={1600}
+                  height={900}
+                  sizes="(max-width: 1024px) 100vw, 75vw"
+                  loading="eager"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6">

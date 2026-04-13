@@ -1,4 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+const footerServices = [
+  { label: 'Landing Pages', to: '/services#landing-pages' },
+  { label: 'Sitios Corporativos', to: '/services#corporate-sites' },
+  { label: 'Desarrollo a la medida', to: '/services#custom-development' },
+  { label: 'Optimización SEO', to: '/contact#quote-form' },
+  { label: 'Mantenimiento Web', to: '/contact#quote-form' },
+];
 
 const Footer = () => {
   return (
@@ -38,17 +47,14 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-gilroy font-semibold mb-6">Servicios</h3>
             <ul className="space-y-3">
-              {[
-                'Landing Pages',
-                'Sitios Corporativos',
-                'Desarrollo a la medida',
-                'Optimización SEO',
-                'Mantenimiento Web',
-              ].map((service, idx) => (
-                <li key={idx}>
-                  <a href="#" className="text-white/80 hover:text-primary transition-colors text-sm">
-                    {service}
-                  </a>
+              {footerServices.map((item) => (
+                <li key={item.to + item.label}>
+                  <Link
+                    to={item.to}
+                    className="text-sm text-white/85 transition-colors hover:text-primary"
+                  >
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -59,19 +65,19 @@ const Footer = () => {
             <h3 className="text-lg font-gilroy font-semibold mb-6">Contacto</h3>
             <div className="space-y-4">
               <div className="text-sm">
-                <div className="text-white/60 mb-1">Email</div>
+                <div className="mb-1 text-white/75">Email</div>
                 <a href="mailto:lovap.dev@gmail.com" className="text-white/80 hover:text-primary transition-colors">
                   lovap.dev@gmail.com
                 </a>
               </div>
               <div className="text-sm">
-                <div className="text-white/60 mb-1">Teléfono</div>
+                <div className="mb-1 text-white/75">Teléfono</div>
                 <a href="tel:+573006719235" className="text-white/80 hover:text-primary transition-colors">
                   +57 300 671 9235
                 </a>
               </div>
               <div className="text-sm">
-                <div className="text-white/60 mb-1">Horario</div>
+                <div className="mb-1 text-white/75">Horario</div>
                 <div className="text-white/80">
                   Lun - Vie: 7:00 - 18:00
                   <br />
@@ -84,16 +90,22 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/20 pt-8 flex flex-col lg:flex-row justify-between items-center">
-          <div className="text-white/60 text-sm mb-4 lg:mb-0">
+          <div className="mb-4 text-sm text-white/70 lg:mb-0">
             © {new Date().getFullYear()} Lovap Corporate. Todos los derechos reservados.
           </div>
           <div className="flex items-center space-x-6 text-sm">
-            <a href="#" className="text-white/60 hover:text-primary transition-colors">
+            <Link
+              to="/contact#legal-privacidad"
+              className="text-white/75 transition-colors hover:text-primary"
+            >
               Política de Privacidad
-            </a>
-            <a href="#" className="text-white/60 hover:text-primary transition-colors">
+            </Link>
+            <Link
+              to="/contact#legal-terminos"
+              className="text-white/75 transition-colors hover:text-primary"
+            >
               Términos de Servicio
-            </a>
+            </Link>
           </div>
         </div>
       </div>

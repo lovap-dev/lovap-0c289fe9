@@ -110,6 +110,8 @@ const TeamSection = () => {
                     src={member?.photo || "/assets/images/no_image.png"}
                     alt={`Retrato de ${member?.name}`}
                     className="max-h-full max-w-full object-contain object-center"
+                    width={400}
+                    height={400}
                     loading="lazy"
                   />
                 </div>

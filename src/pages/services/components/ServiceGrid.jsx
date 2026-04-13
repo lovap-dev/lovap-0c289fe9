@@ -114,8 +114,9 @@ const ServiceGrid = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           {services?.map((service, index) => (
             <div
+              id={service?.id}
               key={service?.id}
-              className={`group relative bg-white rounded-2xl border-2 transition-all duration-300 ${
+              className={`group relative scroll-mt-24 bg-white rounded-2xl border-2 transition-all duration-300 ${
                 index === highlightedIndex
                   ? "border-primary shadow-card-elevated-strong scale-105"
                   : "border-border hover:border-primary/50 hover:shadow-card-elevated"

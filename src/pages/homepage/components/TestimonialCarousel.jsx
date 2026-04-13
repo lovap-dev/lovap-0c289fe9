@@ -184,16 +184,20 @@ const TestimonialCarousel = () => {
                           {testimonials?.[currentTestimonial]?.industry}
                         </span>
                         <button
+                          type="button"
                           onClick={prevTestimonial}
-                          className="w-10 h-10 bg-muted rounded-full flex items-center justify-center text-secondary hover:bg-primary/10 transition-colors"
+                          className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-muted text-secondary transition-colors hover:bg-primary/10"
+                          aria-label="Testimonio anterior"
                         >
-                          <Icon name="ChevronLeft" size={20} />
+                          <Icon name="ChevronLeft" size={20} aria-hidden />
                         </button>
                         <button
+                          type="button"
                           onClick={nextTestimonial}
-                          className="w-10 h-10 bg-muted rounded-full flex items-center justify-center text-secondary hover:bg-primary/10 transition-colors"
+                          className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-muted text-secondary transition-colors hover:bg-primary/10"
+                          aria-label="Testimonio siguiente"
                         >
-                          <Icon name="ChevronRight" size={20} />
+                          <Icon name="ChevronRight" size={20} aria-hidden />
                         </button>
                       </div>
                     </div>
@@ -207,12 +211,18 @@ const TestimonialCarousel = () => {
           <div className="flex justify-center space-x-2 mt-8">
             {testimonials?.map((_, idx) => (
               <button
+                type="button"
                 key={idx}
                 onClick={() => setCurrentTestimonial(idx)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  idx === currentTestimonial ? "bg-primary" : "bg-border"
-                }`}
-              />
+                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full p-2 transition-opacity hover:opacity-90"
+                aria-label={`Ir al testimonio ${idx + 1} de ${testimonials.length}`}
+                aria-current={idx === currentTestimonial ? "true" : undefined}
+              >
+                <span
+                  className={`block h-3 w-3 rounded-full ${idx === currentTestimonial ? "bg-primary" : "bg-border"}`}
+                  aria-hidden
+                />
+              </button>
             ))}
           </div>
         </div>

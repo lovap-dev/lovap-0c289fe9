@@ -1,16 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Button from '../../../components/ui/Button';
 import Icon from '../../../components/AppIcon';
-import { SplineSceneBasic } from '../../../components/ui/spline-scene-basic';
 import { DynamicTextSlider } from '@/components/ui/dynamic-text-slider';
+
+const SplineSceneBasic = lazy(() =>
+  import('../../../components/ui/spline-scene-basic').then((m) => ({ default: m.SplineSceneBasic }))
+);
 
 const HeroSection = () => {
   const [currentValueProp, setCurrentValueProp] = useState(0);
   const [sliderHeight, setSliderHeight] = useState(110);
-  const [scrollHintVisible, setScrollHintVisible] = useState(true);
-  const heroRef = useRef(null);
   const whatsappNumber = '573006719235'; // +57 (CO) + número provisto 3006719235
   const whatsappText = encodeURIComponent('Hola, me interesa una cotización estratégica para mi sitio web. Mi nombre es [Tu nombre]. ¿Podemos coordinar una llamada esta semana?');
 
@@ -70,22 +71,8 @@ const HeroSection = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const el = heroRef.current;
-    if (!el || typeof IntersectionObserver === 'undefined') return;
-    const io = new IntersectionObserver(
-      ([entry]) => setScrollHintVisible(entry.isIntersecting && entry.intersectionRatio > 0.05),
-      { threshold: [0, 0.05, 0.2, 0.5] }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
   return (
-    <section
-      ref={heroRef}
-      className="relative min-h-[100dvh] flex flex-col bg-gradient-to-b from-background via-background to-muted/80 pt-20 md:pt-0"
-    >
+    <section className="relative min-h-[100dvh] flex flex-col bg-gradient-to-b from-background via-background to-muted/80 pt-20 md:pt-0">
       {/* Background Pattern */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-5 hidden md:block">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
@@ -105,7 +92,7 @@ const HeroSection = () => {
                 Sitios web que
                 <DynamicTextSlider
                   text="transforman negocios"
-                  className="block text-gray-400 font-gilroy font-bold text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl leading-[1.1] tracking-tight"
+                  className="block text-secondary/85 font-gilroy font-bold text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl leading-[1.1] tracking-tight"
                   height={sliderHeight}
                 />
               </h1>
@@ -132,9 +119,9 @@ const HeroSection = () => {
                   </div>
                 </div>
                 <div className="min-w-0">
-                  <h3 className="text-base md:text-lg xl:text-xl font-gilroy font-semibold text-secondary">
+                  <h2 className="text-base md:text-lg xl:text-xl font-gilroy font-semibold text-secondary">
                     {valuePropositions?.[currentValueProp]?.title}
-                  </h3>
+                  </h2>
                   <p className="text-sm md:text-base xl:text-lg text-text-secondary">
                     {valuePropositions?.[currentValueProp]?.subtitle}
                   </p>
@@ -205,28 +192,19 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 0.2 }}
             className="relative z-0 hidden md:block w-full min-w-0 min-h-0 overflow-hidden rounded-2xl [&_.rounded-2xl]:h-[min(440px,46vh)] [&_.rounded-2xl]:lg:h-[min(480px,48vh)] [&_.rounded-2xl]:xl:h-[min(500px,50vh)]"
           >
-            <SplineSceneBasic />
+            <Suspense
+              fallback={
+                <div
+                  className="w-full min-h-[min(440px,46vh)] rounded-2xl border border-border/60 bg-muted/80 animate-pulse"
+                  aria-hidden
+                />
+              }
+            >
+              <SplineSceneBasic />
+            </Suspense>
           </motion.div>
         </div>
       </div>
-      {/* Scroll indicator: fijo al pie del viewport (el hero a veces supera 100vh; absolute quedaba fuera de vista) */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: scrollHintVisible ? 1 : 0 }}
-        transition={{ duration: 0.35 }}
-        className="pointer-events-none fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-1/2 z-30 -translate-x-1/2 flex flex-col items-center gap-1.5 px-4"
-        aria-hidden
-      >
-        <span className="text-sm md:text-base text-text-secondary underline decoration-text-secondary/40 underline-offset-4">
-          Descubre más
-        </span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <Icon name="ChevronDown" size={24} className="text-text-secondary" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 };

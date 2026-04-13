@@ -217,29 +217,41 @@ const ClientTestimonials = () => {
         {/* Navigation */}
         <div className="flex items-center justify-center space-x-4 mb-12">
           <button
+            type="button"
             onClick={prevTestimonial}
-            className="w-12 h-12 bg-card rounded-full flex items-center justify-center shadow-card hover:shadow-card-elevated transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
+            className="flex h-12 w-12 min-h-[48px] min-w-[48px] items-center justify-center rounded-full bg-card shadow-card transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:shadow-card-elevated"
+            aria-label="Testimonio anterior"
           >
-            <Icon name="ChevronLeft" size={20} />
+            <Icon name="ChevronLeft" size={20} aria-hidden />
           </button>
           
-          <div className="flex space-x-2">
+          <div className="flex items-center space-x-1">
             {testimonials?.map((_, index) => (
               <button
+                type="button"
                 key={index}
                 onClick={() => setActiveTestimonial(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  activeTestimonial === index ? 'bg-primary' : 'bg-border'
-                }`}
-              />
+                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full p-2 transition-opacity hover:opacity-90"
+                aria-label={`Ir al testimonio ${index + 1} de ${testimonials.length}`}
+                aria-current={activeTestimonial === index ? "true" : undefined}
+              >
+                <span
+                  className={`block h-3 w-3 rounded-full transition-all duration-300 ${
+                    activeTestimonial === index ? 'bg-primary' : 'bg-border'
+                  }`}
+                  aria-hidden
+                />
+              </button>
             ))}
           </div>
           
           <button
+            type="button"
             onClick={nextTestimonial}
-            className="w-12 h-12 bg-card rounded-full flex items-center justify-center shadow-card hover:shadow-card-elevated transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
+            className="flex h-12 w-12 min-h-[48px] min-w-[48px] items-center justify-center rounded-full bg-card shadow-card transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:shadow-card-elevated"
+            aria-label="Testimonio siguiente"
           >
-            <Icon name="ChevronRight" size={20} />
+            <Icon name="ChevronRight" size={20} aria-hidden />
           </button>
         </div>
 
@@ -247,8 +259,11 @@ const ClientTestimonials = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {testimonials?.map((testimonial, index) => (
             <button
+              type="button"
               key={testimonial?.id}
               onClick={() => setActiveTestimonial(index)}
+              aria-pressed={activeTestimonial === index}
+              aria-label={`Seleccionar testimonio de ${testimonial?.name}, ${testimonial?.company}`}
               className={`p-6 rounded-xl text-left transition-all duration-300 ${
                 activeTestimonial === index
                   ? 'bg-primary text-primary-foreground shadow-lg transform scale-105'
@@ -260,6 +275,8 @@ const ClientTestimonials = () => {
                   src={testimonial?.avatar}
                   alt={testimonial?.name}
                   className="w-12 h-12 rounded-full object-cover"
+                  width={48}
+                  height={48}
                 />
                 <div>
                   <div className="font-gilroy font-semibold text-sm">
